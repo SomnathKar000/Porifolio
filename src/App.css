@@ -1,3 +1,9 @@
+/* Google fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto&display=swap");
+
+/* Veriable css */
+
 .App {
   text-align: center;
 }
