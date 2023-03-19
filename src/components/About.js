@@ -5,11 +5,10 @@ import { Typography, Box, Container, Button } from "@mui/material";
 import { Contextvalues } from "../context/context";
 
 const About = () => {
-  console.log(window.location);
   return (
     <Wrapper>
       <Container className="Contain" maxWidth="xl">
-        <Box classname="text_box">
+        <Box className="text_box">
           <Typography variant="h3">
             Hi, I'm Somnath
             <br /> I love to build amazing apps
@@ -29,7 +28,7 @@ const About = () => {
         </Box>
         <Box className="profile_box">
           <img
-            calssName="profile_box"
+            className="profile_box"
             src={Somnath}
             alt="Somnath"
             width="70%"
