@@ -10,7 +10,7 @@ const Projects = () => {
     <Wrapper>
       <Container>
         <Box sx={{ margin: "2rem" }}>
-          <AccountTreeIcon sx={{ fontSize: 40 }} />
+          <AccountTreeIcon sx={{ fontSize: 60 }} />
           <Typography variant="h3">Apps I've Build</Typography>
         </Box>
         <Box className="images">
