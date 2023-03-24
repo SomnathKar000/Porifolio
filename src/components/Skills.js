@@ -61,8 +61,8 @@ const Wrapper = styled.div`
   }
   .skillsContainer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 `;
 export default Skills;
