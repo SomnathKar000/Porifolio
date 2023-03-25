@@ -1,14 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
-import { Typography, Box, Container, Button } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import photo from "../assets/photo.png";
+import { Contextvalues } from "../context/context";
 
 const Projects = () => {
+  const { mode } = Contextvalues();
+  const backgroundColor = mode === "light" ? "#0277bd" : "#202020";
   const images = [photo, photo, photo, photo];
   return (
     <Wrapper>
-      <Container>
+      <Box>
         <Box sx={{ margin: "2rem" }}>
           <AccountTreeIcon sx={{ fontSize: 60 }} />
           <Typography variant="h3">Apps I've Build</Typography>
@@ -17,7 +20,12 @@ const Projects = () => {
           {images.map((img, index) => (
             <div className="imageContainer" key={index}>
               <img className="image" src={img} alt={"Image" + { img }} />
-              <Box className="HoverDetails">
+              <Box
+                className="HoverDetails"
+                sx={{
+                  background: backgroundColor,
+                }}
+              >
                 <Box className="Ok">
                   <h3 className="text">Epic react app</h3>
                   <Typography variant="p" className="details">
@@ -29,7 +37,7 @@ const Projects = () => {
             </div>
           ))}
         </Box>
-      </Container>
+      </Box>
     </Wrapper>
   );
 };
@@ -41,11 +49,7 @@ const Wrapper = styled.div`
 
     text-align: center;
   }
-  .images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-  }
+
   .imageContainer {
     position: relative;
     border-radius: 0.7rem;
@@ -56,7 +60,7 @@ const Wrapper = styled.div`
     position: absolute;
     bottom: 100%;
     justify-content: center;
-    background-color: #202020;
+
     overflow: hidden;
     width: 100%;
     height: 0;
@@ -83,6 +87,18 @@ const Wrapper = styled.div`
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+  }
+  .images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+  @media screen and (max-width: 900px) {
+    .images {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
   }
 `;
 

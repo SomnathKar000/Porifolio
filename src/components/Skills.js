@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import MemoryIcon from "@mui/icons-material/Memory";
 import VerifiedIcon from "@mui/icons-material/Verified";
+import { Contextvalues } from "../context/context";
 
 const Skills = () => {
+  const { mode } = Contextvalues();
+  const backgroundColor =
+    mode === "light" ? "#0277bd" : "rgba(255, 255, 255, 0.08)";
   const skills = [
     "JavaScript",
     "C++",
@@ -21,7 +25,7 @@ const Skills = () => {
   ];
   return (
     <Wrapper>
-      <Container>
+      <Box>
         <Box className="name" sx={{ margin: "3rem" }}>
           <MemoryIcon sx={{ fontSize: 60 }} />
           <Typography variant="h3">Skills & Technologies</Typography>
@@ -35,8 +39,10 @@ const Skills = () => {
             {skills.map((item, index) => {
               return (
                 <Typography
+                  className="skillText"
                   sx={{
-                    background: "rgba(255, 255, 255, 0.08)",
+                    backgroundColor: backgroundColor,
+                    color: "white",
                     borderRadius: 2,
                     padding: 2,
                   }}
@@ -50,7 +56,7 @@ const Skills = () => {
             })}
           </Box>
         </Box>
-      </Container>
+      </Box>
     </Wrapper>
   );
 };
@@ -63,6 +69,17 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+  @media screen and (max-width: 600px) {
+    .skillsContainer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .skillText {
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
   }
 `;
 export default Skills;

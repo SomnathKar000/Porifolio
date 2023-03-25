@@ -1,13 +1,15 @@
 import React from "react";
 import Somnath from "../assets/Somnath.jpeg";
 import styled from "styled-components";
-import { Typography, Box, Container, Button } from "@mui/material";
+import { Typography, Box, Button } from "@mui/material";
 import { Contextvalues } from "../context/context";
 
 const About = () => {
+  const { mode } = Contextvalues();
+
   return (
     <Wrapper>
-      <Container className="Contain" maxWidth="xl">
+      <Box className="Contain" maxWidth="xl">
         <Box className="text_box">
           <Typography variant="h3">
             Hi, I'm Somnath
@@ -32,9 +34,12 @@ const About = () => {
             src={Somnath}
             alt="Somnath"
             width="70%"
+            style={{
+              filter: mode === "light" ? "none" : "grayscale(100%)",
+            }}
           />
         </Box>
-      </Container>
+      </Box>
     </Wrapper>
   );
 };
@@ -43,8 +48,9 @@ const Wrapper = styled.div`
   img {
     border-radius: 10%;
   }
-  margin: 5rem 1rem;
+
   .Contain {
+    margin: 3rem 0;
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     grid-template-areas:
@@ -52,6 +58,7 @@ const Wrapper = styled.div`
       "text_box text_box";
   }
   .profile_box {
+    margin: 2rem;
     grid-area: profile_box;
     display: flex;
     align-items: center;
@@ -64,6 +71,7 @@ const Wrapper = styled.div`
     justify-content: center;
     padding: 1rem;
   }
+
   @media screen and (min-width: 900px) {
     .Contain {
       grid-template-areas:

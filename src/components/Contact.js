@@ -1,11 +1,23 @@
 import React from "react";
-import { Box, Container, Typography, TextField, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  TextareaAutosize,
+} from "@mui/material";
+import { Contextvalues } from "../context/context";
 import styled from "styled-components";
 
 const Contact = () => {
+  const { mode } = Contextvalues();
+  const backgroundColor = mode === "light" ? "white" : "#121212";
+  const onSubmit = () => {
+    console.log("submit");
+  };
   return (
     <Wrapper>
-      <Container>
+      <Box>
         <Box sx={{ margin: 5 }}>
           <Typography variant="h2">Hire me</Typography>
           <Typography variant="p">
@@ -13,32 +25,45 @@ const Contact = () => {
             cumque, quae iste obcaecati reprehenderit blanditiis.
           </Typography>
         </Box>
-        <Box className="inputContainer">
+        <form onSubmit={onSubmit} className="inputContainer">
           <TextField label="Name" id="fullWidth"></TextField>
           <TextField label="Email" id="fullWidth"></TextField>
-          <TextField
-            className="messageBox"
-            sx={{ height: 40 }}
-            label="Message"
-          ></TextField>
-          <Button variant="contained" color="success">
+          <TextareaAutosize
+            label="message"
+            aria-label="empty textarea"
+            placeholder="Enter your message"
+            style={{
+              height: "20rem",
+              background: backgroundColor,
+              color: "white",
+              fontSize: "1.1rem",
+              padding: "0.5rem",
+              borderRadius: "3px",
+              borderColor: "#616161",
+            }}
+          />
+          <Button
+            variant="contained"
+            type="submit"
+            value="Submit"
+            color="success"
+          >
             Submit
           </Button>
-        </Box>
-      </Container>
+        </form>
+      </Box>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
   text-align: center;
+  margin-bottom: 2rem;
   .inputContainer {
     display: grid;
     grid-template-columns: 50rem;
     justify-content: center;
-    gap: 3rem;
-  }
-  .messageBox {
+    gap: 1.5rem;
   }
 `;
 

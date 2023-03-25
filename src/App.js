@@ -1,6 +1,11 @@
 import "./App.css";
 import Header from "./components/Header";
-import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
+import {
+  ThemeProvider,
+  createTheme,
+  CssBaseline,
+  Container,
+} from "@mui/material";
 import { Contextvalues } from "./context/context";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -17,10 +22,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
+      <Container>
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </Container>
     </ThemeProvider>
   );
 }
