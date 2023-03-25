@@ -19,7 +19,9 @@ const Contact = () => {
     <Wrapper>
       <Box>
         <Box sx={{ margin: 5 }}>
-          <Typography variant="h2">Hire me</Typography>
+          <Typography className="HeaderText" variant="h2">
+            Hire me
+          </Typography>
           <Typography variant="p">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
             cumque, quae iste obcaecati reprehenderit blanditiis.
@@ -61,9 +63,15 @@ const Wrapper = styled.div`
   margin-bottom: 2rem;
   .inputContainer {
     display: grid;
-    grid-template-columns: 50rem;
+    grid-template-columns: 40rem;
     justify-content: center;
     gap: 1.5rem;
+  }
+  @media screen and (max-width: 630px) {
+    .inputContainer {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
   }
 `;
 
