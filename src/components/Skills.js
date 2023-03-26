@@ -6,7 +6,7 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 import { Contextvalues } from "../context/context";
 
 const Skills = () => {
-  const { mode } = Contextvalues();
+  const { mode, skillsRef } = Contextvalues();
   const backgroundColor =
     mode === "light" ? "#0277bd" : "rgba(255, 255, 255, 0.08)";
   const skills = [
@@ -25,10 +25,12 @@ const Skills = () => {
   ];
   return (
     <Wrapper>
-      <Box>
-        <Box className="name" sx={{ margin: "3rem" }}>
+      <Box ref={skillsRef}>
+        <Box className="name" sx={{ marginY: "3rem" }}>
           <MemoryIcon sx={{ fontSize: 60 }} />
-          <Typography variant="h3">Skills & Technologies</Typography>
+          <Typography className="HeaderText" variant="h3">
+            Skills & Technologies
+          </Typography>
           <Typography variant="p">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
             fuga!
@@ -70,6 +72,7 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
+
   @media screen and (max-width: 600px) {
     .skillsContainer {
       display: grid;

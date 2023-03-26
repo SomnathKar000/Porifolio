@@ -1,22 +1,32 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import { Tooltip, IconButton, Toolbar } from "@mui/material";
 import { Contextvalues } from "../context/context";
 
-const pages = ["About", "Projects", "Contact"];
-
 function Header() {
-  const { mode, changeMode } = Contextvalues();
+  const {
+    mode,
+    changeMode,
+    ViewPage,
+    contactRef,
+    skillsRef,
+    projectsRef,
+    navbarRef,
+  } = Contextvalues();
+  const pages = [
+    { name: "Skills", pageRef: skillsRef },
+    { name: "Projects", pageRef: projectsRef },
+    { name: "Contact", pageRef: contactRef },
+  ];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -28,7 +38,7 @@ function Header() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar ref={navbarRef} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -74,9 +84,15 @@ function Header() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page, index) => (
+                <MenuItem
+                  key={index}
+                  onClick={() => {
+                    handleCloseNavMenu();
+                    ViewPage(page.pageRef);
+                  }}
+                >
+                  <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -99,28 +115,27 @@ function Header() {
             Somnath
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={index}
+                onClick={() => {
+                  handleCloseNavMenu();
+                  ViewPage(page.pageRef);
+                }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
           <Box>
-            <IconButton sx={{ color: "white", my: 2 }} onClick={changeMode}>
-              {mode === "light" ? (
-                <>
-                  Dark mode <Brightness7Icon />{" "}
-                </>
-              ) : (
-                <>
-                  Light mode <Brightness4Icon />
-                </>
-              )}
-            </IconButton>
+            <Tooltip
+              title={`Enable ${mode === "light" ? "Dark" : "Light"} Mode`}
+            >
+              <IconButton sx={{ color: "white", my: 2 }} onClick={changeMode}>
+                {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+              </IconButton>
+            </Tooltip>
           </Box>
         </Toolbar>
       </Container>

@@ -10,16 +10,16 @@ import { Contextvalues } from "../context/context";
 import styled from "styled-components";
 
 const Contact = () => {
-  const { mode } = Contextvalues();
+  const { mode, contactRef } = Contextvalues();
   const backgroundColor = mode === "light" ? "white" : "#121212";
   const onSubmit = () => {
     console.log("submit");
   };
   return (
     <Wrapper>
-      <Box>
+      <Box ref={contactRef}>
         <Box sx={{ margin: 5 }}>
-          <Typography className="HeaderText" variant="h2">
+          <Typography className="HeaderText" variant="h3">
             Hire me
           </Typography>
           <Typography variant="p">
@@ -67,7 +67,7 @@ const Wrapper = styled.div`
     justify-content: center;
     gap: 1.5rem;
   }
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 670px) {
     .inputContainer {
       display: grid;
       grid-template-columns: 1fr;

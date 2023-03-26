@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Button } from "@mui/material";
 import photo from "../assets/photo.png";
 import { Contextvalues } from "../context/context";
 
 const Projects = () => {
-  const { mode } = Contextvalues();
+  const { mode, projectsRef } = Contextvalues();
   const backgroundColor = mode === "light" ? "#0277bd" : "#202020";
   const images = [photo, photo, photo, photo];
   return (
@@ -14,9 +14,11 @@ const Projects = () => {
       <Box>
         <Box sx={{ margin: "2rem" }}>
           <AccountTreeIcon sx={{ fontSize: 60 }} />
-          <Typography variant="h3">Apps I've Build</Typography>
+          <Typography className="HeaderText" variant="h3">
+            Apps I've Build
+          </Typography>
         </Box>
-        <Box className="images">
+        <Box ref={projectsRef} className="images">
           {images.map((img, index) => (
             <div className="imageContainer" key={index}>
               <img className="image" src={img} alt={"Image" + { img }} />
@@ -33,6 +35,7 @@ const Projects = () => {
                     Adipisci, fuga!
                   </Typography>
                 </Box>
+                <Button variant="contained">View code</Button>
               </Box>
             </div>
           ))}
@@ -60,7 +63,6 @@ const Wrapper = styled.div`
     position: absolute;
     bottom: 100%;
     justify-content: center;
-
     overflow: hidden;
     width: 100%;
     height: 0;
@@ -93,6 +95,7 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
   }
+
   @media screen and (max-width: 900px) {
     .images {
       display: grid;

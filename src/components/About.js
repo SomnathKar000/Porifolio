@@ -5,13 +5,13 @@ import { Typography, Box, Button } from "@mui/material";
 import { Contextvalues } from "../context/context";
 
 const About = () => {
-  const { mode } = Contextvalues();
+  const { mode, aboutRef, ViewPage, projectsRef, contactRef } = Contextvalues();
 
   return (
     <Wrapper>
-      <Box className="Contain" maxWidth="xl">
+      <Box ref={aboutRef} className="Contain" maxWidth="xl">
         <Box className="text_box">
-          <Typography variant="h3">
+          <Typography className="HeaderText" variant="h4">
             Hi, I'm Somnath
             <br /> I love to build amazing apps
           </Typography>
@@ -22,10 +22,24 @@ const About = () => {
             soluta nisi doloremque
           </Typography>
           <Box>
-            <Button sx={{ margin: "1rem" }} variant="contained" color="success">
+            <Button
+              onClick={() => {
+                ViewPage(contactRef);
+              }}
+              sx={{ margin: "1rem" }}
+              variant="contained"
+              color="success"
+            >
               Contact me
             </Button>
-            <Button variant="contained">See my projects</Button>
+            <Button
+              onClick={() => {
+                ViewPage(projectsRef);
+              }}
+              variant="contained"
+            >
+              See my projects
+            </Button>
           </Box>
         </Box>
         <Box className="profile_box">
@@ -50,7 +64,7 @@ const Wrapper = styled.div`
   }
 
   .Contain {
-    margin: 3rem 0;
+    margin: 2rem 0;
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     grid-template-areas:
@@ -58,7 +72,7 @@ const Wrapper = styled.div`
       "text_box text_box";
   }
   .profile_box {
-    margin: 2rem;
+    margin: 1rem;
     grid-area: profile_box;
     display: flex;
     align-items: center;
