@@ -1,19 +1,59 @@
-import React from "react";
+import { useState } from "react";
 import {
   Box,
   Typography,
   TextField,
   Button,
   TextareaAutosize,
+  Snackbar,
+  Alert,
 } from "@mui/material";
 import { Contextvalues } from "../context/context";
 import styled from "styled-components";
 
 const Contact = () => {
-  const { mode, contactRef } = Contextvalues();
+  const [open, setOpen] = useState(false);
+  const { mode, contactRef, isValidEmail } = Contextvalues();
   const backgroundColor = mode === "light" ? "white" : "#121212";
-  const onSubmit = () => {
-    console.log("submit");
+  const [data, setData] = useState({ name: "", email: "", message: "" });
+  const [alertMessage, setAlertMessage] = useState("Enter your details");
+  const [alertType, setAlertType] = useState("info");
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    if (!isValidEmail(data.email)) {
+      setAlertMessage("Please enter a valid email");
+      setAlertType("error");
+      setOpen(true);
+      return;
+    }
+    if (data.name.trim().length <= 4) {
+      setAlertMessage("Please enter a valid name");
+      setAlertType("error");
+      setOpen(true);
+      return;
+    }
+    if (data.message.trim().length <= 6) {
+      setAlertMessage("Enter your message");
+      setAlertType("error");
+      setOpen(true);
+      return;
+    }
+    setAlertMessage("Message sent successfully");
+    setAlertType("success");
+    setOpen(true);
+    console.log(data);
+  };
+
+  const onChange = (event) => {
+    setData({ ...data, [event.target.name]: event.target.value });
+  };
+
+  const handleClose = (event, reason) => {
+    setOpen(false);
+    if (reason === "clickaway") {
+      return;
+    }
   };
   return (
     <Wrapper>
@@ -28,9 +68,24 @@ const Contact = () => {
           </Typography>
         </Box>
         <form onSubmit={onSubmit} className="inputContainer">
-          <TextField label="Name" id="fullWidth"></TextField>
-          <TextField label="Email" id="fullWidth"></TextField>
+          <TextField
+            name="name"
+            value={data.name}
+            onChange={onChange}
+            label="Name"
+            id="fullWidth"
+          ></TextField>
+          <TextField
+            name="email"
+            onChange={onChange}
+            value={data.email}
+            label="Email"
+            id="fullWidth"
+          ></TextField>
           <TextareaAutosize
+            value={data.message}
+            onChange={onChange}
+            name="message"
             label="message"
             aria-label="empty textarea"
             placeholder="Enter your message"
@@ -54,6 +109,15 @@ const Contact = () => {
           </Button>
         </form>
       </Box>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity={alertType}
+          sx={{ width: "100%" }}
+        >
+          {alertMessage}
+        </Alert>
+      </Snackbar>
     </Wrapper>
   );
 };

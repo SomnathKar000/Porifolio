@@ -1,8 +1,9 @@
 import React from "react";
 import Somnath from "../assets/Somnath.jpeg";
 import styled from "styled-components";
-import { Typography, Box, Button } from "@mui/material";
+import { Typography, Box, Button, Tooltip, IconButton } from "@mui/material";
 import { Contextvalues } from "../context/context";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const About = () => {
   const { mode, aboutRef, ViewPage, projectsRef, contactRef } = Contextvalues();
@@ -41,7 +42,16 @@ const About = () => {
               See my projects
             </Button>
           </Box>
+          <Box>
+            <Typography variant="h5">Social accounts </Typography>
+            <Tooltip title="My GitHub profile">
+              <IconButton sx={{ my: 1 }}>
+                <GitHubIcon sx={{ fontSize: 30 }} />
+              </IconButton>
+            </Tooltip>
+          </Box>
         </Box>
+
         <Box className="profile_box">
           <img
             className="profile_box"

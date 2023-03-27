@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Paper } from "@mui/material";
 import MemoryIcon from "@mui/icons-material/Memory";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import { Contextvalues } from "../context/context";
 
 const Skills = () => {
-  const { mode, skillsRef } = Contextvalues();
-  const backgroundColor =
-    mode === "light" ? "#0277bd" : "rgba(255, 255, 255, 0.08)";
+  const { skillsRef } = Contextvalues();
+
   const skills = [
     "JavaScript",
     "C++",
@@ -40,20 +39,18 @@ const Skills = () => {
           <Box className="skillsContainer">
             {skills.map((item, index) => {
               return (
-                <Typography
+                <Paper
+                  elevation={8}
                   className="skillText"
                   sx={{
-                    backgroundColor: backgroundColor,
-                    color: "white",
                     borderRadius: 2,
                     padding: 2,
                   }}
-                  variant="h5"
                   key={index}
                 >
                   <VerifiedIcon color="success" sx={{ marginRight: 2 }} />
                   {item}
-                </Typography>
+                </Paper>
               );
             })}
           </Box>

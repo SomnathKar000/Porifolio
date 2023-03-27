@@ -17,6 +17,11 @@ export const ContextProvider = ({ children }) => {
     dispatch({ type: "CHANGE_MODE" });
   };
 
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const ViewPage = (pageName) => {
     window.scrollTo({
       top: pageName.current.offsetTop,
@@ -35,6 +40,7 @@ export const ContextProvider = ({ children }) => {
         aboutRef,
         projectsRef,
         navbarRef,
+        isValidEmail,
       }}
     >
       {children}

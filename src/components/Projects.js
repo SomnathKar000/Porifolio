@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
-import { Typography, Box, Button } from "@mui/material";
+import { Typography, Box, Button, Paper } from "@mui/material";
 import photo from "../assets/photo.png";
 import { Contextvalues } from "../context/context";
 
 const Projects = () => {
-  const { mode, projectsRef } = Contextvalues();
-  const backgroundColor = mode === "light" ? "#0277bd" : "#202020";
+  const { projectsRef } = Contextvalues();
   const images = [photo, photo, photo, photo];
   return (
     <Wrapper>
@@ -22,21 +21,19 @@ const Projects = () => {
           {images.map((img, index) => (
             <div className="imageContainer" key={index}>
               <img className="image" src={img} alt={"Image" + { img }} />
-              <Box
-                className="HoverDetails"
-                sx={{
-                  background: backgroundColor,
-                }}
-              >
+              <Paper className="HoverDetails" elevation={4}>
                 <Box className="Ok">
                   <h3 className="text">Epic react app</h3>
                   <Typography variant="p" className="details">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Adipisci, fuga!
+                    Adipisci, fuga! Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Mollitia minima aliquid obcaecati rem
                   </Typography>
+                  <Box sx={{ marginTop: 5 }}>
+                    <Button variant="contained">View code</Button>
+                  </Box>
                 </Box>
-                <Button variant="contained">View code</Button>
-              </Box>
+              </Paper>
             </div>
           ))}
         </Box>
@@ -47,8 +44,10 @@ const Projects = () => {
 const Wrapper = styled.div`
   text-align: center;
   .Ok {
-    display: grid;
-    grid-template-column: 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
     text-align: center;
   }
@@ -59,7 +58,7 @@ const Wrapper = styled.div`
   }
   .HoverDetails {
     border-radius: 0.7rem;
-    color: white;
+
     position: absolute;
     bottom: 100%;
     justify-content: center;
