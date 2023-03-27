@@ -4,10 +4,44 @@ import styled from "styled-components";
 import { Typography, Box, Button, Tooltip, IconButton } from "@mui/material";
 import { Contextvalues } from "../context/context";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import RedditIcon from "@mui/icons-material/Reddit";
 
 const About = () => {
   const { mode, aboutRef, ViewPage, projectsRef, contactRef } = Contextvalues();
-
+  const accounts = [
+    {
+      name: "GitHub",
+      link: "https://github.com/SomnathKar000",
+      icon: (
+        <GitHubIcon
+          sx={{ fontSize: 30, color: mode === "light" ? "#212121" : "white" }}
+        />
+      ),
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/somnath-kar-aa73aa1a3/",
+      icon: <LinkedInIcon sx={{ fontSize: 30, color: "#0072b1" }} />,
+    },
+    {
+      name: "Twitter",
+      link: "https://twitter.com/Somnath0123456",
+      icon: <TwitterIcon sx={{ fontSize: 30, color: "#00acee" }} />,
+    },
+    {
+      name: "Facebook",
+      link: "https://www.facebook.com/somnath.kar.77985",
+      icon: <FacebookIcon sx={{ fontSize: 30, color: "#3b5998" }} />,
+    },
+    {
+      name: "Reddit",
+      link: "https://www.reddit.com/user/Somnath000",
+      icon: <RedditIcon sx={{ fontSize: 30, color: "#FF4300" }} />,
+    },
+  ];
   return (
     <Wrapper>
       <Box ref={aboutRef} className="Contain" maxWidth="xl">
@@ -42,13 +76,22 @@ const About = () => {
               See my projects
             </Button>
           </Box>
-          <Box>
-            <Typography variant="h5">Social accounts </Typography>
-            <Tooltip title="My GitHub profile">
-              <IconButton sx={{ my: 1 }}>
-                <GitHubIcon sx={{ fontSize: 30 }} />
-              </IconButton>
-            </Tooltip>
+          <Box className="social">
+            <Typography sx={{ marginRight: 2 }} variant="h5">
+              Social accounts :
+            </Typography>
+
+            {accounts.map(({ name, link, icon }) => {
+              return (
+                <Box>
+                  <Tooltip title={`My ${name} account`}>
+                    <IconButton href={link} sx={{ my: 1 }}>
+                      {icon}
+                    </IconButton>
+                  </Tooltip>
+                </Box>
+              );
+            })}
           </Box>
         </Box>
 
@@ -72,7 +115,10 @@ const Wrapper = styled.div`
   img {
     border-radius: 10%;
   }
-
+  .social {
+    display: flex;
+    align-items: center;
+  }
   .Contain {
     margin: 2rem 0;
     display: grid;

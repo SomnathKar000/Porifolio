@@ -15,6 +15,7 @@ const Contact = () => {
   const [open, setOpen] = useState(false);
   const { mode, contactRef, isValidEmail } = Contextvalues();
   const backgroundColor = mode === "light" ? "white" : "#121212";
+  const textColor = mode === "light" ? "black" : "white";
   const [data, setData] = useState({ name: "", email: "", message: "" });
   const [alertMessage, setAlertMessage] = useState("Enter your details");
   const [alertType, setAlertType] = useState("info");
@@ -92,7 +93,7 @@ const Contact = () => {
             style={{
               height: "20rem",
               background: backgroundColor,
-              color: "white",
+              color: textColor,
               fontSize: "1.1rem",
               padding: "0.5rem",
               borderRadius: "3px",
