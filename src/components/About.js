@@ -48,13 +48,14 @@ const About = () => {
         <Box className="text_box">
           <Typography className="HeaderText" variant="h4">
             Hi, I'm Somnath
-            <br /> I love to build amazing apps
+            <br /> I'm a MERN stack developer
           </Typography>
           <Typography variant="p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam neque
-            rem amet dicta unde debitis consectetur hic velit ipsa nesciunt!
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio
-            soluta nisi doloremque
+            I specialize in building full-stack web applications using the MERN
+            (MongoDB, Express, React, Node.js) stack. In addition, I have
+            experience working with C++ and SQL. I'm passionate about developing
+            elegant and efficient code, and I'm always looking to learn new
+            technologies and programming paradigms.
           </Typography>
           <Box>
             <Button
@@ -83,7 +84,7 @@ const About = () => {
 
             {accounts.map(({ name, link, icon }) => {
               return (
-                <Box>
+                <Box key={link}>
                   <Tooltip title={`My ${name} account`}>
                     <IconButton href={link} sx={{ my: 1 }}>
                       {icon}

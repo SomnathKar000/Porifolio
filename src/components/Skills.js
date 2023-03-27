@@ -31,8 +31,8 @@ const Skills = () => {
             Skills & Technologies
           </Typography>
           <Typography variant="p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
-            fuga!
+            I possess a diverse set of technical and interpersonal skills which
+            are discussed below.
           </Typography>
         </Box>
         <Box>

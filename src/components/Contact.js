@@ -64,8 +64,10 @@ const Contact = () => {
             Hire me
           </Typography>
           <Typography variant="p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-            cumque, quae iste obcaecati reprehenderit blanditiis.
+            If you're interested in working with me, please feel free to contact
+            me using the form below.
+            <br /> Thanks for stopping by and I look forward to hearing from you
+            soon!
           </Typography>
         </Box>
         <form onSubmit={onSubmit} className="inputContainer">
