@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Box, Typography, Paper } from "@mui/material";
+import { Box, Typography, Paper, IconButton, Tooltip } from "@mui/material";
 import MemoryIcon from "@mui/icons-material/Memory";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import { Contextvalues } from "../context/context";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
+import CV from "../assets/SomnathCV.pdf";
 
 const Skills = () => {
   const { skillsRef } = Contextvalues();
@@ -49,11 +51,19 @@ const Skills = () => {
                   key={index}
                 >
                   <VerifiedIcon color="success" sx={{ marginRight: 2 }} />
-                  {item}
+                  <Typography>{item}</Typography>
                 </Paper>
               );
             })}
           </Box>
+        </Box>
+        <Box sx={{ margin: 3 }} className="cvContainer">
+          <Typography variant="h5">Download my CV</Typography>
+          <Tooltip title="Click on this icon">
+            <IconButton href={CV} download>
+              <FileDownloadIcon sx={{ fontSize: 40 }} color="primary" />
+            </IconButton>
+          </Tooltip>
         </Box>
       </Box>
     </Wrapper>
@@ -61,6 +71,12 @@ const Skills = () => {
 };
 
 const Wrapper = styled.div`
+  .cvContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .name {
     text-align: center;
   }
@@ -70,6 +86,11 @@ const Wrapper = styled.div`
     gap: 2rem;
   }
 
+  .skillText {
+    display:flex;
+  }
+
+
   @media screen and (max-width: 600px) {
     .skillsContainer {
       display: grid;
@@ -77,8 +98,10 @@ const Wrapper = styled.div`
       gap: 1rem;
     }
     .skillText {
+      display:flex
       font-size: 1rem;
       padding: 0.5rem;
+      
     }
   }
 `;
