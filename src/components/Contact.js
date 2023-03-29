@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { Contextvalues } from "../context/context";
 import styled from "styled-components";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [open, setOpen] = useState(false);
@@ -19,6 +20,7 @@ const Contact = () => {
   const [data, setData] = useState({ name: "", email: "", message: "" });
   const [alertMessage, setAlertMessage] = useState("Enter your details");
   const [alertType, setAlertType] = useState("info");
+
   const onSubmit = (event) => {
     event.preventDefault();
 
@@ -40,10 +42,14 @@ const Contact = () => {
       setOpen(true);
       return;
     }
-    setAlertMessage("Message sent successfully");
-    setAlertType("success");
-    setOpen(true);
-    console.log(data);
+
+    emailjs
+      .send("service_3npkrfo", "template_hh8m4xp", data, "Twwap4ZeVKnG-749h")
+      .then((responce) => {
+        setAlertMessage("Message sent successfully");
+        setAlertType("success");
+        setOpen(true);
+      });
   };
 
   const onChange = (event) => {
