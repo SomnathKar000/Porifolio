@@ -2,12 +2,45 @@ import React from "react";
 import styled from "styled-components";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import { Typography, Box, Button, Paper } from "@mui/material";
-import photo from "../assets/photo.png";
 import { Contextvalues } from "../context/context";
+import Text_editor from "../assets/Text_editor.gif";
+import News_website from "../assets/News_website.gif";
+import Notebook from "../assets/Notebook.gif";
+import Furniture_website from "../assets/Furniture_website.gif";
 
 const Projects = () => {
   const { projectsRef } = Contextvalues();
-  const images = [photo, photo, photo, photo];
+  const images = [
+    {
+      image: Furniture_website,
+      link: "https://github.com/SomnathKar000/Furniture-website",
+      name: "Furniture website",
+      about:
+        "A responsive e-commerce website where users can browse and purchase furniture items. Built with React and Node.js, utilizing RESTful APIs for seamless integration with the back-end server.",
+    },
+    {
+      image: Notebook,
+      link: "https://github.com/SomnathKar000/Notebook",
+      name: "Notebook",
+      about:
+        "An online notebook that allows users to take notes and organize their thoughts. The project involves implementing user authentication, a note-taking feature with editing and deleting functionality.",
+    },
+    {
+      image: News_website,
+      link: "https://github.com/SomnathKar000/newsapp",
+      name: "News website",
+      about:
+        "A comprehensive news platform that aggregates top stories from around the world, featuring a customizable dashboard and advanced search capabilities.",
+    },
+    {
+      image: Text_editor,
+      link: "https://github.com/SomnathKar000/new-app",
+      name: "Text editor",
+      about:
+        "A simple text editor built with React that allows users to enter and manipulate text in various ways. Features include converting text to lower or uppercase, undo and redo functionality, clearing the text field, and removing extra spaces. Users can also view the formatted text in real-time as they type.",
+    },
+  ];
+
   return (
     <Wrapper>
       <Box>
@@ -18,19 +51,23 @@ const Projects = () => {
           </Typography>
         </Box>
         <Box ref={projectsRef} className="images">
-          {images.map((img, index) => (
+          {images.map(({ image, link, name, about }, index) => (
             <div className="imageContainer" key={index}>
-              <img className="image" src={img} alt={"Image" + { img }} />
+              <img className="image" src={image} alt={name} />
               <Paper className="HoverDetails" elevation={4}>
                 <Box className="Ok">
-                  <h3 className="text">Epic react app</h3>
-                  <Typography variant="p" className="details">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Adipisci, fuga! Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Mollitia minima aliquid obcaecati rem
+                  <h3 className="text">{name}</h3>
+                  <Typography
+                    sx={{ marginX: 2 }}
+                    variant="p"
+                    className="details"
+                  >
+                    {about}
                   </Typography>
                   <Box sx={{ marginTop: 5 }}>
-                    <Button variant="contained">View code</Button>
+                    <Button href={link} variant="contained">
+                      View code
+                    </Button>
                   </Box>
                 </Box>
               </Paper>
