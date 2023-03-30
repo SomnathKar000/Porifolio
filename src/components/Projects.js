@@ -65,7 +65,7 @@ const Projects = () => {
                     {about}
                   </Typography>
                   <Box sx={{ marginTop: 5 }}>
-                    <Button href={link} variant="contained">
+                    <Button href={link} target="_blank" variant="contained">
                       View code
                     </Button>
                   </Box>
