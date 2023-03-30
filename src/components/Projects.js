@@ -37,7 +37,7 @@ const Projects = () => {
       link: "https://github.com/SomnathKar000/new-app",
       name: "Text editor",
       about:
-        "A simple text editor built with React that allows users to enter and manipulate text in various ways. Features include converting text to lower or uppercase, undo and redo functionality, clearing the text field, and removing extra spaces. Users can also view the formatted text in real-time as they type.",
+        "Text editor is a React-based application offering a range of text manipulation functionalities, including case conversion, undo and redo, clearing the text field, and real-time formatting preview.",
     },
   ];
 
@@ -64,7 +64,7 @@ const Projects = () => {
                   >
                     {about}
                   </Typography>
-                  <Box sx={{ marginTop: 5 }}>
+                  <Box className="link-container" sx={{ marginTop: 4 }}>
                     <Button href={link} target="_blank" variant="contained">
                       View code
                     </Button>
@@ -115,7 +115,7 @@ const Wrapper = styled.div`
     height: auto;
     border-radius: 0.7rem;
   }
-  .text .details {
+  .text.details {
     color: white;
     font-size: 20px;
     position: absolute;
@@ -138,7 +138,34 @@ const Wrapper = styled.div`
       grid-template-columns: 1fr;
       gap: 1rem;
     }
+    .HoverDetails{
+      display:flex;
+      align-items:center;
+    }
   }
+  @media screen and (max-width: 490px) {
+    
+    .Ok {
+      h3 {
+        font-size:1px:
+        margin: 1rem;
+      }
+      p {
+        margin: 0px;
+      }
+      .link-container {
+        margin: 1rem;
+      }
+    }
+  }
+  @media screen and (max-width: 440px) {
+    .Ok .details {
+      display: none;
+    }
+  }
+
+
+  
 `;
 
 export default Projects;

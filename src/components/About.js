@@ -82,17 +82,19 @@ const About = () => {
               Social accounts :
             </Typography>
 
-            {accounts.map(({ name, link, icon }) => {
-              return (
-                <Box key={link}>
-                  <Tooltip title={`My ${name} account`}>
-                    <IconButton href={link} sx={{ my: 1 }}>
-                      {icon}
-                    </IconButton>
-                  </Tooltip>
-                </Box>
-              );
-            })}
+            <Box className="accounts">
+              {accounts.map(({ name, link, icon }) => {
+                return (
+                  <Box key={link}>
+                    <Tooltip title={`My ${name} account`}>
+                      <IconButton href={link} sx={{ my: 1 }}>
+                        {icon}
+                      </IconButton>
+                    </Tooltip>
+                  </Box>
+                );
+              })}
+            </Box>
           </Box>
         </Box>
 
@@ -117,6 +119,10 @@ const Wrapper = styled.div`
     border-radius: 10%;
   }
   .social {
+    display: flex;
+    align-items: center;
+  }
+  .accounts {
     display: flex;
     align-items: center;
   }
@@ -148,6 +154,13 @@ const Wrapper = styled.div`
       grid-template-areas:
         "profile_box text_box"
         "profile_box text_box";
+    }
+  }
+  @media screen and (max-width: 525px) {
+    .social {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-top: 1rem;
     }
   }
 `;
