@@ -43,14 +43,14 @@ const Projects = () => {
 
   return (
     <Wrapper>
-      <Box>
+      <Box ref={projectsRef}>
         <Box sx={{ margin: "2rem" }}>
           <AccountTreeIcon sx={{ fontSize: 60 }} />
           <Typography className="HeaderText" variant="h3">
             Apps I've Build
           </Typography>
         </Box>
-        <Box ref={projectsRef} className="images">
+        <Box className="images">
           {images.map(({ image, link, name, about }, index) => (
             <div className="imageContainer" key={index}>
               <img className="image" src={image} alt={name} />
@@ -73,6 +73,16 @@ const Projects = () => {
               </Paper>
             </div>
           ))}
+        </Box>
+        <Box sx={{ margin: "3rem" }}>
+          <Button
+            fullWidth
+            href="https://github.com/SomnathKar000?tab=repositories"
+            target="_blank"
+            variant="contained"
+          >
+            View more
+          </Button>
         </Box>
       </Box>
     </Wrapper>

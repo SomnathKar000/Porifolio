@@ -11,6 +11,8 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
+import Information from "./components/Information";
+
 function App() {
   const { mode } = Contextvalues();
   const theme = createTheme({
@@ -26,6 +28,7 @@ function App() {
         <About />
         <Projects />
         <Skills />
+        <Information />
         <Contact />
       </Container>
     </ThemeProvider>
