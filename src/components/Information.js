@@ -10,10 +10,6 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import FastfoodIcon from "@mui/icons-material/Fastfood";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import HotelIcon from "@mui/icons-material/Hotel";
-import RepeatIcon from "@mui/icons-material/Repeat";
 import EmailIcon from "@mui/icons-material/Email";
 import CallIcon from "@mui/icons-material/Call";
 import SchoolIcon from "@mui/icons-material/School";
@@ -40,7 +36,7 @@ const SocialAccounts = () => {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent sx={{ py: "12px", px: 2 }}>
-              <Typography variant="h6" component="span">
+              <Typography className="information" variant="h6" component="span">
                 Birthday
               </Typography>
             </TimelineContent>
@@ -57,7 +53,7 @@ const SocialAccounts = () => {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent sx={{ py: "12px", px: 2 }}>
-              <Typography variant="h6" component="span">
+              <Typography className="information" variant="h6" component="span">
                 Secondary Education
               </Typography>
               <Typography
@@ -81,7 +77,7 @@ const SocialAccounts = () => {
               <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
             </TimelineSeparator>
             <TimelineContent sx={{ py: "12px", px: 2 }}>
-              <Typography variant="h6" component="span">
+              <Typography className="information" variant="h6" component="span">
                 Higher Secondary Education
               </Typography>
               <Typography
@@ -113,7 +109,7 @@ const SocialAccounts = () => {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent sx={{ py: "12px", px: 2 }}>
-              <Typography variant="h6" component="span">
+              <Typography className="information" variant="h6" component="span">
                 B.Tech in Computer Science and Engineering
               </Typography>
               <Typography
@@ -127,6 +123,34 @@ const SocialAccounts = () => {
           </TimelineItem>
         </Timeline>
       </Paper>
+      <Box
+        sx={{
+          display: { xs: "block", sm: "flex" },
+          gap: 5,
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
+            marginY: 3,
+          }}
+        >
+          <EmailIcon /> somnathkar2023@gmail.com
+        </Typography>
+        <Typography
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
+            marginY: 3,
+          }}
+        >
+          <CallIcon /> 8509592835
+        </Typography>
+      </Box>
       <Box sx={{ margin: 3 }} className="cvContainer">
         <Typography variant="h5">Download my CV</Typography>
         <Tooltip title="Click on this icon">
@@ -145,5 +169,10 @@ const Wrapper = styled.div`
 
   align-items: center;
   text-align: center;
+  @media screen and (max-width: 380px) {
+    .information {
+      font-size: 1rem;
+    }
+  }
 `;
 export default SocialAccounts;
