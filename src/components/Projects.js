@@ -1,43 +1,60 @@
 import React from "react";
 import styled from "styled-components";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
-import { Typography, Box, Button, Paper } from "@mui/material";
+import {
+  Typography,
+  Box,
+  Button,
+  Paper,
+  Tooltip,
+  IconButton,
+} from "@mui/material";
 import { Contextvalues } from "../context/context";
-import Text_editor from "../assets/Text_editor.gif";
+import Gallery_website from "../assets/Gallery_website.gif";
 import News_website from "../assets/News_website.gif";
 import Notebook from "../assets/Notebook.gif";
 import Furniture_website from "../assets/Furniture_website.gif";
+import LinkIcon from "@mui/icons-material/Link";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const Projects = () => {
-  const { projectsRef } = Contextvalues();
+  const { projectsRef, mode } = Contextvalues();
   const images = [
     {
-      image: Furniture_website,
-      link: "https://github.com/SomnathKar000/Furniture-website",
       name: "Furniture website",
+      image: Furniture_website,
+      websiteLink: "",
+      gitHubLink: "https://github.com/SomnathKar000/Furniture-website",
+
       about:
         "A responsive e-commerce website where users can browse and purchase furniture items. Built with React and Node.js, utilizing RESTful APIs for seamless integration with the back-end server.",
     },
     {
-      image: Notebook,
-      link: "https://github.com/SomnathKar000/Notebook",
+      name: "Gallery website",
+      image: Gallery_website,
+      websiteLink: "https://gallery-website-somnath.vercel.app/",
+      gitHubLink: "https://github.com/SomnathKar000/Gallery-website",
+
+      about:
+        "Gallery website is a MERN stack project where users can upload their personal images and view them. Users must log in or sign up to upload their images. The site offers sorting functionality by image title and users can edit titles or delete images.",
+    },
+    {
       name: "Notebook",
+      image: Notebook,
+      websiteLink: "https://notebook-somnath000.vercel.app/",
+      gitHubLink: "https://github.com/SomnathKar000/Notebook",
+
       about:
         "An online notebook that allows users to take notes and organize their thoughts. The project involves implementing user authentication, a note-taking feature with editing and deleting functionality.",
     },
     {
-      image: News_website,
-      link: "https://github.com/SomnathKar000/newsapp",
       name: "News website",
+      image: News_website,
+      websiteLink: "",
+      gitHubLink: "https://github.com/SomnathKar000/newsapp",
+
       about:
         "A comprehensive news platform that aggregates top stories from around the world, featuring a customizable dashboard and advanced search capabilities.",
-    },
-    {
-      image: Text_editor,
-      link: "https://github.com/SomnathKar000/new-app",
-      name: "Text editor",
-      about:
-        "Text editor is a React-based application offering a range of text manipulation functionalities, including case conversion, undo and redo, clearing the text field, and real-time formatting preview.",
     },
   ];
 
@@ -51,28 +68,54 @@ const Projects = () => {
           </Typography>
         </Box>
         <Box className="images">
-          {images.map(({ image, link, name, about }, index) => (
-            <div className="imageContainer" key={index}>
-              <img className="image" src={image} alt={name} />
-              <Paper className="HoverDetails" elevation={4}>
-                <Box className="Ok">
-                  <h3 className="text">{name}</h3>
-                  <Typography
-                    sx={{ marginX: 2 }}
-                    variant="p"
-                    className="details"
-                  >
-                    {about}
-                  </Typography>
-                  <Box className="link-container" sx={{ marginTop: 4 }}>
-                    <Button href={link} target="_blank" variant="contained">
-                      View code
-                    </Button>
+          {images.map(
+            ({ image, websiteLink, gitHubLink, name, about }, index) => (
+              <div className="imageContainer" key={index}>
+                <img className="image" src={image} alt={name} />
+                <Paper className="HoverDetails" elevation={4}>
+                  <Box className="Ok">
+                    <h3 className="text">{name}</h3>
+                    <Typography
+                      sx={{ marginX: 2 }}
+                      variant="p"
+                      className="details"
+                    >
+                      {about}
+                    </Typography>
+                    <Box
+                      className="link-container"
+                      sx={{
+                        marginTop: 4,
+                      }}
+                    >
+                      <Tooltip
+                        sx={{ marginX: 2 }}
+                        title={`View my ${name} GitHub repository`}
+                      >
+                        <IconButton href={gitHubLink} target="_blank">
+                          <GitHubIcon
+                            sx={{
+                              color: mode === "light" ? "#212121" : "white",
+                              fontSize: "2rem",
+                            }}
+                          />
+                        </IconButton>
+                      </Tooltip>
+                      <Tooltip
+                        sx={{ marginX: 2 }}
+                        disabled={websiteLink.length === 0}
+                        title={`View my ${name}`}
+                      >
+                        <IconButton href={websiteLink} target="_blank">
+                          <LinkIcon sx={{ fontSize: "2rem" }} />
+                        </IconButton>
+                      </Tooltip>
+                    </Box>
                   </Box>
-                </Box>
-              </Paper>
-            </div>
-          ))}
+                </Paper>
+              </div>
+            )
+          )}
         </Box>
         <Box sx={{ margin: "3rem" }}>
           <Button
