@@ -29,6 +29,7 @@ const Skills = () => {
     "AWS RDS",
     "Git",
     "GitHub",
+    "Vercel",
   ];
   return (
     <Wrapper>
