@@ -10,10 +10,6 @@ import {
   IconButton,
 } from "@mui/material";
 import { Contextvalues } from "../context/context";
-import Gallery_website from "../assets/Gallery_website.gif";
-import News_website from "../assets/News_website.gif";
-import Notebook from "../assets/Notebook.gif";
-import Furniture_website from "../assets/Furniture_website.gif";
 import LinkIcon from "@mui/icons-material/Link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
@@ -22,7 +18,8 @@ const Projects = () => {
   const images = [
     {
       name: "Furniture website",
-      image: Furniture_website,
+      image:
+        "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/246487000-82cb9567-1e9a-45c4-a11d-9af97674e322.png",
       websiteLink: "",
       gitHubLink: "https://github.com/SomnathKar000/Furniture-website",
 
@@ -30,31 +27,34 @@ const Projects = () => {
         "A responsive e-commerce website where users can browse and purchase furniture items. Built with React and Node.js, utilizing RESTful APIs for seamless integration with the back-end server.",
     },
     {
+      name: "Ai CahtBot",
+      image:
+        "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/244596256-54df3c50-52eb-4287-b418-5b41d88a8535.png",
+      websiteLink: "",
+      gitHubLink: "https://github.com/SomnathKar000/AI-Chatbot",
+
+      about:
+        "The Chat Bot Application is a robust and interactive chat bot built using various technologies. It leverages the power of AI and real-time communication to provide intelligent conversation capabilities and a seamless user experience.",
+    },
+    {
+      name: "AWS Serverless API",
+      image:
+        "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/247105870-ce033a8c-214d-4276-83bc-7dad5c857f60.png",
+      websiteLink: "",
+      gitHubLink: "https://github.com/SomnathKar000/AWS-Serverless-API",
+
+      about:
+        "This project provides a serverless CRUD (Create, Read, Update, Delete) API for DynamoDB using AWS Lambda and the Serverless Framework.",
+    },
+    {
       name: "Gallery website",
-      image: Gallery_website,
-      websiteLink: "https://gallery-website-somnath.vercel.app/",
+      image:
+        "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/244605688-3d9fe784-709e-4b74-a2a5-5a49381673bb.png",
+      websiteLink: "https://gallery-website-somnath.vercel.app",
       gitHubLink: "https://github.com/SomnathKar000/Gallery-website",
 
       about:
         "Gallery website is a MERN stack project where users can upload their personal images and view them. Users must log in or sign up to upload their images. The site offers sorting functionality by image title and users can edit titles or delete images.",
-    },
-    {
-      name: "Notebook",
-      image: Notebook,
-      websiteLink: "https://notebook-somnath000.vercel.app/",
-      gitHubLink: "https://github.com/SomnathKar000/Notebook",
-
-      about:
-        "An online notebook that allows users to take notes and organize their thoughts. The project involves implementing user authentication, a note-taking feature with editing and deleting functionality.",
-    },
-    {
-      name: "News website",
-      image: News_website,
-      websiteLink: "",
-      gitHubLink: "https://github.com/SomnathKar000/newsapp",
-
-      about:
-        "A comprehensive news platform that aggregates top stories from around the world, featuring a customizable dashboard and advanced search capabilities.",
     },
   ];
 

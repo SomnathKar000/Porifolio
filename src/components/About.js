@@ -1,5 +1,4 @@
 import React from "react";
-import Somnath from "../assets/Somnath.jpeg";
 import styled from "styled-components";
 import { Typography, Box, Button, Tooltip, IconButton } from "@mui/material";
 import { Contextvalues } from "../context/context";
@@ -10,6 +9,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import RedditIcon from "@mui/icons-material/Reddit";
 
 const About = () => {
+  const Somnath =
+    "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/247098543-58155098-8559-40cc-b52c-0d3ebaa0b914.jpeg";
   const { mode, aboutRef, ViewPage, projectsRef, contactRef } = Contextvalues();
   const accounts = [
     {

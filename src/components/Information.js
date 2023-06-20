@@ -2,7 +2,6 @@ import React from "react";
 import { Paper, Box, Typography, IconButton, Tooltip } from "@mui/material";
 import styled from "styled-components";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
-import CV from "../assets/SomnathCV.pdf";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
@@ -16,6 +15,8 @@ import SchoolIcon from "@mui/icons-material/School";
 import CakeIcon from "@mui/icons-material/Cake";
 
 const SocialAccounts = () => {
+  const CV =
+    "https://github.com/SomnathKar000/Porifolio/files/11799335/SomnathCV.pdf";
   return (
     <Wrapper>
       <Paper evevation={4}>
@@ -85,7 +86,7 @@ const SocialAccounts = () => {
                 display="block"
                 color="text.secondary"
               >
-                March 2016 -- March 2017
+                March 2018 -- March 2019
               </Typography>
             </TimelineContent>
           </TimelineItem>
