@@ -49,6 +49,7 @@ const Contact = () => {
         setAlertMessage("Message sent successfully");
         setAlertType("success");
         setOpen(true);
+        setData({ name: "", email: "", message: "" });
       });
   };
 

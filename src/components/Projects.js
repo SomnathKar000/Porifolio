@@ -39,7 +39,7 @@ const Projects = () => {
     {
       name: "AWS Serverless API",
       image:
-        "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/247105870-ce033a8c-214d-4276-83bc-7dad5c857f60.png",
+        "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/251432884-5b82ce49-5c0c-495a-9fb8-da8155155429.png",
       websiteLink: "",
       gitHubLink: "https://github.com/SomnathKar000/AWS-Serverless-API",
 
@@ -55,6 +55,46 @@ const Projects = () => {
 
       about:
         "Gallery website is a MERN stack project where users can upload their personal images and view them. Users must log in or sign up to upload their images. The site offers sorting functionality by image title and users can edit titles or delete images.",
+    },
+    {
+      name: "User Registration Web Application",
+      image:
+        "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/245683772-9371df94-731a-4bd8-a3d0-143c70df3ecc.png",
+      websiteLink: "https://user-registration-somnath000.vercel.app",
+      gitHubLink: "https://github.com/SomnathKar000/User-registration",
+
+      about:
+        "This is a web application that allows users to register, login, and manage their personal details, including changing their name and password. The application follows the given use cases and handles error scenarios. It is implemented using Node.js, ReactJS, and MongoDB.",
+    },
+    {
+      name: "Tambola Ticket Create API",
+      image:
+        "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/251437389-83fda426-af8d-49c5-9732-3be0e15ea314.png",
+      websiteLink: "https://github.com/SomnathKar000/Tambola-Ticket-Create-API",
+      gitHubLink: "https://github.com/SomnathKar000/Tambola-Ticket-Create-API",
+
+      about:
+        "The Tambola Ticket Create API is a project developed by the user that allows users to create and fetch Tambola tickets. Tambola, also known as Bingo or Housie, is a popular numbers game.",
+    },
+    {
+      name: "Notebook-firebase",
+      image:
+        "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/245452955-ddff3de0-e930-420f-b316-bacdbe74dca7.png",
+      websiteLink: "https://notebook-firebase-somnath000.vercel.app",
+      gitHubLink: "https://github.com/SomnathKar000/Notebook-firebase",
+
+      about:
+        "A sleek note-taking app powered by Firebase. Real-time editing, customizable categories, secure authentication, and title-based note search. Effortlessly create, organize, and sync your notes for a seamless note-taking experience.",
+    },
+    {
+      name: "TS Compiler Hub",
+      image:
+        "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/250079565-09ae704b-406d-436e-b4ab-db9c331df42e.png",
+      websiteLink: "https://ts-compiler-hub-somnath000.vercel.app",
+      gitHubLink: "https://github.com/SomnathKar000/TS-Compiler-Hub",
+
+      about:
+        "TS Compiler Hub is an online TypeScript compiler and playground built with React. It provides a web-based interface for compiling, executing, and experimenting with TypeScript code right in the browser.",
     },
   ];
 
