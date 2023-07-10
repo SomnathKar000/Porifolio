@@ -67,14 +67,14 @@ const Projects = () => {
         "This is a web application that allows users to register, login, and manage their personal details, including changing their name and password. The application follows the given use cases and handles error scenarios. It is implemented using Node.js, ReactJS, and MongoDB.",
     },
     {
-      name: "Tambola Ticket Create API",
+      name: "ExpressTS-MySQL-CRUD",
       image:
-        "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/251437389-83fda426-af8d-49c5-9732-3be0e15ea314.png",
-      websiteLink: "https://github.com/SomnathKar000/Tambola-Ticket-Create-API",
-      gitHubLink: "https://github.com/SomnathKar000/Tambola-Ticket-Create-API",
+        "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/252409625-b7a5ff86-d285-45f0-904d-9694209e3a5f.png",
+      websiteLink: "https://express-ts-my-sql-crud.vercel.app",
+      gitHubLink: "https://github.com/SomnathKar000/ExpressTS-MySQL-CRUD",
 
       about:
-        "The Tambola Ticket Create API is a project developed by the user that allows users to create and fetch Tambola tickets. Tambola, also known as Bingo or Housie, is a popular numbers game.",
+        "ExpressTS-MySQL-CRUD is a backend application built with TypeScript, Express, and MySQL database. It provides a CRUD (Create, Read, Update, Delete) functionality for managing blog posts and users.",
     },
     {
       name: "Notebook-firebase",
