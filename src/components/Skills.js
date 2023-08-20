@@ -9,10 +9,11 @@ const Skills = () => {
   const { skillsRef } = Contextvalues();
 
   const skills = [
+    "TypeScript",
     "JavaScript",
     "C++",
     "React",
-    "Redux",
+    "Redux Toolkit",
     "Bootstrap",
     "Material UI",
     "Axios",
@@ -26,9 +27,13 @@ const Skills = () => {
     "AWS API Gateway",
     "AWS Lambda",
     "AWS RDS",
-    "AWS RDS",
+    "AWS S3",
+    "Stripe",
+    "RESTful APIs",
     "Git",
     "GitHub",
+    "GitHub Actions",
+    "YML",
     "Vercel",
   ];
   return (
