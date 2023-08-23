@@ -16,7 +16,7 @@ import CakeIcon from "@mui/icons-material/Cake";
 
 const SocialAccounts = () => {
   const CV =
-    "https://github.com/SomnathKar000/Porifolio/files/12388390/Somnath_Kar_MERN_Stack_Developer.pdf";
+    "https://github.com/SomnathKar000/Porifolio/files/12419445/Somnath_Kar_MERN_Stack_Developer.pdf";
   return (
     <Wrapper>
       <Paper evevation={4}>
