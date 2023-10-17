@@ -2,47 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import { Typography, Box, Button, Tooltip, IconButton } from "@mui/material";
 import { Contextvalues } from "../context/context";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import RedditIcon from "@mui/icons-material/Reddit";
+import { getAccounts } from "../utills/constants";
 
 const About = () => {
-  const Somnath =
-    "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/247098543-58155098-8559-40cc-b52c-0d3ebaa0b914.jpeg";
   const { mode, aboutRef, ViewPage, projectsRef, contactRef } = Contextvalues();
-  const accounts = [
-    {
-      name: "GitHub",
-      link: "https://github.com/SomnathKar000",
-      icon: (
-        <GitHubIcon
-          sx={{ fontSize: 30, color: mode === "light" ? "#212121" : "white" }}
-        />
-      ),
-    },
-    {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/somnath-kar-aa73aa1a3/",
-      icon: <LinkedInIcon sx={{ fontSize: 30, color: "#0072b1" }} />,
-    },
-    {
-      name: "Twitter",
-      link: "https://twitter.com/Somnath0123456",
-      icon: <TwitterIcon sx={{ fontSize: 30, color: "#00acee" }} />,
-    },
-    {
-      name: "Facebook",
-      link: "https://www.facebook.com/somnath.kar.77985",
-      icon: <FacebookIcon sx={{ fontSize: 30, color: "#3b5998" }} />,
-    },
-    {
-      name: "Reddit",
-      link: "https://www.reddit.com/user/Somnath000",
-      icon: <RedditIcon sx={{ fontSize: 30, color: "#FF4300" }} />,
-    },
-  ];
+  const accounts = getAccounts(mode);
+
+  const Somnath =
+    process.env.REACT_APP_IMAGE ||
+    "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/247098543-58155098-8559-40cc-b52c-0d3ebaa0b914.jpeg";
+
   return (
     <Wrapper>
       <Box ref={aboutRef} className="Contain" maxWidth="xl">
@@ -53,10 +22,10 @@ const About = () => {
           </Typography>
           <Typography variant="p">
             I specialize in building full-stack web applications using the MERN
-            (MongoDB, Express, React, Node.js) stack. In addition, I have
-            experience working with C++ and SQL. I'm passionate about developing
-            elegant and efficient code, and I'm always looking to learn new
-            technologies and programming paradigms.
+            (MongoDB, Express, React, Node.js) stack. I'm also familiar with AWS
+            services and have created a few serverless applications. I'm
+            passionate about developing elegant and efficient code, and I'm
+            always looking to learn new technologies and programming paradigms.
           </Typography>
           <Box>
             <Button

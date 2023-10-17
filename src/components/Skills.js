@@ -4,38 +4,10 @@ import { Box, Typography, Paper } from "@mui/material";
 import MemoryIcon from "@mui/icons-material/Memory";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import { Contextvalues } from "../context/context";
-
-const Skills = () => {
+import { Skills } from "../utills/constants";
+const SkillsComponent = () => {
   const { skillsRef } = Contextvalues();
 
-  const skills = [
-    "TypeScript",
-    "JavaScript",
-    "C++",
-    "React",
-    "Redux Toolkit",
-    "Bootstrap",
-    "Material UI",
-    "Axios",
-    "Node.js",
-    "Express.js",
-    "Postman",
-    "MySQL",
-    "MongoDB",
-    "AWS DynamoDB",
-    "AWS IAM",
-    "AWS API Gateway",
-    "AWS Lambda",
-    "AWS RDS",
-    "AWS S3",
-    "Stripe",
-    "RESTful APIs",
-    "Git",
-    "GitHub",
-    "GitHub Actions",
-    "YML",
-    "Vercel",
-  ];
   return (
     <Wrapper>
       <Box ref={skillsRef}>
@@ -51,7 +23,7 @@ const Skills = () => {
         </Box>
         <Box>
           <Box className="skillsContainer">
-            {skills.map((item, index) => {
+            {Skills.map((item, index) => {
               return (
                 <Paper
                   elevation={8}
@@ -109,4 +81,4 @@ const Wrapper = styled.div`
     }
   }
 `;
-export default Skills;
+export default SkillsComponent;

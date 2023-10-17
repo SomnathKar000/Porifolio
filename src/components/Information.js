@@ -15,8 +15,9 @@ import SchoolIcon from "@mui/icons-material/School";
 import CakeIcon from "@mui/icons-material/Cake";
 
 const SocialAccounts = () => {
-  const CV =
-    "https://github.com/SomnathKar000/Porifolio/files/12419445/Somnath_Kar_MERN_Stack_Developer.pdf";
+  const CV = process.env.REACT_APP_CV;
+  const email = process.env.REACT_APP_EMAIL || "somnathkar2023@gmail.com";
+  const phone = process.env.REACT_APP_PHONE || "8509592835";
   return (
     <Wrapper>
       <Paper evevation={4}>
@@ -98,7 +99,7 @@ const SocialAccounts = () => {
                 display="block"
                 color="text.secondary"
               >
-                Percentage: 82.7%
+                CGPA: 9.09
               </Typography>
             </TimelineOppositeContent>
 
@@ -139,7 +140,7 @@ const SocialAccounts = () => {
             marginY: 3,
           }}
         >
-          <EmailIcon /> somnathkar2023@gmail.com
+          <EmailIcon /> {email}
         </Typography>
         <Typography
           sx={{
@@ -149,7 +150,7 @@ const SocialAccounts = () => {
             marginY: 3,
           }}
         >
-          <CallIcon /> 8509592835
+          <CallIcon /> {phone}
         </Typography>
       </Box>
       <Box sx={{ margin: 3 }} className="cvContainer">
