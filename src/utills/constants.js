@@ -3,8 +3,10 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import RedditIcon from "@mui/icons-material/Reddit";
-
+import LeetCodeWhite from "../assets/LeetCodeWhite.svg";
+import LeetCodeBlack from "../assets/LeetCodeBlack.svg";
 export const getAccounts = (mode) => {
+  let leetCodeImage = mode === "dark" ? LeetCodeWhite : LeetCodeBlack;
   return [
     {
       name: "GitHub",
@@ -21,7 +23,7 @@ export const getAccounts = (mode) => {
       icon: (
         <img
           style={{ width: 30, height: 30 }}
-          src="https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/275893741-8257e419-ebb4-4f25-8f40-52e7be4e3066.svg"
+          src={leetCodeImage}
           alt="LeetCode"
         />
       ),
@@ -134,30 +136,30 @@ export const ProjectDetails = [
 ];
 
 export const Skills = [
-    "TypeScript",
-    "JavaScript",
-    "C++",
-    "React",
-    "Redux",
-    "Bootstrap",
-    "Material UI",
-    "Axios",
-    "Node.js",
-    "Express.js",
-    "Postman",
-    "MySQL",
-    "MongoDB",
-    "AWS DynamoDB",
-    "AWS IAM",
-    "AWS API Gateway",
-    "AWS Lambda",
-    "AWS RDS",
-    "AWS S3",
-    "Stripe",
-    "RESTful APIs",
-    "Git",
-    "GitHub",
-    "GitHub Actions",
-    "YML",
-    "Vercel",
-  ];
+  "TypeScript",
+  "JavaScript",
+  "C++",
+  "React",
+  "Redux",
+  "Bootstrap",
+  "Material UI",
+  "Axios",
+  "Node.js",
+  "Express.js",
+  "Postman",
+  "MySQL",
+  "MongoDB",
+  "AWS DynamoDB",
+  "AWS IAM",
+  "AWS API Gateway",
+  "AWS Lambda",
+  "AWS RDS",
+  "AWS S3",
+  "Stripe",
+  "RESTful APIs",
+  "Git",
+  "GitHub",
+  "GitHub Actions",
+  "YML",
+  "Vercel",
+];
