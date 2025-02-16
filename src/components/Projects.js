@@ -61,17 +61,19 @@ const Projects = () => {
                         </IconButton>
                       </Tooltip>
                       <Tooltip sx={{ marginX: 2 }} title={`View my ${name}`}>
-                        <IconButton
-                          disabled={websiteLink.length === 0}
-                          href={websiteLink}
-                          target="_blank"
-                        >
-                          <LinkIcon
-                            sx={{
-                              fontSize: "2rem",
-                            }}
-                          />
-                        </IconButton>
+                        <span>
+                          <IconButton
+                            disabled={websiteLink.length === 0}
+                            href={websiteLink}
+                            target="_blank"
+                          >
+                            <LinkIcon
+                              sx={{
+                                fontSize: "2rem",
+                              }}
+                            />
+                          </IconButton>
+                        </span>
                       </Tooltip>
                     </Box>
                   </Box>
