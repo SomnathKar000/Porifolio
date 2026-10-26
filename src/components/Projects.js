@@ -23,7 +23,7 @@ const Projects = () => {
         <Box sx={{ margin: "2rem" }}>
           <AccountTreeIcon sx={{ fontSize: 60 }} />
           <Typography className="HeaderText" variant="h3">
-            Apps I've Build
+            Apps I've Built
           </Typography>
         </Box>
         <Box className="images">

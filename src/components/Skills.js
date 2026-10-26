@@ -16,9 +16,9 @@ const SkillsComponent = () => {
           <Typography className="HeaderText" variant="h3">
             Skills & Technologies
           </Typography>
-          <Typography variant="p">
-            I possess a diverse set of technical and interpersonal skills which
-            are discussed below.
+          <Typography variant="body1" sx={{ color: "text.secondary", mt: 1 }}>
+            A comprehensive toolkit covering frontend engineering, Firebase & cloud functions,
+            responsive interfaces, and scalable web application development.
           </Typography>
         </Box>
         <Box>

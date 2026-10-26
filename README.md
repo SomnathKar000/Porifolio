@@ -1,15 +1,15 @@
 # Portfolio Website
 
-This is my portfolio website project built with React, where I showcase my skills and projects as a developer.
+This is the personal portfolio website of **Somnath Kar**, a Software Engineer with hands-on experience building and improving web applications, social content platforms, and project management tools.
 
 ## Description
 
-The portfolio website is a single-page application created using React. It includes the following features:
+The portfolio website is a single-page application built using React and Material UI, featuring:
 
-- Home page with an introduction and summary of my expertise
-- Projects section highlighting my notable projects
-- Skills section showcasing my technical skills
-- Contact section with a contact form for inquiries
+- **About Section**: Introduction highlighting experience in frontend development, Firebase integration, cloud functions, responsive UI, and role-based access control.
+- **Projects Section**: Highlights of notable applications built across modern web stacks.
+- **Skills Section**: Technical competencies covering frontend engineering, APIs, cloud services, and tools.
+- **Contact Section**: Interactive contact form with direct messaging integration.
 
 ## Technologies Used
 

@@ -18,14 +18,18 @@ const About = () => {
         <Box className="text_box">
           <Typography className="HeaderText" variant="h4">
             Hi, I'm Somnath
-            <br /> I'm a MERN stack developer
+            <br /> I'm a Software Engineer
           </Typography>
           <Typography variant="p">
-            I specialize in building full-stack web applications using the MERN
-            (MongoDB, Express, React, Node.js) stack. I'm also familiar with AWS
-            services and have created a few serverless applications. I'm
-            passionate about developing elegant and efficient code, and I'm
-            always looking to learn new technologies and programming paradigms.
+            I'm a Software Engineer with 2+ years of experience building and
+            improving modern web applications. I specialize in frontend
+            development with Vue.js and TypeScript, responsive and pixel-perfect
+            UI, Firebase integration, and cloud functions, and I also work on
+            backend services with Node.js, PostgreSQL, and Redis. I've built
+            scheduling systems, real-time features, and team collaboration tools
+            used by real teams. I enjoy solving complex engineering problems,
+            learning new technologies, and building reliable, user-friendly
+            applications that deliver real value.
           </Typography>
           <Box>
             <Button
