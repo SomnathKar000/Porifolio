@@ -13,6 +13,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import CallIcon from "@mui/icons-material/Call";
 import SchoolIcon from "@mui/icons-material/School";
 import CakeIcon from "@mui/icons-material/Cake";
+import WorkIcon from "@mui/icons-material/Work";
 
 const SocialAccounts = () => {
   const CV = process.env.REACT_APP_CV;
@@ -120,6 +121,38 @@ const SocialAccounts = () => {
                 color="text.secondary"
               >
                 Sept 2019 -- July 2023
+              </Typography>
+            </TimelineContent>
+          </TimelineItem>
+          <TimelineItem>
+            <TimelineOppositeContent sx={{ m: "auto 0" }} variant="body2">
+              Wiseboxs Softworks Pvt Ltd
+              <Typography
+                variant="caption"
+                display="block"
+                color="text.secondary"
+              >
+                Full-time
+              </Typography>
+            </TimelineOppositeContent>
+
+            <TimelineSeparator>
+              <TimelineConnector />
+              <TimelineDot color="success">
+                <WorkIcon />
+              </TimelineDot>
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent sx={{ py: "12px", px: 2 }}>
+              <Typography className="information" variant="h6" component="span">
+                Software Engineer
+              </Typography>
+              <Typography
+                variant="caption"
+                display="block"
+                color="text.secondary"
+              >
+                February 2024 -- Present
               </Typography>
             </TimelineContent>
           </TimelineItem>
