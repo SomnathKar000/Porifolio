@@ -70,11 +70,9 @@ const Contact = () => {
           <Typography className="HeaderText" variant="h3">
             Hire me
           </Typography>
-          <Typography variant="p">
-            If you're interested in working with me, please feel free to contact
-            me using the form below.
-            <br /> Thanks for stopping by and I look forward to hearing from you
-            soon!
+          <Typography variant="body1" sx={{ color: "text.secondary", mt: 1 }}>
+            If you're interested in working with me or discussing potential opportunities, please feel free to reach out using the form below.
+            <br /> Thanks for stopping by and I look forward to connecting with you!
           </Typography>
         </Box>
         <form onSubmit={onSubmit} className="inputContainer">
