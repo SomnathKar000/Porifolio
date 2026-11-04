@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, Layers, Cloud } from "lucide-react";
 import { Badge } from "../components/ui/Badge";
 import { DottedRow } from "../components/ui/DottedRow";
+import { LeafletMap } from "../components/ui/LeafletMap";
 import { ProjectDetails } from "../utils/constants";
 
 export const AboutView: React.FC = () => {
@@ -461,82 +462,8 @@ export const AboutView: React.FC = () => {
             patterns, and crafting refined minimal web interfaces.
           </p>
 
-          {/* Dark Cartographic Map SVG Container (Kolkata Map) */}
-          <div className="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden border border-white/[0.08] bg-[#121315] shadow-md card-glow-hover">
-            <svg
-              className="w-full h-full object-cover"
-              preserveAspectRatio="xMidYMid slice"
-              viewBox="0 0 800 400"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect fill="#16171a" height="100%" width="100%"></rect>
-              <path
-                d="M-20,90 Q120,130 220,190 T430,220 T610,310 T820,380 L820,420 L-20,420 Z"
-                fill="#111214"
-              ></path>
-              <path
-                d="M290,0 Q320,80 340,160 T430,220 T480,420"
-                fill="none"
-                stroke="#111214"
-                strokeWidth="28"
-              ></path>
-              <path
-                d="M620,0 Q610,120 630,200 T720,350"
-                fill="none"
-                stroke="#111214"
-                strokeWidth="16"
-              ></path>
-              {/* Grid */}
-              <g opacity="0.4" stroke="#26282c" strokeWidth="1">
-                <line x1="0" x2="800" y1="60" y2="60"></line>
-                <line x1="0" x2="800" y1="120" y2="120"></line>
-                <line x1="0" x2="800" y1="180" y2="180"></line>
-                <line x1="0" x2="800" y1="250" y2="250"></line>
-                <line x1="0" x2="800" y1="320" y2="320"></line>
-                <line x1="80" x2="80" y1="0" y2="400"></line>
-                <line x1="160" x2="160" y1="0" y2="400"></line>
-                <line x1="240" x2="240" y1="0" y2="400"></line>
-                <line x1="360" x2="360" y1="0" y2="400"></line>
-                <line x1="460" x2="460" y1="0" y2="400"></line>
-                <line x1="560" x2="560" y1="0" y2="400"></line>
-                <line x1="680" x2="680" y1="0" y2="400"></line>
-                <line x1="760" x2="760" y1="0" y2="400"></line>
-              </g>
-              {/* Roads */}
-              <g
-                opacity="0.6"
-                stroke="#38393e"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M-20,40 Q250,90 480,180 T820,290" fill="none" strokeWidth="2.5"></path>
-                <path d="M120,-10 Q190,160 270,410" fill="none" strokeWidth="2.5"></path>
-                <path d="M-20,310 Q280,240 540,110 T820,70" fill="none" strokeWidth="2.5"></path>
-                <path d="M510,-10 Q500,210 670,410" fill="none" strokeWidth="2.5"></path>
-                <path d="M310,210 L580,260 L780,210" fill="none" strokeWidth="1.8"></path>
-                <path d="M40,220 L310,210 L440,390" fill="none" strokeWidth="1.8"></path>
-              </g>
-              <g opacity="0.75" stroke="#4a4c52" strokeWidth="3">
-                <path d="M-10,160 Q210,170 380,210 T790,260" fill="none"></path>
-              </g>
-              {/* Labels */}
-              <g fill="#71747d" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="500">
-                <text opacity="0.85" x="150" y="140">HOWRAH</text>
-                <text opacity="0.85" x="530" y="180">SALT LAKE</text>
-                <text opacity="0.7" x="610" y="90">AIRPORT</text>
-                <text opacity="0.7" x="210" y="340">ALIPORE</text>
-              </g>
-              <g fill="#e3e2e5" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" letterSpacing="0.08em">
-                <text opacity="0.9" x="370" y="195">KOLKATA</text>
-              </g>
-              {/* Location Pin */}
-              <g transform="translate(395, 172)">
-                <circle cx="0" cy="0" fill="#ffffff" opacity="0.2" r="10"></circle>
-                <circle cx="0" cy="0" fill="#ffffff" opacity="0.4" r="6"></circle>
-                <circle cx="0" cy="0" fill="#ffffff" r="3"></circle>
-              </g>
-            </svg>
-          </div>
+          {/* Leaflet Dark Cartographic Map (Kolkata) */}
+          <LeafletMap className="h-64 sm:h-72" />
 
           {/* Dotted Leader Info List */}
           <div className="flex flex-col gap-3 pt-2">
