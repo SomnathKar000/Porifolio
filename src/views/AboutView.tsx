@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Layers, Cloud } from "lucide-react";
 import { Badge } from "../components/ui/Badge";
@@ -6,6 +6,7 @@ import { DottedRow } from "../components/ui/DottedRow";
 import { ProjectDetails } from "../utils/constants";
 
 export const AboutView: React.FC = () => {
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const SomnathAvatar =
     "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/247098543-58155098-8559-40cc-b52c-0d3ebaa0b914.jpeg";
 
@@ -18,10 +19,14 @@ export const AboutView: React.FC = () => {
             <h1 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
               Somnath
             </h1>
-            <p className="text-xs sm:text-sm text-text-muted flex items-center gap-2">
-              <span className="text-neutral-300">Full-Stack Engineer & Systems Architect</span>
+            <p className="text-xs sm:text-sm text-text-dim flex items-center gap-2">
+              <span className="text-text-muted">
+                Full-Stack Engineer & Systems Architect
+              </span>
               <span className="w-1 h-1 rounded-full bg-surface-container-highest"></span>
-              <span className="text-text-dim font-mono text-xs">Kolkata, India (Remote)</span>
+              <span className="text-text-dim font-mono text-xs">
+                Kolkata, India (Remote)
+              </span>
             </p>
           </div>
           <div className="relative shrink-0">
@@ -39,15 +44,14 @@ export const AboutView: React.FC = () => {
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
             I'm a full-stack engineer and systems architect focused on building
             high-throughput web applications with the MERN stack (MongoDB,
-            Express, React, Node.js) and resilient AWS cloud architectures. I enjoy
-            turning complex data pipelines into intuitive, calm interfaces.
+            Express, React, Node.js) and resilient AWS cloud architectures. I
+            enjoy turning complex data pipelines into intuitive, calm
+            interfaces.
           </p>
-          <p className="text-sm text-text-muted leading-relaxed">
+          <p className="text-sm text-text-dim leading-relaxed">
             Currently engineering production systems at{" "}
-            <span className="text-white font-medium">
-              Wiseboxs Softworks
-            </span>
-            , scaling cloud infrastructure and boosting client asset delivery
+            <span className="text-white font-medium">Wiseboxs Softworks</span>,
+            scaling cloud infrastructure and boosting client asset delivery
             efficiency by{" "}
             <span className="text-white font-mono text-xs bg-surface-container px-1.5 py-0.5 rounded border border-white/10">
               +35%
@@ -65,7 +69,7 @@ export const AboutView: React.FC = () => {
           </a>
           <span className="text-surface-container-highest">/</span>
           <a
-            className="text-text-muted hover:text-white transition-colors"
+            className="text-text-dim hover:text-white transition-colors"
             href="#experience"
           >
             Timeline
@@ -73,7 +77,7 @@ export const AboutView: React.FC = () => {
           <span className="text-surface-container-highest">/</span>
           <Link
             to="/contact"
-            className="group text-text-muted hover:text-white transition-colors flex items-center gap-1"
+            className="group text-text-dim hover:text-white transition-colors flex items-center gap-1"
           >
             somnathkar2023@gmail.com
             <ArrowUpRight className="w-3.5 h-3.5 text-text-dim arrow-redirect" />
@@ -84,10 +88,12 @@ export const AboutView: React.FC = () => {
       {/* Highlights Section */}
       <section className="flex flex-col gap-6" id="highlights">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-white tracking-tight">
+          <h2 className="text-sm sm:text-base font-medium text-text-muted tracking-tight">
             Highlights
           </h2>
-          <span className="text-xs text-text-dim font-mono">FEATURED CASE STUDIES</span>
+          <span className="text-[11px] text-text-dim font-mono">
+            FEATURED CASE STUDIES
+          </span>
         </div>
 
         <div className="flex flex-col gap-4">
@@ -102,9 +108,10 @@ export const AboutView: React.FC = () => {
                   Vortex — Direct-to-S3 Multipart Upload Pipeline
                   <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
                 </h3>
-                <p className="text-xs text-text-muted leading-normal">
+                <p className="text-xs text-text-dim leading-normal">
                   Bypassing application servers using presigned multipart URLs,
-                  SHA-256 integrity verification, and zero proxy memory saturation.
+                  SHA-256 integrity verification, and zero proxy memory
+                  saturation.
                 </p>
               </div>
             </div>
@@ -133,9 +140,10 @@ export const AboutView: React.FC = () => {
                     <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
                   </a>
                 </h3>
-                <p className="text-xs text-text-muted leading-normal">
-                  A high-concurrency digital store with session storage, idempotent
-                  RESTful webhook handling, and inventory consistency.
+                <p className="text-xs text-text-dim leading-normal">
+                  A high-concurrency digital store with session storage,
+                  idempotent RESTful webhook handling, and inventory
+                  consistency.
                 </p>
               </div>
             </div>
@@ -164,9 +172,9 @@ export const AboutView: React.FC = () => {
                     <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
                   </a>
                 </h3>
-                <p className="text-xs text-text-muted leading-normal">
-                  Multi-tier storage with encrypted file sharing, DynamoDB session
-                  persistence, and AWS Lambda serverless execution.
+                <p className="text-xs text-text-dim leading-normal">
+                  Multi-tier storage with encrypted file sharing, DynamoDB
+                  session persistence, and AWS Lambda serverless execution.
                 </p>
               </div>
             </div>
@@ -181,44 +189,152 @@ export const AboutView: React.FC = () => {
         </div>
       </section>
 
-      {/* Projects (Minimal Row List) */}
+      {/* Projects Section */}
       <section className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-white tracking-tight">
-            All Projects
+          <h2 className="text-sm sm:text-base font-medium text-text-muted tracking-tight">
+            Projects
           </h2>
-          <span className="text-xs text-text-dim font-mono">
+          <span className="text-[11px] text-text-dim font-mono">
             {ProjectDetails.length} REPOSITORIES
           </span>
         </div>
 
-        <div className="flex flex-col -mx-3 divide-y divide-white/5">
-          {ProjectDetails.map((project) => (
-            <a
-              key={project.name}
-              href={project.websiteLink || project.gitHubLink}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-center justify-between gap-4 p-3 rounded-lg hover:bg-[#14161a] transition-all"
-            >
-              <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 min-w-0">
-                <span className="text-[14px] font-medium text-neutral-200 group-hover:text-white transition-colors truncate">
-                  {project.name}
-                </span>
-                <span className="text-xs text-text-muted truncate max-w-sm sm:max-w-md">
+        <div className="flex flex-col gap-3.5">
+          {ProjectDetails.map((project) => {
+            const isHovered = hoveredProject === project.name;
+            const targetLink = project.websiteLink || project.gitHubLink;
+            const hasImage = Boolean(project.image);
+
+            return (
+              <div
+                key={project.name}
+                onMouseLeave={() => setHoveredProject(null)}
+                className="p-4 sm:p-5 rounded-xl border border-white/[0.08] bg-[#131418] hover:border-white/15 transition-all duration-300 flex flex-col"
+              >
+                {/* Header row with title button and secondary links */}
+                <div className="flex items-center justify-between gap-3 flex-wrap">
+                  {targetLink ? (
+                    <a
+                      href={targetLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onMouseEnter={() => setHoveredProject(project.name)}
+                      onFocus={() => setHoveredProject(project.name)}
+                      className={`group/btn inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 border ${
+                        isHovered
+                          ? "bg-[#22242d] text-white border-white/20 shadow-[0_0_16px_rgba(255,255,255,0.06)]"
+                          : "bg-[#18191f] text-neutral-300 border-white/10 hover:bg-[#22242d] hover:text-white hover:border-white/20 hover:shadow-[0_0_16px_rgba(255,255,255,0.06)]"
+                      }`}
+                    >
+                      <span>{project.name}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-text-dim group-hover/btn:text-neutral-200 arrow-redirect" />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onMouseEnter={() => setHoveredProject(project.name)}
+                      onFocus={() => setHoveredProject(project.name)}
+                      className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 border cursor-default ${
+                        isHovered
+                          ? "bg-[#22242d] text-white border-white/20 shadow-[0_0_16px_rgba(255,255,255,0.06)]"
+                          : "bg-[#18191f] text-neutral-300 border-white/10 hover:bg-[#22242d] hover:text-white hover:border-white/20 hover:shadow-[0_0_16px_rgba(255,255,255,0.06)]"
+                      }`}
+                    >
+                      <span>{project.name}</span>
+                    </button>
+                  )}
+
+                  {/* Secondary source link if both websiteLink and gitHubLink exist */}
+                  {project.websiteLink && project.gitHubLink && (
+                    <a
+                      href={project.gitHubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[11px] font-mono text-text-dim hover:text-neutral-200 transition-colors flex items-center gap-1"
+                    >
+                      <span>Source</span>
+                      <ArrowUpRight className="w-3 h-3 text-text-dim arrow-redirect" />
+                    </a>
+                  )}
+                </div>
+
+                {/* Project Image: visible below the title within the box on hover */}
+                {hasImage && (
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-out ${
+                      isHovered
+                        ? "max-h-72 sm:max-h-80 opacity-100 mt-3.5"
+                        : "max-h-0 opacity-0 mt-0 pointer-events-none"
+                    }`}
+                  >
+                    {targetLink ? (
+                      <a
+                        href={targetLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block relative rounded-lg overflow-hidden border border-white/10 bg-[#0b0c0e] group/img"
+                      >
+                        <img
+                          src={project.image}
+                          alt={project.name}
+                          loading="lazy"
+                          className="w-full h-44 sm:h-56 object-cover object-top transition-transform duration-500 hover:scale-[1.01]"
+                          onError={(e) => {
+                            const container = e.currentTarget.parentElement
+                              ?.parentElement as HTMLElement;
+                            if (container) container.style.display = "none";
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                      </a>
+                    ) : (
+                      <div className="relative rounded-lg overflow-hidden border border-white/10 bg-[#0b0c0e]">
+                        <img
+                          src={project.image}
+                          alt={project.name}
+                          loading="lazy"
+                          className="w-full h-44 sm:h-56 object-cover object-top"
+                          onError={(e) => {
+                            const container = e.currentTarget
+                              .parentElement as HTMLElement;
+                            if (container) container.style.display = "none";
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Description below title */}
+                <p className="text-xs sm:text-[13px] text-text-dim leading-relaxed mt-3">
                   {project.about}
-                </span>
+                </p>
+
+                {/* Tags */}
+                {project.tags && project.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-white/[0.04]">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[11px] px-2 py-0.5 rounded bg-[#17181e] text-text-dim border border-white/5 font-mono"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
-              <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect shrink-0" />
-            </a>
-          ))}
+            );
+          })}
         </div>
       </section>
 
       {/* Experience Section */}
       <section className="flex flex-col gap-6" id="experience">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-white tracking-tight">
+          <h2 className="text-sm sm:text-base font-medium text-text-muted tracking-tight">
             Experience & Education
           </h2>
         </div>
@@ -228,15 +344,15 @@ export const AboutView: React.FC = () => {
           <div className="flex flex-col gap-1.5 pb-5 border-b border-white/5">
             <div className="flex items-start gap-3.5">
               <div className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 flex items-center justify-center shrink-0 overflow-hidden text-text-muted mt-0.5">
-                <span className="font-mono text-[13px] font-semibold text-white">
+                <span className="font-mono text-[13px] font-semibold text-text-muted">
                   W
                 </span>
               </div>
               <div className="flex flex-col gap-1.5 flex-1 min-w-0">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                  <h3 className="text-sm font-medium text-white">
+                  <h3 className="text-sm font-medium text-neutral-200">
                     Wiseboxs Softworks Pvt Ltd{" "}
-                    <span className="font-normal text-text-muted">
+                    <span className="font-normal text-text-dim">
                       — Software Engineer
                     </span>
                   </h3>
@@ -244,10 +360,12 @@ export const AboutView: React.FC = () => {
                     FEB 2024 — PRESENT
                   </span>
                 </div>
-                <p className="text-xs text-text-muted leading-relaxed">
-                  Building scalable MERN applications with integrated cloud infrastructure.
-                  Architected direct S3 multipart upload pipelines boosting asset delivery
-                  efficiency by 35%. Implemented robust scheduling engines and idempotent caching layers.
+                <p className="text-xs text-text-dim leading-relaxed">
+                  Building scalable MERN applications with integrated cloud
+                  infrastructure. Architected direct S3 multipart upload
+                  pipelines boosting asset delivery efficiency by 35%.
+                  Implemented robust scheduling engines and idempotent caching
+                  layers.
                 </p>
               </div>
             </div>
@@ -257,15 +375,15 @@ export const AboutView: React.FC = () => {
           <div className="flex flex-col gap-1.5 pb-5 border-b border-white/5">
             <div className="flex items-start gap-3.5">
               <div className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 flex items-center justify-center shrink-0 overflow-hidden text-text-muted mt-0.5">
-                <span className="font-mono text-[13px] font-semibold text-white">
+                <span className="font-mono text-[13px] font-semibold text-text-muted">
                   M
                 </span>
               </div>
               <div className="flex flex-col gap-1.5 flex-1 min-w-0">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                  <h3 className="text-sm font-medium text-white">
+                  <h3 className="text-sm font-medium text-neutral-200">
                     Maulana Abul Kalam Azad University (MAKAUT){" "}
-                    <span className="font-normal text-text-muted">
+                    <span className="font-normal text-text-dim">
                       — B.Tech in CSE
                     </span>
                   </h3>
@@ -273,9 +391,10 @@ export const AboutView: React.FC = () => {
                     2019 — 2023 · CGPA: 9.09
                   </span>
                 </div>
-                <p className="text-xs text-text-muted leading-relaxed">
-                  Graduated with CGPA 9.09. Rigorous curriculum across Data Structures,
-                  Algorithms, Database Management Systems, Computer Networks, and Cloud Computing.
+                <p className="text-xs text-text-dim leading-relaxed">
+                  Graduated with CGPA 9.09. Rigorous curriculum across Data
+                  Structures, Algorithms, Database Management Systems, Computer
+                  Networks, and Cloud Computing.
                 </p>
               </div>
             </div>
@@ -285,15 +404,15 @@ export const AboutView: React.FC = () => {
           <div className="flex flex-col gap-1.5">
             <div className="flex items-start gap-3.5">
               <div className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 flex items-center justify-center shrink-0 overflow-hidden text-text-muted mt-0.5">
-                <span className="font-mono text-[13px] font-semibold text-white">
+                <span className="font-mono text-[13px] font-semibold text-text-muted">
                   K
                 </span>
               </div>
               <div className="flex flex-col gap-1.5 flex-1 min-w-0">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                  <h3 className="text-sm font-medium text-white">
+                  <h3 className="text-sm font-medium text-neutral-200">
                     Kartickpur Deganga Adarsha Vidyapith{" "}
-                    <span className="font-normal text-text-muted">
+                    <span className="font-normal text-text-dim">
                       — Secondary & Higher Secondary
                     </span>
                   </h3>
@@ -301,8 +420,9 @@ export const AboutView: React.FC = () => {
                     2016 — 2019
                   </span>
                 </div>
-                <p className="text-xs text-text-muted leading-relaxed">
-                  Focus on Mathematics, Physics, Chemistry, and Computer Science fundamentals.
+                <p className="text-xs text-text-dim leading-relaxed">
+                  Focus on Mathematics, Physics, Chemistry, and Computer Science
+                  fundamentals.
                 </p>
               </div>
             </div>
@@ -313,7 +433,7 @@ export const AboutView: React.FC = () => {
       {/* Skills & Stack Section */}
       <section className="flex flex-col gap-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-white tracking-tight">
+          <h2 className="text-sm sm:text-base font-medium text-text-muted tracking-tight">
             Skills & Stack
           </h2>
         </div>
@@ -341,7 +461,7 @@ export const AboutView: React.FC = () => {
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="text-xs px-2.5 py-1 rounded bg-[#1c1d22] text-neutral-300 border border-white/5 hover:border-white/20 transition-colors"
+                  className="text-xs px-2.5 py-1 rounded bg-[#1c1d22] text-text-muted border border-white/5 hover:border-white/20 transition-colors"
                 >
                   {tech}
                 </span>
@@ -374,7 +494,7 @@ export const AboutView: React.FC = () => {
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="text-xs px-2.5 py-1 rounded bg-[#1c1d22] text-neutral-300 border border-white/5 hover:border-white/20 transition-colors"
+                  className="text-xs px-2.5 py-1 rounded bg-[#1c1d22] text-text-muted border border-white/5 hover:border-white/20 transition-colors"
                 >
                   {tech}
                 </span>
@@ -387,15 +507,15 @@ export const AboutView: React.FC = () => {
       {/* "Now" & Cartographic Map Section */}
       <section className="flex flex-col gap-6 pt-4 border-t border-white/[0.08]">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-white tracking-tight">
+          <h2 className="text-sm sm:text-base font-medium text-text-muted tracking-tight">
             Now
           </h2>
         </div>
 
         <div className="flex flex-col gap-5">
-          <p className="text-sm text-neutral-300 leading-relaxed">
-            Architecting next-generation distributed systems, exploring event-driven
-            patterns, and crafting refined minimal web interfaces.
+          <p className="text-sm text-text-dim leading-relaxed">
+            Architecting next-generation distributed systems, exploring
+            event-driven patterns, and crafting refined minimal web interfaces.
           </p>
 
           {/* Dark Cartographic Map SVG Container (Kolkata Map) */}
@@ -446,30 +566,87 @@ export const AboutView: React.FC = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M-20,40 Q250,90 480,180 T820,290" fill="none" strokeWidth="2.5"></path>
-                <path d="M120,-10 Q190,160 270,410" fill="none" strokeWidth="2.5"></path>
-                <path d="M-20,310 Q280,240 540,110 T820,70" fill="none" strokeWidth="2.5"></path>
-                <path d="M510,-10 Q500,210 670,410" fill="none" strokeWidth="2.5"></path>
-                <path d="M310,210 L580,260 L780,210" fill="none" strokeWidth="1.8"></path>
-                <path d="M40,220 L310,210 L440,390" fill="none" strokeWidth="1.8"></path>
+                <path
+                  d="M-20,40 Q250,90 480,180 T820,290"
+                  fill="none"
+                  strokeWidth="2.5"
+                ></path>
+                <path
+                  d="M120,-10 Q190,160 270,410"
+                  fill="none"
+                  strokeWidth="2.5"
+                ></path>
+                <path
+                  d="M-20,310 Q280,240 540,110 T820,70"
+                  fill="none"
+                  strokeWidth="2.5"
+                ></path>
+                <path
+                  d="M510,-10 Q500,210 670,410"
+                  fill="none"
+                  strokeWidth="2.5"
+                ></path>
+                <path
+                  d="M310,210 L580,260 L780,210"
+                  fill="none"
+                  strokeWidth="1.8"
+                ></path>
+                <path
+                  d="M40,220 L310,210 L440,390"
+                  fill="none"
+                  strokeWidth="1.8"
+                ></path>
               </g>
               <g opacity="0.75" stroke="#4a4c52" strokeWidth="3">
                 <path d="M-10,160 Q210,170 380,210 T790,260" fill="none"></path>
               </g>
               {/* Labels */}
-              <g fill="#71747d" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="500">
-                <text opacity="0.85" x="150" y="140">HOWRAH</text>
-                <text opacity="0.85" x="530" y="180">SALT LAKE</text>
-                <text opacity="0.7" x="610" y="90">AIRPORT</text>
-                <text opacity="0.7" x="210" y="340">ALIPORE</text>
+              <g
+                fill="#71747d"
+                fontFamily="Inter, sans-serif"
+                fontSize="10"
+                fontWeight="500"
+              >
+                <text opacity="0.85" x="150" y="140">
+                  HOWRAH
+                </text>
+                <text opacity="0.85" x="530" y="180">
+                  SALT LAKE
+                </text>
+                <text opacity="0.7" x="610" y="90">
+                  AIRPORT
+                </text>
+                <text opacity="0.7" x="210" y="340">
+                  ALIPORE
+                </text>
               </g>
-              <g fill="#e3e2e5" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" letterSpacing="0.08em">
-                <text opacity="0.9" x="370" y="195">KOLKATA</text>
+              <g
+                fill="#e3e2e5"
+                fontFamily="Inter, sans-serif"
+                fontSize="13"
+                fontWeight="600"
+                letterSpacing="0.08em"
+              >
+                <text opacity="0.9" x="370" y="195">
+                  KOLKATA
+                </text>
               </g>
               {/* Location Pin */}
               <g transform="translate(395, 172)">
-                <circle cx="0" cy="0" fill="#ffffff" opacity="0.2" r="10"></circle>
-                <circle cx="0" cy="0" fill="#ffffff" opacity="0.4" r="6"></circle>
+                <circle
+                  cx="0"
+                  cy="0"
+                  fill="#ffffff"
+                  opacity="0.2"
+                  r="10"
+                ></circle>
+                <circle
+                  cx="0"
+                  cy="0"
+                  fill="#ffffff"
+                  opacity="0.4"
+                  r="6"
+                ></circle>
                 <circle cx="0" cy="0" fill="#ffffff" r="3"></circle>
               </g>
             </svg>
