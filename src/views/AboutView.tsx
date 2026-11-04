@@ -344,7 +344,7 @@ export const AboutView: React.FC = () => {
           </div>
 
           {/* Experience Item 2: MAKAUT */}
-          <div className="flex flex-col gap-1.5 pb-5 border-b border-white/5">
+          <div className="flex flex-col gap-1.5">
             <div className="flex items-start gap-3.5">
               <div className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 flex items-center justify-center shrink-0 overflow-hidden text-text-muted mt-0.5">
                 <span className="font-mono text-[13px] font-semibold text-text-muted">
@@ -366,33 +366,6 @@ export const AboutView: React.FC = () => {
                 <p className="text-xs text-text-dim leading-relaxed">
                   Graduated with CGPA 9.09. Rigorous curriculum across Data Structures,
                   Algorithms, Database Management Systems, Computer Networks, and Cloud Computing.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Experience Item 3: School */}
-          <div className="flex flex-col gap-1.5">
-            <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 flex items-center justify-center shrink-0 overflow-hidden text-text-muted mt-0.5">
-                <span className="font-mono text-[13px] font-semibold text-text-muted">
-                  K
-                </span>
-              </div>
-              <div className="flex flex-col gap-1.5 flex-1 min-w-0">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                  <h3 className="text-sm font-medium text-neutral-200">
-                    Kartickpur Deganga Adarsha Vidyapith{" "}
-                    <span className="font-normal text-text-dim">
-                      — Secondary & Higher Secondary
-                    </span>
-                  </h3>
-                  <span className="text-[11px] text-text-dim font-mono shrink-0">
-                    2016 — 2019
-                  </span>
-                </div>
-                <p className="text-xs text-text-dim leading-relaxed">
-                  Focus on Mathematics, Physics, Chemistry, and Computer Science fundamentals.
                 </p>
               </div>
             </div>

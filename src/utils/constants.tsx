@@ -153,18 +153,6 @@ export const TimelineEvents: TimelineItem[] = [
     type: "event",
   },
   {
-    date: "March 2016 — March 2017",
-    title: "Secondary Education",
-    institution: "Kartickpur Deganga Adarsha Vidyapith",
-    type: "education",
-  },
-  {
-    date: "March 2018 — March 2019",
-    title: "Higher Secondary Education",
-    institution: "Kartickpur Deganga Adarsha Vidyapith",
-    type: "education",
-  },
-  {
     date: "Sept 2019 — July 2023",
     title: "B.Tech in Computer Science and Engineering",
     institution: "Maulana Abul Kalam Azad University of Technology",
