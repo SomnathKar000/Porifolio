@@ -20,13 +20,9 @@ export const AboutView: React.FC = () => {
               Somnath
             </h1>
             <p className="text-xs sm:text-sm text-text-dim flex items-center gap-2">
-              <span className="text-text-muted">
-                Full-Stack Engineer & Systems Architect
-              </span>
+              <span className="text-text-muted">Full-Stack Engineer & Systems Architect</span>
               <span className="w-1 h-1 rounded-full bg-surface-container-highest"></span>
-              <span className="text-text-dim font-mono text-xs">
-                Kolkata, India (Remote)
-              </span>
+              <span className="text-text-dim font-mono text-xs">Kolkata, India (Remote)</span>
             </p>
           </div>
           <div className="relative shrink-0">
@@ -44,14 +40,15 @@ export const AboutView: React.FC = () => {
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
             I'm a full-stack engineer and systems architect focused on building
             high-throughput web applications with the MERN stack (MongoDB,
-            Express, React, Node.js) and resilient AWS cloud architectures. I
-            enjoy turning complex data pipelines into intuitive, calm
-            interfaces.
+            Express, React, Node.js) and resilient AWS cloud architectures. I enjoy
+            turning complex data pipelines into intuitive, calm interfaces.
           </p>
           <p className="text-sm text-text-dim leading-relaxed">
             Currently engineering production systems at{" "}
-            <span className="text-white font-medium">Wiseboxs Softworks</span>,
-            scaling cloud infrastructure and boosting client asset delivery
+            <span className="text-white font-medium">
+              Wiseboxs Softworks
+            </span>
+            , scaling cloud infrastructure and boosting client asset delivery
             efficiency by{" "}
             <span className="text-white font-mono text-xs bg-surface-container px-1.5 py-0.5 rounded border border-white/10">
               +35%
@@ -91,9 +88,7 @@ export const AboutView: React.FC = () => {
           <h2 className="text-sm sm:text-base font-medium text-text-muted tracking-tight">
             Highlights
           </h2>
-          <span className="text-[11px] text-text-dim font-mono">
-            FEATURED CASE STUDIES
-          </span>
+          <span className="text-[11px] text-text-dim font-mono">FEATURED CASE STUDIES</span>
         </div>
 
         <div className="flex flex-col gap-4">
@@ -110,8 +105,7 @@ export const AboutView: React.FC = () => {
                 </h3>
                 <p className="text-xs text-text-dim leading-normal">
                   Bypassing application servers using presigned multipart URLs,
-                  SHA-256 integrity verification, and zero proxy memory
-                  saturation.
+                  SHA-256 integrity verification, and zero proxy memory saturation.
                 </p>
               </div>
             </div>
@@ -141,9 +135,8 @@ export const AboutView: React.FC = () => {
                   </a>
                 </h3>
                 <p className="text-xs text-text-dim leading-normal">
-                  A high-concurrency digital store with session storage,
-                  idempotent RESTful webhook handling, and inventory
-                  consistency.
+                  A high-concurrency digital store with session storage, idempotent
+                  RESTful webhook handling, and inventory consistency.
                 </p>
               </div>
             </div>
@@ -173,8 +166,8 @@ export const AboutView: React.FC = () => {
                   </a>
                 </h3>
                 <p className="text-xs text-text-dim leading-normal">
-                  Multi-tier storage with encrypted file sharing, DynamoDB
-                  session persistence, and AWS Lambda serverless execution.
+                  Multi-tier storage with encrypted file sharing, DynamoDB session
+                  persistence, and AWS Lambda serverless execution.
                 </p>
               </div>
             </div>
@@ -281,8 +274,7 @@ export const AboutView: React.FC = () => {
                           loading="lazy"
                           className="w-full h-44 sm:h-56 object-cover object-top transition-transform duration-500 hover:scale-[1.01]"
                           onError={(e) => {
-                            const container = e.currentTarget.parentElement
-                              ?.parentElement as HTMLElement;
+                            const container = (e.currentTarget.parentElement?.parentElement as HTMLElement);
                             if (container) container.style.display = "none";
                           }}
                         />
@@ -296,8 +288,7 @@ export const AboutView: React.FC = () => {
                           loading="lazy"
                           className="w-full h-44 sm:h-56 object-cover object-top"
                           onError={(e) => {
-                            const container = e.currentTarget
-                              .parentElement as HTMLElement;
+                            const container = (e.currentTarget.parentElement as HTMLElement);
                             if (container) container.style.display = "none";
                           }}
                         />
@@ -361,11 +352,9 @@ export const AboutView: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-text-dim leading-relaxed">
-                  Building scalable MERN applications with integrated cloud
-                  infrastructure. Architected direct S3 multipart upload
-                  pipelines boosting asset delivery efficiency by 35%.
-                  Implemented robust scheduling engines and idempotent caching
-                  layers.
+                  Building scalable MERN applications with integrated cloud infrastructure.
+                  Architected direct S3 multipart upload pipelines boosting asset delivery
+                  efficiency by 35%. Implemented robust scheduling engines and idempotent caching layers.
                 </p>
               </div>
             </div>
@@ -392,9 +381,8 @@ export const AboutView: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-text-dim leading-relaxed">
-                  Graduated with CGPA 9.09. Rigorous curriculum across Data
-                  Structures, Algorithms, Database Management Systems, Computer
-                  Networks, and Cloud Computing.
+                  Graduated with CGPA 9.09. Rigorous curriculum across Data Structures,
+                  Algorithms, Database Management Systems, Computer Networks, and Cloud Computing.
                 </p>
               </div>
             </div>
@@ -421,8 +409,7 @@ export const AboutView: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-text-dim leading-relaxed">
-                  Focus on Mathematics, Physics, Chemistry, and Computer Science
-                  fundamentals.
+                  Focus on Mathematics, Physics, Chemistry, and Computer Science fundamentals.
                 </p>
               </div>
             </div>
@@ -514,8 +501,8 @@ export const AboutView: React.FC = () => {
 
         <div className="flex flex-col gap-5">
           <p className="text-sm text-text-dim leading-relaxed">
-            Architecting next-generation distributed systems, exploring
-            event-driven patterns, and crafting refined minimal web interfaces.
+            Architecting next-generation distributed systems, exploring event-driven
+            patterns, and crafting refined minimal web interfaces.
           </p>
 
           {/* Dark Cartographic Map SVG Container (Kolkata Map) */}
@@ -566,87 +553,30 @@ export const AboutView: React.FC = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path
-                  d="M-20,40 Q250,90 480,180 T820,290"
-                  fill="none"
-                  strokeWidth="2.5"
-                ></path>
-                <path
-                  d="M120,-10 Q190,160 270,410"
-                  fill="none"
-                  strokeWidth="2.5"
-                ></path>
-                <path
-                  d="M-20,310 Q280,240 540,110 T820,70"
-                  fill="none"
-                  strokeWidth="2.5"
-                ></path>
-                <path
-                  d="M510,-10 Q500,210 670,410"
-                  fill="none"
-                  strokeWidth="2.5"
-                ></path>
-                <path
-                  d="M310,210 L580,260 L780,210"
-                  fill="none"
-                  strokeWidth="1.8"
-                ></path>
-                <path
-                  d="M40,220 L310,210 L440,390"
-                  fill="none"
-                  strokeWidth="1.8"
-                ></path>
+                <path d="M-20,40 Q250,90 480,180 T820,290" fill="none" strokeWidth="2.5"></path>
+                <path d="M120,-10 Q190,160 270,410" fill="none" strokeWidth="2.5"></path>
+                <path d="M-20,310 Q280,240 540,110 T820,70" fill="none" strokeWidth="2.5"></path>
+                <path d="M510,-10 Q500,210 670,410" fill="none" strokeWidth="2.5"></path>
+                <path d="M310,210 L580,260 L780,210" fill="none" strokeWidth="1.8"></path>
+                <path d="M40,220 L310,210 L440,390" fill="none" strokeWidth="1.8"></path>
               </g>
               <g opacity="0.75" stroke="#4a4c52" strokeWidth="3">
                 <path d="M-10,160 Q210,170 380,210 T790,260" fill="none"></path>
               </g>
               {/* Labels */}
-              <g
-                fill="#71747d"
-                fontFamily="Inter, sans-serif"
-                fontSize="10"
-                fontWeight="500"
-              >
-                <text opacity="0.85" x="150" y="140">
-                  HOWRAH
-                </text>
-                <text opacity="0.85" x="530" y="180">
-                  SALT LAKE
-                </text>
-                <text opacity="0.7" x="610" y="90">
-                  AIRPORT
-                </text>
-                <text opacity="0.7" x="210" y="340">
-                  ALIPORE
-                </text>
+              <g fill="#71747d" fontFamily="Inter, sans-serif" fontSize="10" fontWeight="500">
+                <text opacity="0.85" x="150" y="140">HOWRAH</text>
+                <text opacity="0.85" x="530" y="180">SALT LAKE</text>
+                <text opacity="0.7" x="610" y="90">AIRPORT</text>
+                <text opacity="0.7" x="210" y="340">ALIPORE</text>
               </g>
-              <g
-                fill="#e3e2e5"
-                fontFamily="Inter, sans-serif"
-                fontSize="13"
-                fontWeight="600"
-                letterSpacing="0.08em"
-              >
-                <text opacity="0.9" x="370" y="195">
-                  KOLKATA
-                </text>
+              <g fill="#e3e2e5" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" letterSpacing="0.08em">
+                <text opacity="0.9" x="370" y="195">KOLKATA</text>
               </g>
               {/* Location Pin */}
               <g transform="translate(395, 172)">
-                <circle
-                  cx="0"
-                  cy="0"
-                  fill="#ffffff"
-                  opacity="0.2"
-                  r="10"
-                ></circle>
-                <circle
-                  cx="0"
-                  cy="0"
-                  fill="#ffffff"
-                  opacity="0.4"
-                  r="6"
-                ></circle>
+                <circle cx="0" cy="0" fill="#ffffff" opacity="0.2" r="10"></circle>
+                <circle cx="0" cy="0" fill="#ffffff" opacity="0.4" r="6"></circle>
                 <circle cx="0" cy="0" fill="#ffffff" r="3"></circle>
               </g>
             </svg>
