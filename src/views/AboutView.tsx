@@ -202,104 +202,87 @@ export const AboutView: React.FC = () => {
             return (
               <div
                 key={project.name}
-                onMouseLeave={() => setHoveredProject(null)}
-                className="p-4 sm:p-5 rounded-xl border border-white/[0.08] bg-[#131418] hover:border-white/15 transition-all duration-300 flex flex-col"
+                className="p-4 sm:p-5 rounded-xl border border-white/[0.08] bg-[#131418] hover:border-white/15 transition-all duration-300 flex flex-col relative"
               >
-                {/* Header row with title button and secondary links */}
-                <div className="flex items-center justify-between gap-3 flex-wrap">
+                {/* Title as a transparent button with menu-type preview popover */}
+                <div
+                  className="relative inline-block self-start"
+                  onMouseEnter={() => setHoveredProject(project.name)}
+                  onMouseLeave={() => setHoveredProject(null)}
+                >
                   {targetLink ? (
                     <a
                       href={targetLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onMouseEnter={() => setHoveredProject(project.name)}
                       onFocus={() => setHoveredProject(project.name)}
-                      className={`group/btn inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 border ${
+                      onBlur={() => setHoveredProject(null)}
+                      className={`inline-flex items-center px-2 py-1 -ml-2 rounded-lg text-sm font-medium transition-colors border ${
                         isHovered
-                          ? "bg-[#22242d] text-white border-white/20 shadow-[0_0_16px_rgba(255,255,255,0.06)]"
-                          : "bg-[#18191f] text-neutral-300 border-white/10 hover:bg-[#22242d] hover:text-white hover:border-white/20 hover:shadow-[0_0_16px_rgba(255,255,255,0.06)]"
+                          ? "bg-white/[0.08] text-white border-white/10"
+                          : "bg-transparent text-neutral-200 border-transparent hover:bg-white/[0.06] hover:text-white hover:border-white/10"
                       }`}
                     >
                       <span>{project.name}</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-text-dim group-hover/btn:text-neutral-200 arrow-redirect" />
                     </a>
                   ) : (
                     <button
                       type="button"
-                      onMouseEnter={() => setHoveredProject(project.name)}
                       onFocus={() => setHoveredProject(project.name)}
-                      className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 border cursor-default ${
+                      onBlur={() => setHoveredProject(null)}
+                      className={`inline-flex items-center px-2 py-1 -ml-2 rounded-lg text-sm font-medium transition-colors border cursor-default ${
                         isHovered
-                          ? "bg-[#22242d] text-white border-white/20 shadow-[0_0_16px_rgba(255,255,255,0.06)]"
-                          : "bg-[#18191f] text-neutral-300 border-white/10 hover:bg-[#22242d] hover:text-white hover:border-white/20 hover:shadow-[0_0_16px_rgba(255,255,255,0.06)]"
+                          ? "bg-white/[0.08] text-white border-white/10"
+                          : "bg-transparent text-neutral-200 border-transparent hover:bg-white/[0.06] hover:text-white hover:border-white/10"
                       }`}
                     >
                       <span>{project.name}</span>
                     </button>
                   )}
 
-                  {/* Secondary source link if both websiteLink and gitHubLink exist */}
-                  {project.websiteLink && project.gitHubLink && (
-                    <a
-                      href={project.gitHubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[11px] font-mono text-text-dim hover:text-neutral-200 transition-colors flex items-center gap-1"
-                    >
-                      <span>Source</span>
-                      <ArrowUpRight className="w-3 h-3 text-text-dim arrow-redirect" />
-                    </a>
+                  {/* Menu type preview box: small enough to identify images, floats without growing the card */}
+                  {hasImage && isHovered && (
+                    <div className="absolute left-0 top-full pt-1.5 z-30 pointer-events-auto">
+                      <div className="w-56 sm:w-64 p-1.5 rounded-xl bg-[#16171d]/95 backdrop-blur-md border border-white/10 shadow-[0_12px_36px_rgba(0,0,0,0.65)]">
+                        {targetLink ? (
+                          <a
+                            href={targetLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block rounded-lg overflow-hidden bg-black/60 group/preview"
+                          >
+                            <img
+                              src={project.image}
+                              alt={project.name}
+                              loading="lazy"
+                              className="w-full h-32 sm:h-36 object-cover object-top transition-transform duration-300 group-hover/preview:scale-[1.02]"
+                              onError={(e) => {
+                                const container = e.currentTarget.closest(".absolute") as HTMLElement;
+                                if (container) container.style.display = "none";
+                              }}
+                            />
+                          </a>
+                        ) : (
+                          <div className="rounded-lg overflow-hidden bg-black/60">
+                            <img
+                              src={project.image}
+                              alt={project.name}
+                              loading="lazy"
+                              className="w-full h-32 sm:h-36 object-cover object-top"
+                              onError={(e) => {
+                                const container = e.currentTarget.closest(".absolute") as HTMLElement;
+                                if (container) container.style.display = "none";
+                              }}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   )}
                 </div>
 
-                {/* Project Image: visible below the title within the box on hover */}
-                {hasImage && (
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-out ${
-                      isHovered
-                        ? "max-h-72 sm:max-h-80 opacity-100 mt-3.5"
-                        : "max-h-0 opacity-0 mt-0 pointer-events-none"
-                    }`}
-                  >
-                    {targetLink ? (
-                      <a
-                        href={targetLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block relative rounded-lg overflow-hidden border border-white/10 bg-[#0b0c0e] group/img"
-                      >
-                        <img
-                          src={project.image}
-                          alt={project.name}
-                          loading="lazy"
-                          className="w-full h-44 sm:h-56 object-cover object-top transition-transform duration-500 hover:scale-[1.01]"
-                          onError={(e) => {
-                            const container = (e.currentTarget.parentElement?.parentElement as HTMLElement);
-                            if (container) container.style.display = "none";
-                          }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                      </a>
-                    ) : (
-                      <div className="relative rounded-lg overflow-hidden border border-white/10 bg-[#0b0c0e]">
-                        <img
-                          src={project.image}
-                          alt={project.name}
-                          loading="lazy"
-                          className="w-full h-44 sm:h-56 object-cover object-top"
-                          onError={(e) => {
-                            const container = (e.currentTarget.parentElement as HTMLElement);
-                            if (container) container.style.display = "none";
-                          }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                      </div>
-                    )}
-                  </div>
-                )}
-
                 {/* Description below title */}
-                <p className="text-xs sm:text-[13px] text-text-dim leading-relaxed mt-3">
+                <p className="text-xs sm:text-[13px] text-text-dim leading-relaxed mt-2.5">
                   {project.about}
                 </p>
 
