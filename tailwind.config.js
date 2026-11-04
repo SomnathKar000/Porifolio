@@ -5,22 +5,37 @@ export default {
   theme: {
     extend: {
       colors: {
-        border: "hsl(var(--border, 240 5.9% 90%))",
-        background: "hsl(var(--background, 0 0% 100%))",
-        foreground: "hsl(var(--foreground, 240 10% 3.9%))",
+        canvas: "#0c0d0f",
+        "surface-base": "#0D0E10",
+        "surface-raised": "#131418",
+        "surface-overlay": "#1C1D22",
+        "surface-container": "#1f2022",
+        "surface-container-high": "#292a2c",
+        "surface-container-highest": "#343537",
+        "text-primary": "#FFFFFF",
+        "text-muted": "#8B8D98",
+        "text-dim": "#52545D",
+        "status-active": "#34C759",
+        "border-subtle": "rgba(255, 255, 255, 0.08)",
+        "border-active": "rgba(255, 255, 255, 0.20)",
       },
       fontFamily: {
         sans: [
+          "Inter",
           "-apple-system",
           "BlinkMacSystemFont",
-          "Inter",
           "Segoe UI",
           "Roboto",
           "sans-serif",
+        ],
+        mono: [
+          "JetBrains Mono",
+          "Fira Code",
+          "Menlo",
+          "monospace",
         ],
       },
     },
   },
   plugins: [],
 };
-
