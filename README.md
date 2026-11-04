@@ -1,45 +1,69 @@
 # Portfolio Website
 
-This is the personal portfolio website of **Somnath Kar**, a Software Engineer with hands-on experience building and improving web applications, social content platforms, and project management tools.
+This is the personal portfolio website of **Somnath Kar**, a Software Engineer with hands-on experience building and scaling modern web applications, real-time collaboration tools, scheduling systems, and cloud architectures.
 
-## Description
+## Overview
 
-The portfolio website is a single-page application built using React and Material UI, featuring:
+The portfolio is built as a fast, responsive Single Page Application (SPA) powered by **React 18**, **TypeScript**, **Vite**, **Tailwind CSS**, and **Glisse** (Liquid Glass UI).
 
-- **About Section**: Introduction highlighting experience in frontend development, Firebase integration, cloud functions, responsive UI, and role-based access control.
-- **Projects Section**: Highlights of notable applications built across modern web stacks.
-- **Skills Section**: Technical competencies covering frontend engineering, APIs, cloud services, and tools.
-- **Contact Section**: Interactive contact form with direct messaging integration.
+### Key Sections
+
+- **About**: Professional summary, key expertise (Vue.js, React, TypeScript, Firebase, Node.js), resume download, and social profiles.
+- **Projects**: Showcase of production and open-source applications (Furniture Website, CloudHive, AI ChatBot, AWS Serverless API, Gallery Website, TS Compiler Hub, etc.) with GitHub & Live Demo links.
+- **Skills**: Core engineering competencies covering frontend architectures, cloud functions, databases, CI/CD, and developer tools.
+- **Journey & Timeline**: Education and professional timeline, including Software Engineer role at Wiseboxs Softworks Pvt Ltd and B.Tech CSE (CGPA: 9.09).
+- **Contact**: Direct communication form integrated with EmailJS.
 
 ## Technologies Used
 
-The portfolio website is built using the following technologies and libraries:
+- **Framework**: React 18
+- **Language**: TypeScript (`.tsx` / `.ts`)
+- **Bundler & Tooling**: Vite 6
+- **Styling**: Tailwind CSS + PostCSS + Autoprefixer
+- **UI & Aesthetics**: [Glisse](https://github.com/0kzh/glisse) (Liquid Glass design for the web)
+- **Icons**: Lucide React
+- **Messaging**: EmailJS
 
-- React
-- HTML5
-- CSS3
-- JavaScript
-- Material UI
+## Getting Started
 
-## Installation
+### Prerequisites
 
-1. Clone the repository: `git clone https://github.com/SomnathKar000/Portfolio.git`
-2. Navigate to the project directory: `cd Portfolio`
-3. Install dependencies: `npm install`
+- Node.js >= 20.0.0
+- npm >= 10.0.0
 
-## Usage
+### Installation
 
-1. Start the development server: `npm start`
-2. Open the portfolio website in your browser: [http://localhost:3000](http://localhost:3000)
+```bash
+git clone https://github.com/SomnathKar000/Portfolio.git
+cd Portfolio
+npm install
+```
 
-## Contributing
+### Development
 
-Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
+To run the local development server with instant Hot Module Replacement (HMR):
+
+```bash
+npm run dev
+```
+
+### Production Build
+
+To run type checking and create an optimized production build:
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
 
 ## Contact
 
-For more information or questions, feel free to reach out:
-
-- Email: somnathkar2023@gmail.com
-- LinkedIn: [Somnath Kar](https://www.linkedin.com/in/somnath-kar-aa73aa1a3)
-- GitHub: [SomnathKar000](https://github.com/SomnathKar000)
+- **Email**: somnathkar2023@gmail.com
+- **LinkedIn**: [Somnath Kar](https://www.linkedin.com/in/somnath-kar-aa73aa1a3/)
+- **GitHub**: [SomnathKar000](https://github.com/SomnathKar000)
+- **LeetCode**: [SomnathKar000](https://leetcode.com/SomnathKar000/)
