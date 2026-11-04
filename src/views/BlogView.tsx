@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 import { BlogPosts } from "../data/blogData";
 import { BlogPost } from "../types";
 
@@ -26,7 +26,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onSelectPost }) => {
     <div className="w-full max-w-2xl mx-auto px-6 pt-6 pb-24">
       {/* Section Heading */}
       <div className="mb-10">
-        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white text-glow-subtle mb-2.5">
+        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white mb-2.5">
           Blog
         </h1>
         <p className="text-sm text-text-muted font-normal leading-relaxed max-w-xl">
@@ -47,7 +47,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onSelectPost }) => {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-3 py-1 rounded-full text-xs font-medium transition-all shrink-0 ${
                   isSelected
-                    ? "bg-[#25272e] text-white border border-white/20 shadow-sm text-glow-subtle"
+                    ? "bg-[#25272e] text-white border border-white/20 shadow-sm"
                     : "text-text-muted hover:text-white border border-white/5 hover:border-white/15 hover:bg-[#15161b]"
                 }`}
               >
@@ -65,11 +65,11 @@ export const BlogView: React.FC<BlogViewProps> = ({ onSelectPost }) => {
             <li key={post.id}>
               <button
                 onClick={() => onSelectPost(post)}
-                className="w-full text-left group py-5 px-3.5 -mx-3.5 rounded-xl flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 hover:bg-[#14161a] hover:shadow-[0_0_24px_rgba(255,255,255,0.03)] border border-transparent hover:border-white/[0.06] transition-all duration-150 cursor-pointer"
+                className="w-full text-left group py-5 px-3.5 -mx-3.5 rounded-xl flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 hover:bg-[#14161a] border border-transparent hover:border-white/[0.06] transition-all duration-150 cursor-pointer"
               >
                 <div className="flex-grow pr-4">
                   <div className="flex items-center gap-2">
-                    <span className="text-[15px] font-medium text-neutral-200 group-hover:text-white group-hover:text-glow-subtle transition-all duration-150">
+                    <span className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors duration-150">
                       {post.title}
                     </span>
                     {post.hasCaseStudy && (
@@ -78,7 +78,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onSelectPost }) => {
                         Case Study
                       </span>
                     )}
-                    <ArrowRight className="w-3.5 h-3.5 text-text-dim opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-white transition-all duration-150 shrink-0 hidden sm:inline-block" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-text-dim opacity-0 group-hover:opacity-100 arrow-upright shrink-0 hidden sm:inline-block" />
                   </div>
                   <p className="text-xs text-text-muted font-normal mt-1 leading-relaxed line-clamp-1">
                     {post.summary}

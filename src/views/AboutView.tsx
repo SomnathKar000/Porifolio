@@ -23,7 +23,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
       <section className="flex flex-col gap-6 pt-4">
         <div className="flex items-center justify-between gap-6">
           <div className="flex flex-col gap-1.5">
-            <h1 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight text-glow-subtle">
+            <h1 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
               Somnath
             </h1>
             <p className="text-xs sm:text-sm text-text-muted flex items-center gap-2">
@@ -57,7 +57,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
             </span>
             , scaling cloud infrastructure and boosting client asset delivery
             efficiency by{" "}
-            <span className="text-white font-mono text-xs bg-surface-container px-1.5 py-0.5 rounded border border-white/10 text-glow-subtle">
+            <span className="text-white font-mono text-xs bg-surface-container px-1.5 py-0.5 rounded border border-white/10">
               +35%
             </span>
             .
@@ -66,7 +66,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
 
         <div className="flex items-center gap-4 pt-1 text-xs sm:text-sm">
           <a
-            className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-white/80 transition-all font-medium hover:text-glow-subtle"
+            className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-white/80 transition-all font-medium"
             href="#highlights"
           >
             Selected Work
@@ -81,10 +81,10 @@ export const AboutView: React.FC<AboutViewProps> = ({
           <span className="text-surface-container-highest">/</span>
           <button
             onClick={() => onNavigate("contact")}
-            className="text-text-muted hover:text-white transition-colors flex items-center gap-1 group"
+            className="group text-text-muted hover:text-white transition-colors flex items-center gap-1"
           >
             somnathkar2023@gmail.com
-            <ArrowUpRight className="w-3.5 h-3.5 text-text-dim group-hover:text-white transition-colors" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-text-dim arrow-upright" />
           </button>
         </div>
       </section>
@@ -92,23 +92,23 @@ export const AboutView: React.FC<AboutViewProps> = ({
       {/* Highlights Section */}
       <section className="flex flex-col gap-6" id="highlights">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-white tracking-tight text-glow-subtle">
+          <h2 className="text-lg font-medium text-white tracking-tight">
             Highlights
           </h2>
           <span className="text-xs text-text-dim font-mono">FEATURED CASE STUDIES</span>
         </div>
 
         <div className="flex flex-col gap-4">
-          {/* Highlight Card 1: Vortex / S3 Pipeline (Click opens case study) */}
+          {/* Highlight Card 1: Vortex / S3 Pipeline */}
           <article
             onClick={onOpenCaseStudy}
             className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-col gap-1">
-                <h3 className="text-[15px] font-medium text-white group-hover:text-glow transition-all flex items-center gap-1.5">
+                <h3 className="text-[15px] font-medium text-white group-hover:text-white transition-colors flex items-center gap-1.5">
                   Vortex — Direct-to-S3 Multipart Upload Pipeline
-                  <ArrowUpRight className="w-4 h-4 text-text-dim group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="w-4 h-4 text-text-dim arrow-upright" />
                 </h3>
                 <p className="text-xs text-text-muted leading-normal">
                   Bypassing application servers using presigned multipart URLs,
@@ -129,7 +129,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
           <article className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover">
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-col gap-1">
-                <h3 className="text-[15px] font-medium text-white group-hover:text-glow transition-all flex items-center gap-1.5">
+                <h3 className="text-[15px] font-medium text-white group-hover:text-white transition-colors flex items-center gap-1.5">
                   Full-Stack E-Commerce & Ingress Platform
                   <a
                     href="https://github.com/SomnathKar000/Furniture-website"
@@ -138,7 +138,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                     className="inline-flex items-center"
                     aria-label="View on GitHub"
                   >
-                    <ArrowUpRight className="w-4 h-4 text-text-dim group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-4 h-4 text-text-dim arrow-upright" />
                   </a>
                 </h3>
                 <p className="text-xs text-text-muted leading-normal">
@@ -160,7 +160,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
           <article className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover">
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-col gap-1">
-                <h3 className="text-[15px] font-medium text-white group-hover:text-glow transition-all flex items-center gap-1.5">
+                <h3 className="text-[15px] font-medium text-white group-hover:text-white transition-colors flex items-center gap-1.5">
                   CloudHive & AI Conversational Assistant
                   <a
                     href="https://cloud-hive.vercel.app"
@@ -169,7 +169,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                     className="inline-flex items-center"
                     aria-label="Live Demo"
                   >
-                    <ArrowUpRight className="w-4 h-4 text-text-dim group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-4 h-4 text-text-dim arrow-upright" />
                   </a>
                 </h3>
                 <p className="text-xs text-text-muted leading-normal">
@@ -192,7 +192,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
       {/* Projects (Minimal Row List) */}
       <section className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-white tracking-tight text-glow-subtle">
+          <h2 className="text-lg font-medium text-white tracking-tight">
             All Projects
           </h2>
           <span className="text-xs text-text-dim font-mono">
@@ -207,17 +207,17 @@ export const AboutView: React.FC<AboutViewProps> = ({
               href={project.websiteLink || project.gitHubLink}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center justify-between gap-4 p-3 rounded-lg hover:bg-[#14161a] hover:shadow-[0_0_20px_rgba(255,255,255,0.03)] transition-all"
+              className="group flex items-center justify-between gap-4 p-3 rounded-lg hover:bg-[#14161a] transition-all"
             >
               <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 min-w-0">
-                <span className="text-[14px] font-medium text-neutral-200 group-hover:text-white group-hover:text-glow-subtle transition-all truncate">
+                <span className="text-[14px] font-medium text-neutral-200 group-hover:text-white transition-colors truncate">
                   {project.name}
                 </span>
                 <span className="text-xs text-text-muted truncate max-w-sm sm:max-w-md">
                   {project.about}
                 </span>
               </div>
-              <ArrowRight className="w-4 h-4 text-text-dim group-hover:text-white transition-colors shrink-0" />
+              <ArrowUpRight className="w-4 h-4 text-text-dim arrow-upright shrink-0" />
             </a>
           ))}
         </div>
@@ -226,7 +226,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
       {/* Experience Section */}
       <section className="flex flex-col gap-6" id="experience">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-white tracking-tight text-glow-subtle">
+          <h2 className="text-lg font-medium text-white tracking-tight">
             Experience & Education
           </h2>
         </div>
@@ -321,7 +321,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
       {/* Skills & Stack Section */}
       <section className="flex flex-col gap-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-white tracking-tight text-glow-subtle">
+          <h2 className="text-lg font-medium text-white tracking-tight">
             Skills & Stack
           </h2>
         </div>
@@ -395,7 +395,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
       {/* "Now" & Cartographic Map Section */}
       <section className="flex flex-col gap-6 pt-4 border-t border-white/[0.08]">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-white tracking-tight flex items-center gap-2 text-glow-subtle">
+          <h2 className="text-lg font-medium text-white tracking-tight flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-amber-400" />
             Now
           </h2>
@@ -476,7 +476,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
               <g fill="#e3e2e5" fontFamily="Inter, sans-serif" fontSize="13" fontWeight="600" letterSpacing="0.08em">
                 <text opacity="0.9" x="370" y="195">KOLKATA</text>
               </g>
-              {/* Location Pin with Glow */}
+              {/* Location Pin */}
               <g transform="translate(395, 172)">
                 <circle cx="0" cy="0" fill="#ffffff" opacity="0.2" r="10"></circle>
                 <circle cx="0" cy="0" fill="#ffffff" opacity="0.4" r="6"></circle>

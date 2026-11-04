@@ -60,26 +60,24 @@
 }
 
 @layer utilities {
-  /* Obsidian Craft Luminous & Glow Utilities */
-  .text-glow {
-    text-shadow: 0 0 16px rgba(255, 255, 255, 0.4), 0 0 32px rgba(255, 255, 255, 0.2);
-  }
-
-  .text-glow-subtle {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
-  }
-
-  .box-glow {
-    box-shadow: 0 0 24px -4px rgba(255, 255, 255, 0.08), 0 8px 32px -4px rgba(0, 0, 0, 0.6);
-  }
-
+  /* Subtle box glow without any position movement */
   .card-glow-hover {
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
   }
   .card-glow-hover:hover {
     border-color: rgba(255, 255, 255, 0.22);
-    box-shadow: 0 0 28px -4px rgba(255, 255, 255, 0.1), 0 8px 32px -4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 24px -4px rgba(255, 255, 255, 0.08), 0 8px 32px -4px rgba(0, 0, 0, 0.5);
     background-color: #17181d;
-    transform: translateY(-1px);
+    transform: none !important; /* Keep box strictly stationary */
+  }
+
+  /* Arrow glow and upright movement */
+  .arrow-upright {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease, color 0.2s ease;
+  }
+  .group:hover .arrow-upright {
+    transform: translate(3px, -3px);
+    color: #ffffff;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
   }
 }
