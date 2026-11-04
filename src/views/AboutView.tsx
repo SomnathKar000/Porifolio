@@ -242,7 +242,7 @@ export const AboutView: React.FC = () => {
 
                   {/* Menu type preview box: small enough to identify images, floats without growing the card */}
                   {hasImage && isHovered && (
-                    <div className="absolute left-0 top-full pt-1.5 z-30 pointer-events-auto">
+                    <div className="absolute left-0 top-full pt-1.5 z-30 pointer-events-auto animate-popover-in">
                       <div className="w-56 sm:w-64 p-1.5 rounded-xl bg-[#16171d]/95 backdrop-blur-md border border-white/10 shadow-[0_12px_36px_rgba(0,0,0,0.65)]">
                         {targetLink ? (
                           <a
