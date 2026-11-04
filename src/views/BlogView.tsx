@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { BlogPosts } from "../data/blogData";
 
 export const BlogView: React.FC = () => {
@@ -69,12 +69,6 @@ export const BlogView: React.FC = () => {
                     <span className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors duration-150">
                       {post.title}
                     </span>
-                    {post.hasCaseStudy && (
-                      <span className="inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20 font-mono">
-                        <Sparkles className="w-2.5 h-2.5" />
-                        Case Study
-                      </span>
-                    )}
                     <ArrowUpRight className="w-3.5 h-3.5 text-text-dim opacity-0 group-hover:opacity-100 arrow-redirect shrink-0 hidden sm:inline-block" />
                   </div>
                   <p className="text-xs text-text-muted font-normal mt-1 leading-relaxed line-clamp-1">

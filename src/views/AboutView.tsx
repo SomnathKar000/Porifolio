@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Layers, Cloud, Sparkles } from "lucide-react";
+import { ArrowUpRight, Layers, Cloud } from "lucide-react";
 import { Badge } from "../components/ui/Badge";
 import { DottedRow } from "../components/ui/DottedRow";
 import { ProjectDetails } from "../utils/constants";
@@ -387,11 +387,9 @@ export const AboutView: React.FC = () => {
       {/* "Now" & Cartographic Map Section */}
       <section className="flex flex-col gap-6 pt-4 border-t border-white/[0.08]">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-white tracking-tight flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-amber-400" />
+          <h2 className="text-lg font-medium text-white tracking-tight">
             Now
           </h2>
-          <span className="text-xs text-text-dim font-mono">Q4 2025</span>
         </div>
 
         <div className="flex flex-col gap-5">
