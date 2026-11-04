@@ -30,13 +30,16 @@ export const LeafletMap: React.FC<LeafletMapProps> = ({ className = "" }) => {
 
     mapInstanceRef.current = map;
 
-    // CartoDB Dark Matter tiles (refined dark cartographic style)
+    const MAPTILER_KEY =
+      import.meta.env.VITE_MAPTILER_API_KEY || "dYabcyQdKlP5efG04Sni";
+
+    // MapTiler Retina Dark Tiles
     L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+      `https://api.maptiler.com/maps/streets-v2-dark/256/{z}/{x}/{y}@2x.png?key=${MAPTILER_KEY}`,
       {
         attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OSM</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noreferrer">CARTO</a>',
-        subdomains: "abcd",
+          '&copy; <a href="https://www.maptiler.com/copyright/" target="_blank" rel="noreferrer">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>',
+        tileSize: 256,
         maxZoom: 19,
       }
     ).addTo(map);
