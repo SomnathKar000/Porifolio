@@ -1,19 +1,26 @@
 import React from "react";
-import { NavPage } from "../../types";
+import { Link, useLocation } from "react-router-dom";
 
-export interface NavbarCapsuleProps {
-  currentPage: NavPage;
-  onNavigate: (page: NavPage) => void;
-}
+export const NavbarCapsule: React.FC = () => {
+  const location = useLocation();
+  const pathname = location.pathname;
 
-export const NavbarCapsule: React.FC<NavbarCapsuleProps> = ({
-  currentPage,
-  onNavigate,
-}) => {
-  const tabs: { id: NavPage; label: string }[] = [
-    { id: "about", label: "About" },
-    { id: "blog", label: "Blog" },
-    { id: "contact", label: "Contact" },
+  const tabs = [
+    {
+      to: "/",
+      label: "About",
+      isActive: pathname === "/" || pathname === "/about",
+    },
+    {
+      to: "/blog",
+      label: "Blog",
+      isActive: pathname.startsWith("/blog"),
+    },
+    {
+      to: "/contact",
+      label: "Contact",
+      isActive: pathname === "/contact",
+    },
   ];
 
   return (
@@ -23,30 +30,22 @@ export const NavbarCapsule: React.FC<NavbarCapsuleProps> = ({
           className="h-11 px-1.5 bg-[#181a1f]/85 backdrop-blur-2xl rounded-full flex items-center gap-1 shadow-[0_8px_32px_-4px_rgba(0,0,0,0.6)] border border-white/10"
           aria-label="Site Navigation"
         >
-          {tabs.map((tab) => {
-            const isActive =
-              currentPage === tab.id ||
-              (tab.id === "blog" && currentPage === "case-study");
-            return (
-              <button
-                key={tab.id}
-                onClick={() => {
-                  onNavigate(tab.id);
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-                className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-150 ${
-                  isActive
-                    ? "bg-[#292a2c] text-white shadow-sm border border-white/15"
-                    : "text-neutral-400 hover:text-white hover:bg-white/5"
-                }`}
-              >
-                {tab.label}
-              </button>
-            );
-          })}
+          {tabs.map((tab) => (
+            <Link
+              key={tab.to}
+              to={tab.to}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-150 ${
+                tab.isActive
+                  ? "bg-[#292a2c] text-white shadow-sm border border-white/15"
+                  : "text-neutral-400 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              {tab.label}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
   );
 };
-

@@ -88,7 +88,7 @@ export const ContactView: React.FC = () => {
 
       {/* Direct Contact Cards */}
       <section className="flex flex-col gap-3.5">
-        {/* Email Card: Stationary box, clean text without glow, glowing and shifting upright arrow */}
+        {/* Email Card: Inside page action, stationary arrow (no movement) */}
         <div
           onClick={() => (window.location.href = `mailto:${email}`)}
           className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
@@ -127,12 +127,12 @@ export const ContactView: React.FC = () => {
               className="p-1.5 rounded-lg bg-[#1c1d22] border border-white/10 group-hover:border-white/30 transition-all flex items-center justify-center shadow-sm"
               href={`mailto:${email}`}
             >
-              <ArrowUpRight className="w-4 h-4 text-text-dim arrow-upright" />
+              <ArrowUpRight className="w-4 h-4 text-[#63656e] group-hover:text-neutral-300 transition-colors" />
             </a>
           </div>
         </div>
 
-        {/* Voice / Signal Card: Stationary box, clean text, glowing and shifting upright arrow */}
+        {/* Voice / Signal Card: Shows a Phone icon instead of arrow */}
         <div
           onClick={() => (window.location.href = `tel:+918509592835`)}
           className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
@@ -146,12 +146,12 @@ export const ContactView: React.FC = () => {
               {phone}
             </span>
           </div>
-          <div className="p-1.5 rounded-lg bg-[#1c1d22] border border-white/10 group-hover:border-white/30 transition-all flex items-center justify-center shadow-sm">
-            <ArrowUpRight className="w-4 h-4 text-text-dim arrow-upright" />
+          <div className="p-2 rounded-lg bg-[#1c1d22] border border-white/10 group-hover:border-white/20 transition-colors flex items-center justify-center shadow-sm">
+            <Phone className="w-4 h-4 text-[#63656e] group-hover:text-neutral-200 transition-colors" />
           </div>
         </div>
 
-        {/* Verified Profiles Card: Stationary box, clean text, calm shifting upright arrows on links */}
+        {/* Verified Profiles Card: Redirecting to external pages, arrow moves upright */}
         <div className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover">
           <div className="flex flex-col gap-2">
             <span className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium">
@@ -199,7 +199,7 @@ export const ContactView: React.FC = () => {
         </div>
       </section>
 
-      {/* Send a Message Form with Dark Obsidian Inputs */}
+      {/* Send a Message Form: Calm, stable inputs without flash/splash ring */}
       <section className="flex flex-col gap-4">
         <div className="flex flex-col">
           <h2 className="text-[11px] uppercase tracking-wider text-text-dim font-mono font-medium mb-1">
@@ -235,7 +235,7 @@ export const ContactView: React.FC = () => {
                   onChange={handleInputChange}
                   placeholder="Jane Doe"
                   type="text"
-                  className="w-full px-4 py-2.5 rounded-lg !bg-[#15161a] border border-white/10 !text-white text-sm placeholder:text-[#52545D] focus:outline-none focus:!bg-[#1c1d22] focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-all"
+                  className="w-full px-4 py-2.5 rounded-lg !bg-[#15161a] border border-white/10 !text-white text-sm placeholder:text-[#52545D] focus:outline-none focus:border-white/25 transition-colors duration-150"
                 />
               </div>
 
@@ -254,7 +254,7 @@ export const ContactView: React.FC = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="jane@company.com"
-                  className="w-full px-4 py-2.5 rounded-lg !bg-[#15161a] border border-white/10 !text-white text-sm placeholder:text-[#52545D] focus:outline-none focus:!bg-[#1c1d22] focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-all"
+                  className="w-full px-4 py-2.5 rounded-lg !bg-[#15161a] border border-white/10 !text-white text-sm placeholder:text-[#52545D] focus:outline-none focus:border-white/25 transition-colors duration-150"
                 />
               </div>
             </div>
@@ -274,7 +274,7 @@ export const ContactView: React.FC = () => {
                 value={formData.message}
                 onChange={handleInputChange}
                 placeholder="Share project scope, role outline, or technical discussion topics..."
-                className="w-full px-4 py-2.5 rounded-lg !bg-[#15161a] border border-white/10 !text-white text-sm placeholder:text-[#52545D] focus:outline-none focus:!bg-[#1c1d22] focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-all resize-none leading-relaxed"
+                className="w-full px-4 py-2.5 rounded-lg !bg-[#15161a] border border-white/10 !text-white text-sm placeholder:text-[#52545D] focus:outline-none focus:border-white/25 transition-colors duration-150 resize-none leading-relaxed"
               ></textarea>
             </div>
 
@@ -289,7 +289,7 @@ export const ContactView: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-5 py-2.5 rounded-lg bg-white text-zinc-950 text-sm font-semibold hover:bg-neutral-200 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all inline-flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-[0.98] disabled:opacity-50"
+                className="px-5 py-2.5 rounded-lg bg-white text-zinc-950 text-sm font-semibold hover:bg-neutral-200 transition-colors inline-flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-[0.98] disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <>

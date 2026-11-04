@@ -1,13 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { BlogPosts } from "../data/blogData";
-import { BlogPost } from "../types";
 
-export interface BlogViewProps {
-  onSelectPost: (post: BlogPost) => void;
-}
-
-export const BlogView: React.FC<BlogViewProps> = ({ onSelectPost }) => {
+export const BlogView: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
   const categories = [
@@ -63,9 +59,10 @@ export const BlogView: React.FC<BlogViewProps> = ({ onSelectPost }) => {
         <ul className="divide-y divide-white/5 border-t border-b border-white/5">
           {filteredPosts.map((post) => (
             <li key={post.id}>
-              <button
-                onClick={() => onSelectPost(post)}
-                className="w-full text-left group py-5 px-3.5 -mx-3.5 rounded-xl flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 hover:bg-[#14161a] border border-transparent hover:border-white/[0.06] transition-all duration-150 cursor-pointer"
+              <Link
+                to={`/blog/${post.slug}`}
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="w-full text-left group py-5 px-3.5 -mx-3.5 rounded-xl flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 hover:bg-[#14161a] border border-transparent hover:border-white/[0.06] transition-all duration-150 cursor-pointer block"
               >
                 <div className="flex-grow pr-4">
                   <div className="flex items-center gap-2">
@@ -78,7 +75,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onSelectPost }) => {
                         Case Study
                       </span>
                     )}
-                    <ArrowUpRight className="w-3.5 h-3.5 text-text-dim opacity-0 group-hover:opacity-100 arrow-upright shrink-0 hidden sm:inline-block" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-text-dim opacity-0 group-hover:opacity-100 arrow-redirect shrink-0 hidden sm:inline-block" />
                   </div>
                   <p className="text-xs text-text-muted font-normal mt-1 leading-relaxed line-clamp-1">
                     {post.summary}
@@ -89,7 +86,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onSelectPost }) => {
                   <span>·</span>
                   <time>{post.date}</time>
                 </div>
-              </button>
+              </Link>
             </li>
           ))}
         </ul>

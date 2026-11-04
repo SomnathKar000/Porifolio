@@ -1,19 +1,11 @@
 import React from "react";
-import { ArrowUpRight, ArrowRight, Layers, Cloud, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, Layers, Cloud, Sparkles } from "lucide-react";
 import { Badge } from "../components/ui/Badge";
 import { DottedRow } from "../components/ui/DottedRow";
-import { NavPage } from "../types";
 import { ProjectDetails } from "../utils/constants";
 
-export interface AboutViewProps {
-  onNavigate: (page: NavPage) => void;
-  onOpenCaseStudy: () => void;
-}
-
-export const AboutView: React.FC<AboutViewProps> = ({
-  onNavigate,
-  onOpenCaseStudy,
-}) => {
+export const AboutView: React.FC = () => {
   const SomnathAvatar =
     "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/247098543-58155098-8559-40cc-b52c-0d3ebaa0b914.jpeg";
 
@@ -79,13 +71,13 @@ export const AboutView: React.FC<AboutViewProps> = ({
             Timeline
           </a>
           <span className="text-surface-container-highest">/</span>
-          <button
-            onClick={() => onNavigate("contact")}
+          <Link
+            to="/contact"
             className="group text-text-muted hover:text-white transition-colors flex items-center gap-1"
           >
             somnathkar2023@gmail.com
-            <ArrowUpRight className="w-3.5 h-3.5 text-text-dim arrow-upright" />
-          </button>
+            <ArrowUpRight className="w-3.5 h-3.5 text-text-dim arrow-redirect" />
+          </Link>
         </div>
       </section>
 
@@ -99,16 +91,16 @@ export const AboutView: React.FC<AboutViewProps> = ({
         </div>
 
         <div className="flex flex-col gap-4">
-          {/* Highlight Card 1: Vortex / S3 Pipeline */}
-          <article
-            onClick={onOpenCaseStudy}
+          {/* Highlight Card 1: Vortex / S3 Pipeline (Navigates to case study route) */}
+          <Link
+            to="/blog/designing-direct-to-s3-multipart-uploads"
             className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-col gap-1">
                 <h3 className="text-[15px] font-medium text-white group-hover:text-white transition-colors flex items-center gap-1.5">
                   Vortex — Direct-to-S3 Multipart Upload Pipeline
-                  <ArrowUpRight className="w-4 h-4 text-text-dim arrow-upright" />
+                  <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
                 </h3>
                 <p className="text-xs text-text-muted leading-normal">
                   Bypassing application servers using presigned multipart URLs,
@@ -123,7 +115,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
               <Badge variant="mono">TypeScript</Badge>
               <Badge variant="active">+35% Efficiency</Badge>
             </div>
-          </article>
+          </Link>
 
           {/* Highlight Card 2: Modern E-Commerce */}
           <article className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover">
@@ -138,7 +130,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                     className="inline-flex items-center"
                     aria-label="View on GitHub"
                   >
-                    <ArrowUpRight className="w-4 h-4 text-text-dim arrow-upright" />
+                    <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
                   </a>
                 </h3>
                 <p className="text-xs text-text-muted leading-normal">
@@ -169,7 +161,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                     className="inline-flex items-center"
                     aria-label="Live Demo"
                   >
-                    <ArrowUpRight className="w-4 h-4 text-text-dim arrow-upright" />
+                    <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
                   </a>
                 </h3>
                 <p className="text-xs text-text-muted leading-normal">
@@ -217,7 +209,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                   {project.about}
                 </span>
               </div>
-              <ArrowUpRight className="w-4 h-4 text-text-dim arrow-upright shrink-0" />
+              <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect shrink-0" />
             </a>
           ))}
         </div>

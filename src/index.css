@@ -21,13 +21,23 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Force dark inputs across all browsers and prevent white background/autofill */
+  /* Force dark inputs across all browsers and remove any splash/flash/ring */
   input,
   textarea,
   select {
     background-color: #15161a !important;
     color: #ffffff !important;
     color-scheme: dark;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
   }
 
   input:-webkit-autofill,
@@ -71,12 +81,12 @@
     transform: none !important; /* Keep box strictly stationary */
   }
 
-  /* Calm, subtle arrow transition from dim to normal without sharp glare */
-  .arrow-upright {
+  /* Calm, subtle arrow transition from dim to normal without sharp glare - only for redirecting items */
+  .arrow-redirect {
     color: #63656e;
     transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
   }
-  .group:hover .arrow-upright {
+  .group:hover .arrow-redirect {
     transform: translate(2px, -2px);
     color: #e4e4e7;
   }

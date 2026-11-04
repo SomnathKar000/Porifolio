@@ -1,18 +1,13 @@
 import React, { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, Link2, Check, Zap, Server, ShieldCheck } from "lucide-react";
-import { BlogPost } from "../types";
-import { SampleCaseStudy } from "../data/blogData";
+import { BlogPosts, SampleCaseStudy } from "../data/blogData";
 
-export interface CaseStudyViewProps {
-  post?: BlogPost | null;
-  onBack: () => void;
-}
-
-export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
-  post,
-  onBack,
-}) => {
+export const CaseStudyView: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
   const [copied, setCopied] = useState(false);
+
+  const matchedPost = BlogPosts.find((p) => p.slug === slug);
   const data = SampleCaseStudy;
 
   const handleCopyLink = () => {
@@ -25,13 +20,13 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
     <div className="w-full max-w-3xl mx-auto px-6 pt-6 pb-24 flex-1">
       {/* Top Action Bar */}
       <div className="flex items-center justify-between pb-6 mb-8 border-b border-white/[0.08]">
-        <button
-          onClick={onBack}
+        <Link
+          to="/blog"
           className="inline-flex items-center gap-2 text-xs font-medium text-text-muted hover:text-white transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to all writing
-        </button>
+        </Link>
 
         <button
           onClick={handleCopyLink}
@@ -117,7 +112,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
         </div>
       </section>
 
-      {/* 4-Column Metadata Block with Dim Labels and Crisp Values */}
+      {/* 4-Column Metadata Block */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-6 pb-10 mb-10 border-b border-white/[0.08] text-sm">
         <div>
           <h4 className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium mb-1">
@@ -156,17 +151,17 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
       {/* Article Body Narrative */}
       <article className="space-y-10">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white leading-tight mb-3 text-glow-subtle">
-            {post ? post.title : data.title}
+          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white leading-tight mb-3">
+            {matchedPost ? matchedPost.title : data.title}
           </h1>
           <p className="text-xs text-text-dim font-mono">
-            Published · {post ? post.date : "Apr 18, 2025"} · {post ? post.readTime : "4 min read"}
+            Published · {matchedPost ? matchedPost.date : "Apr 18, 2025"} · {matchedPost ? matchedPost.readTime : "4 min read"}
           </p>
         </div>
 
         {/* Background */}
         <section className="space-y-3">
-          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight text-glow-subtle">
+          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight">
             Background
           </h3>
           <p className="text-sm text-neutral-300 leading-relaxed font-normal">
@@ -176,7 +171,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
 
         {/* The Bottleneck */}
         <section className="space-y-3">
-          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight text-glow-subtle">
+          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight">
             The Bottleneck & Constraints
           </h3>
           <p className="text-sm text-neutral-300 leading-relaxed font-normal">
@@ -186,7 +181,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
 
         {/* System Architecture */}
         <section className="space-y-4">
-          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight text-glow-subtle">
+          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight">
             Architectural Invariants
           </h3>
           <ol className="space-y-3 text-sm text-neutral-300">
@@ -216,7 +211,7 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
 
         {/* Comparison Metrics Table */}
         <section className="space-y-4">
-          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight text-glow-subtle">
+          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight">
             Performance & Impact
           </h3>
           <div className="overflow-hidden rounded-xl border border-white/10 bg-[#121316] shadow-sm">
