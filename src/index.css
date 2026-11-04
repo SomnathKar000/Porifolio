@@ -3,26 +3,83 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: dark;
+  }
+
   html {
     scroll-behavior: smooth;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #0D0E10;
+    color: #e3e2e5;
   }
 
   body {
-    @apply transition-colors duration-200 antialiased;
+    background-color: #0D0E10;
+    color: #e3e2e5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Custom scrollbar */
+  /* Force dark inputs across all browsers and prevent white background/autofill */
+  input,
+  textarea,
+  select {
+    background-color: #15161a !important;
+    color: #ffffff !important;
+    color-scheme: dark;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #15161a inset !important;
+    box-shadow: 0 0 0px 1000px #15161a inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* Custom subtle dark scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
+    height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #0D0E10;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-zinc-300 dark:bg-zinc-700 rounded-full;
+    background: #23252a;
+    border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-zinc-400 dark:bg-zinc-600;
+    background: #343740;
+  }
+}
+
+@layer utilities {
+  /* Obsidian Craft Luminous & Glow Utilities */
+  .text-glow {
+    text-shadow: 0 0 16px rgba(255, 255, 255, 0.4), 0 0 32px rgba(255, 255, 255, 0.2);
+  }
+
+  .text-glow-subtle {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+  }
+
+  .box-glow {
+    box-shadow: 0 0 24px -4px rgba(255, 255, 255, 0.08), 0 8px 32px -4px rgba(0, 0, 0, 0.6);
+  }
+
+  .card-glow-hover {
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card-glow-hover:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 0 28px -4px rgba(255, 255, 255, 0.1), 0 8px 32px -4px rgba(0, 0, 0, 0.5);
+    background-color: #17181d;
+    transform: translateY(-1px);
   }
 }

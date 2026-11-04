@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowLeft, Link2, Check, Zap, Server, ShieldCheck, Database } from "lucide-react";
+import { ArrowLeft, Link2, Check, Zap, Server, ShieldCheck } from "lucide-react";
 import { BlogPost } from "../types";
 import { SampleCaseStudy } from "../data/blogData";
 
@@ -24,10 +24,10 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
   return (
     <div className="w-full max-w-3xl mx-auto px-6 pt-6 pb-24 flex-1">
       {/* Top Action Bar */}
-      <div className="flex items-center justify-between pb-6 mb-8 border-b border-white/5">
+      <div className="flex items-center justify-between pb-6 mb-8 border-b border-white/[0.08]">
         <button
           onClick={onBack}
-          className="inline-flex items-center gap-2 text-xs font-medium text-neutral-400 hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-medium text-text-muted hover:text-white transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to all writing
@@ -35,12 +35,12 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
 
         <button
           onClick={handleCopyLink}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-xs text-neutral-300 hover:text-white border border-white/5 transition-all"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1c1d22] text-xs text-neutral-300 hover:text-white border border-white/10 hover:border-white/30 transition-all shadow-sm"
         >
           {copied ? (
             <>
               <Check className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Link copied</span>
+              <span className="text-emerald-400">Link copied</span>
             </>
           ) : (
             <>
@@ -117,35 +117,35 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
         </div>
       </section>
 
-      {/* 4-Column Metadata Block */}
-      <section className="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-6 pb-10 mb-10 border-b border-white/5 text-sm">
+      {/* 4-Column Metadata Block with Dim Labels and Crisp Values */}
+      <section className="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-6 pb-10 mb-10 border-b border-white/[0.08] text-sm">
         <div>
-          <h4 className="text-white font-semibold mb-1 text-xs sm:text-sm tracking-tight">
+          <h4 className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium mb-1">
             Role
           </h4>
-          <p className="text-neutral-400 text-xs sm:text-sm">{data.role}</p>
+          <p className="text-white font-medium text-xs sm:text-sm">{data.role}</p>
         </div>
         <div>
-          <h4 className="text-white font-semibold mb-1 text-xs sm:text-sm tracking-tight">
+          <h4 className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium mb-1">
             Duration
           </h4>
-          <p className="text-neutral-400 text-xs sm:text-sm">{data.duration}</p>
+          <p className="text-white font-medium text-xs sm:text-sm">{data.duration}</p>
         </div>
         <div>
-          <h4 className="text-white font-semibold mb-1 text-xs sm:text-sm tracking-tight">
+          <h4 className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium mb-1">
             Skills
           </h4>
-          <ul className="text-neutral-400 text-xs sm:text-sm space-y-0.5">
+          <ul className="text-white font-medium text-xs sm:text-sm space-y-0.5">
             {data.skills.map((s) => (
               <li key={s}>{s}</li>
             ))}
           </ul>
         </div>
         <div>
-          <h4 className="text-white font-semibold mb-1 text-xs sm:text-sm tracking-tight">
+          <h4 className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium mb-1">
             Tools
           </h4>
-          <ul className="text-neutral-400 text-xs sm:text-sm space-y-0.5">
+          <ul className="text-white font-medium text-xs sm:text-sm space-y-0.5">
             {data.tools.map((t) => (
               <li key={t}>{t}</li>
             ))}
@@ -156,43 +156,43 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
       {/* Article Body Narrative */}
       <article className="space-y-10">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white leading-tight mb-3">
+          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white leading-tight mb-3 text-glow-subtle">
             {post ? post.title : data.title}
           </h1>
-          <p className="text-xs text-neutral-400">
+          <p className="text-xs text-text-dim font-mono">
             Published · {post ? post.date : "Apr 18, 2025"} · {post ? post.readTime : "4 min read"}
           </p>
         </div>
 
         {/* Background */}
         <section className="space-y-3">
-          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight">
+          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight text-glow-subtle">
             Background
           </h3>
-          <p className="text-sm text-neutral-300 leading-relaxed">
+          <p className="text-sm text-neutral-300 leading-relaxed font-normal">
             {data.background}
           </p>
         </section>
 
         {/* The Bottleneck */}
         <section className="space-y-3">
-          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight">
+          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight text-glow-subtle">
             The Bottleneck & Constraints
           </h3>
-          <p className="text-sm text-neutral-300 leading-relaxed">
+          <p className="text-sm text-neutral-300 leading-relaxed font-normal">
             {data.problem}
           </p>
         </section>
 
         {/* System Architecture */}
         <section className="space-y-4">
-          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight">
+          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight text-glow-subtle">
             Architectural Invariants
           </h3>
           <ol className="space-y-3 text-sm text-neutral-300">
             {data.architecture.map((step, idx) => (
               <li key={idx} className="flex items-start gap-3">
-                <span className="font-mono text-xs px-2 py-0.5 rounded bg-surface-container text-neutral-400 border border-white/5 shrink-0 mt-0.5">
+                <span className="font-mono text-xs px-2 py-0.5 rounded bg-surface-container text-neutral-300 border border-white/10 shrink-0 mt-0.5">
                   0{idx + 1}
                 </span>
                 <span className="leading-relaxed">{step}</span>
@@ -204,11 +204,11 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
         {/* Code Snippet */}
         {data.codeSnippet && (
           <section className="space-y-3">
-            <div className="flex items-center justify-between text-xs text-neutral-400 font-mono">
+            <div className="flex items-center justify-between text-xs text-text-dim font-mono">
               <span>ingress/signer.ts</span>
               <span>TypeScript</span>
             </div>
-            <div className="p-4 rounded-xl bg-[#121316] border border-white/10 overflow-x-auto text-xs font-mono text-neutral-300 leading-relaxed">
+            <div className="p-4 rounded-xl bg-[#121316] border border-white/10 overflow-x-auto text-xs font-mono text-neutral-200 leading-relaxed shadow-inner">
               <pre>{data.codeSnippet.code}</pre>
             </div>
           </section>
@@ -216,12 +216,12 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
 
         {/* Comparison Metrics Table */}
         <section className="space-y-4">
-          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight">
+          <h3 className="text-base sm:text-lg font-medium text-white tracking-tight text-glow-subtle">
             Performance & Impact
           </h3>
-          <div className="overflow-hidden rounded-xl border border-white/10 bg-[#121316]">
+          <div className="overflow-hidden rounded-xl border border-white/10 bg-[#121316] shadow-sm">
             <table className="w-full text-left text-xs sm:text-sm">
-              <thead className="border-b border-white/10 text-neutral-400 font-mono text-[11px] bg-white/5 uppercase">
+              <thead className="border-b border-white/10 text-text-dim font-mono text-[11px] bg-white/5 uppercase tracking-wider">
                 <tr>
                   <th className="p-3 sm:p-4">Metric</th>
                   <th className="p-3 sm:p-4">Legacy Proxy</th>
@@ -232,17 +232,17 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
                 <tr>
                   <td className="p-3 sm:p-4 font-sans font-medium text-white">Client Delivery Speed</td>
                   <td className="p-3 sm:p-4 text-neutral-400">Baseline</td>
-                  <td className="p-3 sm:p-4 text-emerald-400">+35% Throughput</td>
+                  <td className="p-3 sm:p-4 text-emerald-400 font-semibold">+35% Throughput</td>
                 </tr>
                 <tr>
                   <td className="p-3 sm:p-4 font-sans font-medium text-white">Node Server Memory Saturation</td>
                   <td className="p-3 sm:p-4 text-rose-400">~840 MB</td>
-                  <td className="p-3 sm:p-4 text-emerald-400">&lt; 18 MB (Zero Proxy)</td>
+                  <td className="p-3 sm:p-4 text-emerald-400 font-semibold">&lt; 18 MB (Zero Proxy)</td>
                 </tr>
                 <tr>
                   <td className="p-3 sm:p-4 font-sans font-medium text-white">Network Interruption Recovery</td>
                   <td className="p-3 sm:p-4 text-neutral-400">Restart from 0%</td>
-                  <td className="p-3 sm:p-4 text-emerald-400">Chunked Resume (ETag)</td>
+                  <td className="p-3 sm:p-4 text-emerald-400 font-semibold">Chunked Resume (ETag)</td>
                 </tr>
               </tbody>
             </table>
@@ -252,4 +252,3 @@ export const CaseStudyView: React.FC<CaseStudyViewProps> = ({
     </div>
   );
 };
-

@@ -7,9 +7,8 @@ import {
   Phone,
   Send,
   Loader2,
-  CheckCircle2,
+  Mail,
 } from "lucide-react";
-import { StatusDot } from "../components/ui/StatusDot";
 
 export const ContactView: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -26,7 +25,8 @@ export const ContactView: React.FC = () => {
   const email = "somnathkar2023@gmail.com";
   const phone = "+91 85095 92835";
 
-  const handleCopyEmail = () => {
+  const handleCopyEmail = (e: React.MouseEvent) => {
+    e.stopPropagation();
     navigator.clipboard.writeText(email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
@@ -73,56 +73,58 @@ export const ContactView: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-6 py-8 flex flex-col gap-12">
+    <div className="w-full max-w-2xl mx-auto px-6 py-6 flex flex-col gap-12">
       {/* Header */}
       <header className="flex flex-col">
-        <h1 className="text-3xl font-bold tracking-tight text-white mb-3">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white text-glow-subtle mb-3">
           Contact
         </h1>
-        <p className="text-sm text-neutral-400 leading-relaxed">
+        <p className="text-sm text-text-muted leading-relaxed">
           I'm always open to discussing systems architecture, new product
           engineering challenges, open source collaborations, or full-time
           opportunities. Feel free to reach out directly or send a message below.
         </p>
       </header>
 
-      {/* Direct Contact Cards */}
-      <section className="flex flex-col gap-3">
-        {/* Email Card with 1-click Copy */}
-        <div className="flex items-center justify-between p-4 sm:p-5 rounded-xl bg-surface-raised border border-border-subtle hover:border-white/20 transition-all">
+      {/* Direct Contact Cards with Hover Glowing Highlight */}
+      <section className="flex flex-col gap-3.5">
+        {/* Email Card */}
+        <div
+          onClick={() => (window.location.href = `mailto:${email}`)}
+          className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
+        >
           <div className="flex flex-col gap-1">
-            <span className="text-[11px] uppercase tracking-wider text-text-dim font-medium">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium flex items-center gap-1.5">
+              <Mail className="w-3 h-3 text-text-dim group-hover:text-white transition-colors" />
               Email
             </span>
-            <a
-              className="text-sm sm:text-base font-medium text-text-primary hover:text-text-muted transition-colors tracking-tight"
-              href={`mailto:${email}`}
-            >
+            <span className="text-sm sm:text-base font-medium text-white group-hover:text-glow transition-all tracking-tight">
               {email}
-            </a>
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={handleCopyEmail}
               aria-label="Copy Email Address"
-              className="px-3 py-1.5 rounded-lg bg-surface-container-high text-neutral-300 hover:bg-surface-container-highest transition-colors flex items-center gap-1.5 text-xs cursor-pointer border border-border-subtle"
+              className="px-3 py-1.5 rounded-lg bg-[#1c1d22] text-neutral-300 hover:text-white hover:bg-[#25272e] border border-white/10 hover:border-white/30 transition-all flex items-center gap-1.5 text-xs font-medium cursor-pointer shadow-sm active:scale-95"
               type="button"
             >
               {copiedEmail ? (
                 <>
                   <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-400 font-medium">Copied</span>
+                  <span className="text-emerald-400">Copied</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-3.5 h-3.5" />
+                  <Copy className="w-3.5 h-3.5 text-neutral-400 group-hover:text-white transition-colors" />
                   <span>Copy</span>
                 </>
               )}
             </button>
             <a
               aria-label="Send Email"
-              className="p-1.5 rounded-lg bg-surface-container-high text-neutral-300 hover:bg-surface-container-highest transition-colors flex items-center justify-center border border-border-subtle hover:text-white"
+              onClick={(e) => e.stopPropagation()}
+              className="p-1.5 rounded-lg bg-[#1c1d22] text-neutral-400 hover:text-white hover:bg-[#25272e] border border-white/10 hover:border-white/30 transition-all flex items-center justify-center shadow-sm"
               href={`mailto:${email}`}
             >
               <ArrowUpRight className="w-4 h-4" />
@@ -131,86 +133,95 @@ export const ContactView: React.FC = () => {
         </div>
 
         {/* Voice / Signal Card */}
-        <div className="flex items-center justify-between p-4 sm:p-5 rounded-xl bg-surface-raised border border-border-subtle hover:border-white/20 transition-all">
+        <div
+          onClick={() => (window.location.href = `tel:+918509592835`)}
+          className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
+        >
           <div className="flex flex-col gap-1">
-            <span className="text-[11px] uppercase tracking-wider text-text-dim font-medium">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium flex items-center gap-1.5">
+              <Phone className="w-3 h-3 text-text-dim group-hover:text-white transition-colors" />
               Voice / Signal
             </span>
-            <a
-              className="text-sm sm:text-base font-medium text-text-primary hover:text-text-muted transition-colors font-mono tracking-tight"
-              href="tel:+918509592835"
-            >
+            <span className="text-sm sm:text-base font-medium text-white group-hover:text-glow transition-all font-mono tracking-tight">
               {phone}
-            </a>
+            </span>
           </div>
-          <a
-            href="tel:+918509592835"
-            className="p-2 rounded-lg bg-surface-container-high text-neutral-400 hover:text-white border border-border-subtle"
-            aria-label="Call Somnath"
-          >
+          <div className="p-2 rounded-lg bg-[#1c1d22] text-neutral-400 group-hover:text-white border border-white/10 group-hover:border-white/30 transition-all shadow-sm">
             <Phone className="w-4 h-4" />
-          </a>
+          </div>
         </div>
 
-        {/* Verified Profiles */}
-        <div className="flex items-center justify-between p-4 sm:p-5 rounded-xl bg-surface-raised border border-border-subtle hover:border-white/20 transition-all">
+        {/* Verified Profiles Card */}
+        <div className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover">
           <div className="flex flex-col gap-2">
-            <span className="text-[11px] uppercase tracking-wider text-text-dim font-medium">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium">
               Verified Profiles
             </span>
             <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm">
               <a
-                className="text-neutral-200 hover:text-white transition-colors inline-flex items-center gap-1"
+                className="group/link text-neutral-300 hover:text-white hover:text-glow-subtle transition-all inline-flex items-center gap-1 font-medium"
                 href="https://github.com/SomnathKar000"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                GitHub <span className="text-text-dim text-xs">↗</span>
+                GitHub{" "}
+                <span className="text-text-dim group-hover/link:text-white text-xs transition-colors">
+                  ↗
+                </span>
               </a>
               <a
-                className="text-neutral-200 hover:text-white transition-colors inline-flex items-center gap-1"
+                className="group/link text-neutral-300 hover:text-white hover:text-glow-subtle transition-all inline-flex items-center gap-1 font-medium"
                 href="https://www.linkedin.com/in/somnath-kar-aa73aa1a3/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                LinkedIn <span className="text-text-dim text-xs">↗</span>
+                LinkedIn{" "}
+                <span className="text-text-dim group-hover/link:text-white text-xs transition-colors">
+                  ↗
+                </span>
               </a>
               <a
-                className="text-neutral-200 hover:text-white transition-colors inline-flex items-center gap-1"
+                className="group/link text-neutral-300 hover:text-white hover:text-glow-subtle transition-all inline-flex items-center gap-1 font-medium"
                 href="https://twitter.com/Somnathkar000"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Twitter / X <span className="text-text-dim text-xs">↗</span>
+                Twitter / X{" "}
+                <span className="text-text-dim group-hover/link:text-white text-xs transition-colors">
+                  ↗
+                </span>
               </a>
               <a
-                className="text-neutral-200 hover:text-white transition-colors inline-flex items-center gap-1"
+                className="group/link text-neutral-300 hover:text-white hover:text-glow-subtle transition-all inline-flex items-center gap-1 font-medium"
                 href="https://leetcode.com/SomnathKar000/"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                LeetCode <span className="text-text-dim text-xs">↗</span>
+                LeetCode{" "}
+                <span className="text-text-dim group-hover/link:text-white text-xs transition-colors">
+                  ↗
+                </span>
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Send a Message Form */}
+      {/* Send a Message Form with Dark Obsidian Inputs */}
       <section className="flex flex-col gap-4">
         <div className="flex flex-col">
-          <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-semibold mb-1">
+          <h2 className="text-[11px] uppercase tracking-wider text-text-dim font-mono font-medium mb-1">
             Send a message
           </h2>
-          <p className="text-xs text-text-dim">
+          <p className="text-xs text-text-muted">
             Structured inquiry, response within 24 hours.
           </p>
         </div>
 
         {submitted ? (
-          <div className="p-5 rounded-xl bg-surface-container-high border border-border-subtle text-text-primary text-xs sm:text-sm flex items-center gap-3">
+          <div className="p-5 rounded-xl bg-[#15161a] border border-emerald-500/30 text-text-primary text-xs sm:text-sm flex items-center gap-3 box-glow">
             <span className="w-2.5 h-2.5 rounded-full bg-status-active animate-pulse shrink-0"></span>
-            <span>
+            <span className="text-neutral-200">
               Inquiry transmitted successfully. Somnath will reply within 24 hours.
             </span>
           </div>
@@ -219,7 +230,7 @@ export const ContactView: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-[11px] uppercase tracking-wider text-text-dim font-medium"
+                  className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium"
                   htmlFor="name"
                 >
                   Your Name
@@ -232,13 +243,13 @@ export const ContactView: React.FC = () => {
                   onChange={handleInputChange}
                   placeholder="Jane Doe"
                   type="text"
-                  className="w-full px-4 py-2.5 rounded-lg bg-surface-container-high border border-border-subtle text-neutral-200 text-sm placeholder:text-text-dim focus:outline-none focus:border-white/30 transition-colors"
+                  className="w-full px-4 py-2.5 rounded-lg !bg-[#15161a] border border-white/10 !text-white text-sm placeholder:text-[#52545D] focus:outline-none focus:!bg-[#1c1d22] focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-all"
                 />
               </div>
 
               <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-[11px] uppercase tracking-wider text-text-dim font-medium"
+                  className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium"
                   htmlFor="email"
                 >
                   Email Address
@@ -251,14 +262,14 @@ export const ContactView: React.FC = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="jane@company.com"
-                  className="w-full px-4 py-2.5 rounded-lg bg-surface-container-high border border-border-subtle text-neutral-200 text-sm placeholder:text-text-dim focus:outline-none focus:border-white/30 transition-colors"
+                  className="w-full px-4 py-2.5 rounded-lg !bg-[#15161a] border border-white/10 !text-white text-sm placeholder:text-[#52545D] focus:outline-none focus:!bg-[#1c1d22] focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-all"
                 />
               </div>
             </div>
 
             <div className="flex flex-col gap-1.5">
               <label
-                className="text-[11px] uppercase tracking-wider text-text-dim font-medium"
+                className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium"
                 htmlFor="message"
               >
                 Message
@@ -271,7 +282,7 @@ export const ContactView: React.FC = () => {
                 value={formData.message}
                 onChange={handleInputChange}
                 placeholder="Share project scope, role outline, or technical discussion topics..."
-                className="w-full px-4 py-2.5 rounded-lg bg-surface-container-high border border-border-subtle text-neutral-200 text-sm placeholder:text-text-dim focus:outline-none focus:border-white/30 transition-colors resize-none leading-relaxed"
+                className="w-full px-4 py-2.5 rounded-lg !bg-[#15161a] border border-white/10 !text-white text-sm placeholder:text-[#52545D] focus:outline-none focus:!bg-[#1c1d22] focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-all resize-none leading-relaxed"
               ></textarea>
             </div>
 
@@ -280,23 +291,23 @@ export const ContactView: React.FC = () => {
             )}
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-1">
-              <span className="text-xs text-text-dim">
+              <span className="text-xs text-text-dim font-mono">
                 Direct transmission. Encrypted at rest.
               </span>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-5 py-2.5 rounded-lg bg-white text-zinc-950 text-sm font-medium hover:bg-neutral-200 transition-colors inline-flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-[0.98] disabled:opacity-50"
+                className="px-5 py-2.5 rounded-lg bg-white text-zinc-950 text-sm font-semibold hover:bg-neutral-200 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all inline-flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-[0.98] disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <Loader2 className="w-4 h-4 animate-spin text-zinc-950" />
                     <span>Transmitting...</span>
                   </>
                 ) : (
                   <>
                     <span>Send message</span>
-                    <Send className="w-3.5 h-3.5" />
+                    <Send className="w-3.5 h-3.5 text-zinc-950" />
                   </>
                 )}
               </button>
@@ -306,31 +317,40 @@ export const ContactView: React.FC = () => {
       </section>
 
       {/* Now & Location */}
-      <section className="pt-4 border-t border-border-subtle flex flex-col gap-3">
-        <h2 className="text-xs uppercase tracking-wider text-neutral-400 font-semibold">
+      <section className="pt-4 border-t border-white/[0.08] flex flex-col gap-3">
+        <h2 className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium">
           Now & Location
         </h2>
-        <div className="flex flex-col gap-2 text-xs sm:text-sm text-neutral-400">
+        <div className="flex flex-col gap-2.5 text-xs sm:text-sm">
           <div className="flex items-baseline justify-between">
-            <span className="text-text-dim">Location</span>
-            <span className="text-text-primary">Kolkata, West Bengal, India</span>
+            <span className="text-text-dim font-mono text-xs uppercase tracking-wider">
+              Location
+            </span>
+            <span className="text-white font-medium">
+              Kolkata, West Bengal, India
+            </span>
           </div>
           <div className="flex items-baseline justify-between">
-            <span className="text-text-dim">Availability</span>
+            <span className="text-text-dim font-mono text-xs uppercase tracking-wider">
+              Availability
+            </span>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-status-active"></span>
-              <span className="text-text-primary">
+              <span className="w-2 h-2 rounded-full bg-status-active animate-pulse"></span>
+              <span className="text-white font-medium text-glow-subtle">
                 Open for Select Roles (Remote / Hybrid)
               </span>
             </div>
           </div>
           <div className="flex items-baseline justify-between">
-            <span className="text-text-dim">Timezone</span>
-            <span className="font-mono text-text-primary">IST (UTC+05:30)</span>
+            <span className="text-text-dim font-mono text-xs uppercase tracking-wider">
+              Timezone
+            </span>
+            <span className="font-mono text-white font-medium">
+              IST (UTC+05:30)
+            </span>
           </div>
         </div>
       </section>
     </div>
   );
 };
-

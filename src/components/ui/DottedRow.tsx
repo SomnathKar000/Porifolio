@@ -13,10 +13,13 @@ export const DottedRow: React.FC<DottedRowProps> = ({
 }) => {
   return (
     <div className={`flex items-baseline justify-between text-xs sm:text-sm ${className}`}>
-      <span className="font-medium text-text-primary shrink-0">{label}</span>
+      <span className="font-mono text-[11px] uppercase tracking-wider text-text-dim font-medium shrink-0">
+        {label}
+      </span>
       <span className="flex-1 mx-3 border-b border-dotted border-white/20 relative top-[-4px]"></span>
-      <span className="text-text-muted shrink-0 text-right">{value}</span>
+      <span className="text-white font-medium shrink-0 text-right">
+        {value}
+      </span>
     </div>
   );
 };
-
