@@ -71,13 +71,13 @@
     transform: none !important; /* Keep box strictly stationary */
   }
 
-  /* Arrow glow and upright movement */
+  /* Calm, subtle arrow transition from dim to normal without sharp glare */
   .arrow-upright {
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease, color 0.2s ease;
+    color: #63656e;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
   }
   .group:hover .arrow-upright {
-    transform: translate(3px, -3px);
-    color: #ffffff;
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+    transform: translate(2px, -2px);
+    color: #e4e4e7;
   }
 }

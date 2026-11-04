@@ -151,7 +151,7 @@ export const ContactView: React.FC = () => {
           </div>
         </div>
 
-        {/* Verified Profiles Card: Stationary box, clean text, glowing and shifting upright arrows on links */}
+        {/* Verified Profiles Card: Stationary box, clean text, calm shifting upright arrows on links */}
         <div className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover">
           <div className="flex flex-col gap-2">
             <span className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium">
@@ -165,7 +165,7 @@ export const ContactView: React.FC = () => {
                 target="_blank"
               >
                 GitHub
-                <ArrowUpRight className="w-3.5 h-3.5 text-text-dim transition-all group-hover/link:text-white group-hover/link:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#63656e] transition-all duration-150 group-hover/link:text-neutral-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
               </a>
               <a
                 className="group/link text-neutral-300 hover:text-white transition-colors inline-flex items-center gap-1 font-medium"
@@ -174,7 +174,7 @@ export const ContactView: React.FC = () => {
                 target="_blank"
               >
                 LinkedIn
-                <ArrowUpRight className="w-3.5 h-3.5 text-text-dim transition-all group-hover/link:text-white group-hover/link:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#63656e] transition-all duration-150 group-hover/link:text-neutral-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
               </a>
               <a
                 className="group/link text-neutral-300 hover:text-white transition-colors inline-flex items-center gap-1 font-medium"
@@ -183,7 +183,7 @@ export const ContactView: React.FC = () => {
                 target="_blank"
               >
                 Twitter / X
-                <ArrowUpRight className="w-3.5 h-3.5 text-text-dim transition-all group-hover/link:text-white group-hover/link:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#63656e] transition-all duration-150 group-hover/link:text-neutral-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
               </a>
               <a
                 className="group/link text-neutral-300 hover:text-white transition-colors inline-flex items-center gap-1 font-medium"
@@ -192,7 +192,7 @@ export const ContactView: React.FC = () => {
                 target="_blank"
               >
                 LeetCode
-                <ArrowUpRight className="w-3.5 h-3.5 text-text-dim transition-all group-hover/link:text-white group-hover/link:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#63656e] transition-all duration-150 group-hover/link:text-neutral-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
               </a>
             </div>
           </div>
