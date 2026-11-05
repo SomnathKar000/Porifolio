@@ -20,10 +20,10 @@ export const AboutView: React.FC = () => {
             <h1 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
               Somnath
             </h1>
-            <p className="text-xs sm:text-sm text-text-dim flex items-center gap-2">
-              <span className="text-text-muted">Full-Stack Engineer & Systems Architect</span>
+            <p className="text-xs sm:text-sm text-neutral-400 flex items-center gap-2">
+              <span className="text-neutral-300">Full-Stack Engineer & Systems Architect</span>
               <span className="w-1 h-1 rounded-full bg-surface-container-highest"></span>
-              <span className="text-text-dim font-mono text-xs">Kolkata, India (Remote)</span>
+              <span className="text-neutral-400 font-mono text-xs">Kolkata, India (Remote)</span>
             </p>
           </div>
           <div className="relative shrink-0">
@@ -44,7 +44,7 @@ export const AboutView: React.FC = () => {
             Express, React, Node.js) and resilient AWS cloud architectures. I enjoy
             turning complex data pipelines into intuitive, calm interfaces.
           </p>
-          <p className="text-sm text-text-dim leading-relaxed">
+          <p className="text-sm text-neutral-300 leading-relaxed">
             Currently engineering production systems at{" "}
             <span className="text-neutral-200 font-medium">
               Wiseboxs Softworks
@@ -103,7 +103,7 @@ export const AboutView: React.FC = () => {
                   Vortex — Direct-to-S3 Multipart Upload Pipeline
                   <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
                 </h3>
-                <p className="text-xs text-text-dim leading-normal">
+                <p className="text-xs text-neutral-400 leading-relaxed">
                   Bypassing application servers using presigned multipart URLs,
                   SHA-256 integrity verification, and zero proxy memory saturation.
                 </p>
@@ -134,7 +134,7 @@ export const AboutView: React.FC = () => {
                     <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
                   </a>
                 </h3>
-                <p className="text-xs text-text-dim leading-normal">
+                <p className="text-xs text-neutral-400 leading-relaxed">
                   A high-concurrency digital store with session storage, idempotent
                   RESTful webhook handling, and inventory consistency.
                 </p>
@@ -165,7 +165,7 @@ export const AboutView: React.FC = () => {
                     <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
                   </a>
                 </h3>
-                <p className="text-xs text-text-dim leading-normal">
+                <p className="text-xs text-neutral-400 leading-relaxed">
                   Multi-tier storage with encrypted file sharing, DynamoDB session
                   persistence, and AWS Lambda serverless execution.
                 </p>
@@ -279,7 +279,7 @@ export const AboutView: React.FC = () => {
                 </div>
 
                 {/* Description below title */}
-                <p className="text-xs sm:text-[13px] text-text-dim leading-relaxed mt-2.5">
+                <p className="text-xs sm:text-[13px] text-neutral-400 leading-relaxed mt-2.5">
                   {project.about}
                 </p>
 
@@ -289,7 +289,7 @@ export const AboutView: React.FC = () => {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[11px] px-2 py-0.5 rounded bg-[#17181e] text-text-dim border border-white/5 font-mono"
+                        className="text-[11px] px-2 py-0.5 rounded bg-[#17181e] text-neutral-400 border border-white/5 font-mono"
                       >
                         {tag}
                       </span>
@@ -323,15 +323,15 @@ export const AboutView: React.FC = () => {
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                   <h3 className="text-sm font-medium text-neutral-200">
                     Wiseboxs Softworks Pvt Ltd{" "}
-                    <span className="font-normal text-text-dim">
+                    <span className="font-normal text-neutral-400">
                       — Software Engineer
                     </span>
                   </h3>
-                  <span className="text-[11px] text-text-dim font-mono shrink-0">
+                  <span className="text-[11px] text-neutral-400 font-mono shrink-0">
                     FEB 2024 — PRESENT
                   </span>
                 </div>
-                <p className="text-xs text-text-dim leading-relaxed">
+                <p className="text-xs text-neutral-400 leading-relaxed">
                   Building scalable MERN applications with integrated cloud infrastructure.
                   Architected direct S3 multipart upload pipelines boosting asset delivery
                   efficiency by 35%. Implemented robust scheduling engines and idempotent caching layers.
@@ -352,15 +352,15 @@ export const AboutView: React.FC = () => {
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                   <h3 className="text-sm font-medium text-neutral-200">
                     Maulana Abul Kalam Azad University (MAKAUT){" "}
-                    <span className="font-normal text-text-dim">
+                    <span className="font-normal text-neutral-400">
                       — B.Tech in CSE
                     </span>
                   </h3>
-                  <span className="text-[11px] text-text-dim font-mono shrink-0">
+                  <span className="text-[11px] text-neutral-400 font-mono shrink-0">
                     2019 — 2023 · CGPA: 9.09
                   </span>
                 </div>
-                <p className="text-xs text-text-dim leading-relaxed">
+                <p className="text-xs text-neutral-400 leading-relaxed">
                   Graduated with CGPA 9.09. Rigorous curriculum across Data Structures,
                   Algorithms, Database Management Systems, Computer Networks, and Cloud Computing.
                 </p>
@@ -382,8 +382,8 @@ export const AboutView: React.FC = () => {
           {/* Frontend Stack */}
           <div className="p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover flex flex-col gap-3">
             <div className="flex items-center gap-2">
-              <Layers className="w-4 h-4 text-text-dim" />
-              <h3 className="text-[11px] font-mono text-text-dim uppercase tracking-wider font-medium">
+              <Layers className="w-4 h-4 text-neutral-400" />
+              <h3 className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider font-medium">
                 Frontend Architecture
               </h3>
             </div>
@@ -412,8 +412,8 @@ export const AboutView: React.FC = () => {
           {/* Backend & Cloud Stack */}
           <div className="p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover flex flex-col gap-3">
             <div className="flex items-center gap-2">
-              <Cloud className="w-4 h-4 text-text-dim" />
-              <h3 className="text-[11px] font-mono text-text-dim uppercase tracking-wider font-medium">
+              <Cloud className="w-4 h-4 text-neutral-400" />
+              <h3 className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider font-medium">
                 Backend & Cloud
               </h3>
             </div>
@@ -453,7 +453,7 @@ export const AboutView: React.FC = () => {
         </div>
 
         <div className="flex flex-col gap-5">
-          <p className="text-sm text-text-dim leading-relaxed">
+          <p className="text-sm text-neutral-400 leading-relaxed">
             Architecting next-generation distributed systems, exploring event-driven
             patterns, and crafting refined minimal web interfaces.
           </p>

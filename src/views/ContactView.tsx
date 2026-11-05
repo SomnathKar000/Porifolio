@@ -94,8 +94,8 @@ export const ContactView: React.FC = () => {
           className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
         >
           <div className="flex flex-col gap-1">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium flex items-center gap-1.5">
-              <Mail className="w-3 h-3 text-text-dim group-hover:text-neutral-300 transition-colors" />
+            <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium flex items-center gap-1.5">
+              <Mail className="w-3 h-3 text-neutral-400 group-hover:text-neutral-300 transition-colors" />
               Email
             </span>
             <span className="text-sm sm:text-base font-medium text-neutral-200 group-hover:text-white transition-colors tracking-tight">
@@ -138,8 +138,8 @@ export const ContactView: React.FC = () => {
           className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
         >
           <div className="flex flex-col gap-1">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium flex items-center gap-1.5">
-              <Phone className="w-3 h-3 text-text-dim group-hover:text-neutral-300 transition-colors" />
+            <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium flex items-center gap-1.5">
+              <Phone className="w-3 h-3 text-neutral-400 group-hover:text-neutral-300 transition-colors" />
               Voice / Signal
             </span>
             <span className="text-sm sm:text-base font-medium text-neutral-200 group-hover:text-white transition-colors font-mono tracking-tight">
@@ -154,7 +154,7 @@ export const ContactView: React.FC = () => {
         {/* Verified Profiles Card: Redirecting to external pages, arrow moves upright */}
         <div className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover">
           <div className="flex flex-col gap-2">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium">
               Verified Profiles
             </span>
             <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm">
@@ -202,7 +202,7 @@ export const ContactView: React.FC = () => {
       {/* Send a Message Form: Calm, stable inputs without flash/splash ring */}
       <section className="flex flex-col gap-4">
         <div className="flex flex-col">
-          <h2 className="text-[11px] uppercase tracking-wider text-text-dim font-mono font-medium mb-1">
+          <h2 className="text-[11px] uppercase tracking-wider text-neutral-400 font-mono font-medium mb-1">
             Send a message
           </h2>
           <p className="text-xs text-text-muted">
@@ -222,7 +222,7 @@ export const ContactView: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium"
+                  className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium"
                   htmlFor="name"
                 >
                   Your Name
@@ -241,7 +241,7 @@ export const ContactView: React.FC = () => {
 
               <div className="flex flex-col gap-1.5">
                 <label
-                  className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium"
+                  className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium"
                   htmlFor="email"
                 >
                   Email Address
@@ -261,7 +261,7 @@ export const ContactView: React.FC = () => {
 
             <div className="flex flex-col gap-1.5">
               <label
-                className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium"
+                className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium"
                 htmlFor="message"
               >
                 Message
@@ -283,7 +283,7 @@ export const ContactView: React.FC = () => {
             )}
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-1">
-              <span className="text-xs text-text-dim font-mono">
+              <span className="text-xs text-neutral-400 font-mono">
                 Direct transmission. Encrypted at rest.
               </span>
               <button
@@ -310,34 +310,34 @@ export const ContactView: React.FC = () => {
 
       {/* Now & Location */}
       <section className="pt-4 border-t border-white/[0.08] flex flex-col gap-3">
-        <h2 className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium">
+        <h2 className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium">
           Now & Location
         </h2>
         <div className="flex flex-col gap-2.5 text-xs sm:text-sm">
           <div className="flex items-baseline justify-between">
-            <span className="text-text-dim font-mono text-xs uppercase tracking-wider">
+            <span className="text-neutral-400 font-mono text-xs uppercase tracking-wider">
               Location
             </span>
-            <span className="text-white font-medium">
+            <span className="text-neutral-300 font-medium">
               Kolkata, West Bengal, India
             </span>
           </div>
           <div className="flex items-baseline justify-between">
-            <span className="text-text-dim font-mono text-xs uppercase tracking-wider">
+            <span className="text-neutral-400 font-mono text-xs uppercase tracking-wider">
               Availability
             </span>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-status-active animate-pulse"></span>
-              <span className="text-white font-medium">
+              <span className="text-neutral-300 font-medium">
                 Open for Select Roles (Remote / Hybrid)
               </span>
             </div>
           </div>
           <div className="flex items-baseline justify-between">
-            <span className="text-text-dim font-mono text-xs uppercase tracking-wider">
+            <span className="text-neutral-400 font-mono text-xs uppercase tracking-wider">
               Timezone
             </span>
-            <span className="font-mono text-white font-medium">
+            <span className="font-mono text-neutral-300 font-medium">
               IST (UTC+05:30)
             </span>
           </div>

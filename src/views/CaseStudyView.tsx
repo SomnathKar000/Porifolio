@@ -115,19 +115,19 @@ export const CaseStudyView: React.FC = () => {
       {/* 4-Column Metadata Block */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-6 pb-10 mb-10 border-b border-white/[0.08] text-sm">
         <div>
-          <h4 className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium mb-1">
+          <h4 className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium mb-1">
             Role
           </h4>
           <p className="text-white font-medium text-xs sm:text-sm">{data.role}</p>
         </div>
         <div>
-          <h4 className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium mb-1">
+          <h4 className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium mb-1">
             Duration
           </h4>
           <p className="text-white font-medium text-xs sm:text-sm">{data.duration}</p>
         </div>
         <div>
-          <h4 className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium mb-1">
+          <h4 className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium mb-1">
             Skills
           </h4>
           <ul className="text-white font-medium text-xs sm:text-sm space-y-0.5">
@@ -137,7 +137,7 @@ export const CaseStudyView: React.FC = () => {
           </ul>
         </div>
         <div>
-          <h4 className="text-[11px] font-mono uppercase tracking-wider text-text-dim font-medium mb-1">
+          <h4 className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium mb-1">
             Tools
           </h4>
           <ul className="text-white font-medium text-xs sm:text-sm space-y-0.5">
@@ -154,7 +154,7 @@ export const CaseStudyView: React.FC = () => {
           <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white leading-tight mb-3">
             {matchedPost ? matchedPost.title : data.title}
           </h1>
-          <p className="text-xs text-text-dim font-mono">
+          <p className="text-xs text-neutral-400 font-mono">
             Published · {matchedPost ? matchedPost.date : "Apr 18, 2025"} · {matchedPost ? matchedPost.readTime : "4 min read"}
           </p>
         </div>
@@ -199,7 +199,7 @@ export const CaseStudyView: React.FC = () => {
         {/* Code Snippet */}
         {data.codeSnippet && (
           <section className="space-y-3">
-            <div className="flex items-center justify-between text-xs text-text-dim font-mono">
+            <div className="flex items-center justify-between text-xs text-neutral-400 font-mono">
               <span>ingress/signer.ts</span>
               <span>TypeScript</span>
             </div>
@@ -216,7 +216,7 @@ export const CaseStudyView: React.FC = () => {
           </h3>
           <div className="overflow-hidden rounded-xl border border-white/10 bg-[#121316] shadow-sm">
             <table className="w-full text-left text-xs sm:text-sm">
-              <thead className="border-b border-white/10 text-text-dim font-mono text-[11px] bg-white/5 uppercase tracking-wider">
+              <thead className="border-b border-white/10 text-neutral-400 font-mono text-[11px] bg-white/5 uppercase tracking-wider">
                 <tr>
                   <th className="p-3 sm:p-4">Metric</th>
                   <th className="p-3 sm:p-4">Legacy Proxy</th>
