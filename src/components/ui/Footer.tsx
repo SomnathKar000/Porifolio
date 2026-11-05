@@ -1,5 +1,11 @@
 import React from "react";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  GithubIcon,
+  Linkedin01Icon,
+  Mail01Icon,
+  NewTwitterIcon,
+} from "@hugeicons/core-free-icons";
 
 export const Footer: React.FC = () => {
   return (
@@ -21,7 +27,7 @@ export const Footer: React.FC = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Twitter className="w-4 h-4" />
+            <HugeiconsIcon icon={NewTwitterIcon} size={16} />
           </a>
 
           <a
@@ -31,7 +37,7 @@ export const Footer: React.FC = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Linkedin className="w-4 h-4" />
+            <HugeiconsIcon icon={Linkedin01Icon} size={16} />
           </a>
 
           <a
@@ -41,7 +47,7 @@ export const Footer: React.FC = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Github className="w-4 h-4" />
+            <HugeiconsIcon icon={GithubIcon} size={16} />
           </a>
 
           <a
@@ -49,11 +55,10 @@ export const Footer: React.FC = () => {
             className="hover:text-white transition-colors duration-150 p-1"
             href="mailto:somnathkar2023@gmail.com"
           >
-            <Mail className="w-4 h-4" />
+            <HugeiconsIcon icon={Mail01Icon} size={16} />
           </a>
         </div>
       </div>
     </footer>
   );
 };
-

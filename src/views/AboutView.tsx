@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Layers, Cloud } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowUpRight01Icon,
+  Layers01Icon,
+  CloudIcon,
+} from "@hugeicons/core-free-icons";
 import { Badge } from "../components/ui/Badge";
 import { DottedRow } from "../components/ui/DottedRow";
 import { LeafletMap } from "../components/ui/LeafletMap";
@@ -78,7 +83,7 @@ export const AboutView: React.FC = () => {
             className="group text-text-dim hover:text-white transition-colors flex items-center gap-1"
           >
             somnathkar2023@gmail.com
-            <ArrowUpRight className="w-3.5 h-3.5 text-text-dim arrow-redirect" />
+            <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-text-dim arrow-redirect" />
           </Link>
         </div>
       </section>
@@ -101,7 +106,7 @@ export const AboutView: React.FC = () => {
               <div className="flex flex-col gap-1">
                 <h3 className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors flex items-center gap-1.5">
                   Vortex — Direct-to-S3 Multipart Upload Pipeline
-                  <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
+                  <HugeiconsIcon icon={ArrowUpRight01Icon} size={16} className="text-text-dim arrow-redirect" />
                 </h3>
                 <p className="text-xs text-neutral-400 leading-relaxed">
                   Bypassing application servers using presigned multipart URLs,
@@ -131,7 +136,7 @@ export const AboutView: React.FC = () => {
                     className="inline-flex items-center"
                     aria-label="View on GitHub"
                   >
-                    <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
+                    <HugeiconsIcon icon={ArrowUpRight01Icon} size={16} className="text-text-dim arrow-redirect" />
                   </a>
                 </h3>
                 <p className="text-xs text-neutral-400 leading-relaxed">
@@ -162,7 +167,7 @@ export const AboutView: React.FC = () => {
                     className="inline-flex items-center"
                     aria-label="Live Demo"
                   >
-                    <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
+                    <HugeiconsIcon icon={ArrowUpRight01Icon} size={16} className="text-text-dim arrow-redirect" />
                   </a>
                 </h3>
                 <p className="text-xs text-neutral-400 leading-relaxed">
@@ -382,7 +387,7 @@ export const AboutView: React.FC = () => {
           {/* Frontend Stack */}
           <div className="p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover flex flex-col gap-3">
             <div className="flex items-center gap-2">
-              <Layers className="w-4 h-4 text-neutral-400" />
+              <HugeiconsIcon icon={Layers01Icon} size={16} className="text-neutral-400" />
               <h3 className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider font-medium">
                 Frontend Architecture
               </h3>
@@ -412,7 +417,7 @@ export const AboutView: React.FC = () => {
           {/* Backend & Cloud Stack */}
           <div className="p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover flex flex-col gap-3">
             <div className="flex items-center gap-2">
-              <Cloud className="w-4 h-4 text-neutral-400" />
+              <HugeiconsIcon icon={CloudIcon} size={16} className="text-neutral-400" />
               <h3 className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider font-medium">
                 Backend & Cloud
               </h3>

@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, Link2, Check, Zap, Server, ShieldCheck } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ArrowLeft01Icon,
+  Link01Icon,
+  Tick01Icon,
+  FlashIcon,
+  ServerIcon,
+  ShieldCheckIcon,
+} from "@hugeicons/core-free-icons";
 import { BlogPosts, SampleCaseStudy } from "../data/blogData";
 
 export const CaseStudyView: React.FC = () => {
@@ -24,7 +32,7 @@ export const CaseStudyView: React.FC = () => {
           to="/blog"
           className="inline-flex items-center gap-2 text-xs font-medium text-text-muted hover:text-white transition-colors"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <HugeiconsIcon icon={ArrowLeft01Icon} size={16} />
           Back to all writing
         </Link>
 
@@ -34,12 +42,12 @@ export const CaseStudyView: React.FC = () => {
         >
           {copied ? (
             <>
-              <Check className="w-3.5 h-3.5 text-emerald-400" />
+              <HugeiconsIcon icon={Tick01Icon} size={14} className="text-emerald-400" />
               <span className="text-emerald-400">Link copied</span>
             </>
           ) : (
             <>
-              <Link2 className="w-3.5 h-3.5 text-neutral-400" />
+              <HugeiconsIcon icon={Link01Icon} size={14} className="text-neutral-400" />
               <span>Share</span>
             </>
           )}
@@ -52,7 +60,7 @@ export const CaseStudyView: React.FC = () => {
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 pb-8 border-b border-neutral-100">
             <div>
               <div className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center text-white mb-3 shadow-md shadow-blue-500/30">
-                <Zap className="w-5 h-5" />
+                <HugeiconsIcon icon={FlashIcon} size={20} />
               </div>
               <h2 className="text-3xl font-extrabold tracking-tight text-neutral-950">
                 {data.tagline}
@@ -65,7 +73,7 @@ export const CaseStudyView: React.FC = () => {
             {/* Mock Ingestion Widget */}
             <div className="bg-neutral-50 rounded-xl p-4 border border-neutral-200 w-full md:w-64 text-xs space-y-2.5">
               <div className="font-semibold text-neutral-800 flex items-center gap-1.5">
-                <Server className="w-3.5 h-3.5 text-blue-600" />
+                <HugeiconsIcon icon={ServerIcon} size={14} className="text-blue-600" />
                 Chunked Ingestion Buffer
               </div>
               <div className="text-neutral-500 text-[11px] leading-snug">
@@ -85,7 +93,7 @@ export const CaseStudyView: React.FC = () => {
           {/* Interactive Tokens / Verification Pills */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
             <div className="p-2.5 bg-neutral-100 rounded-lg flex items-center gap-2 text-neutral-700">
-              <ShieldCheck className="w-3.5 h-3.5 text-neutral-500" />
+              <HugeiconsIcon icon={ShieldCheckIcon} size={14} className="text-neutral-500" />
               <span className="truncate text-[11px]">SHA-256 Payload Hash</span>
             </div>
             <div className="p-2.5 bg-blue-50 border border-blue-100 text-blue-700 rounded-lg flex items-center gap-2">

@@ -1,5 +1,6 @@
 import React from "react";
-import { Cpu, CheckCircle2 } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { CpuIcon, CheckmarkCircle02Icon } from "@hugeicons/core-free-icons";
 import { Contextvalues } from "../context/context";
 import { Skills } from "../utils/constants";
 
@@ -13,7 +14,7 @@ const SkillsComponent: React.FC = () => {
     >
       <div className="text-center max-w-2xl mx-auto mb-14">
         <div className="inline-flex p-3 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 mb-4 border border-emerald-200/50 dark:border-emerald-800/50">
-          <Cpu className="w-8 h-8" />
+          <HugeiconsIcon icon={CpuIcon} size={32} />
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
           Skills & Technologies
@@ -30,7 +31,11 @@ const SkillsComponent: React.FC = () => {
             key={skill}
             className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl border border-zinc-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800/70 shadow-sm hover:shadow transition-all group"
           >
-            <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 group-hover:scale-110 transition-transform" />
+            <HugeiconsIcon
+              icon={CheckmarkCircle02Icon}
+              size={16}
+              className="text-emerald-500 shrink-0 group-hover:scale-110 transition-transform"
+            />
             <span className="text-xs sm:text-sm font-medium text-zinc-800 dark:text-zinc-200 truncate">
               {skill}
             </span>
@@ -42,4 +47,3 @@ const SkillsComponent: React.FC = () => {
 };
 
 export default SkillsComponent;
-

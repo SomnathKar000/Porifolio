@@ -1,10 +1,11 @@
 import React from "react";
+import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  Github,
-  Linkedin,
-  Twitter,
-  Facebook,
-} from "lucide-react";
+  GithubIcon,
+  Linkedin01Icon,
+  NewTwitterIcon,
+  Facebook01Icon,
+} from "@hugeicons/core-free-icons";
 import LeetCodeWhite from "../assets/LeetCodeWhite.svg";
 import LeetCodeBlack from "../assets/LeetCodeBlack.svg";
 import { Project, SocialAccount, TimelineItem, ThemeMode } from "../types";
@@ -27,7 +28,13 @@ export const getAccounts = (mode: ThemeMode): SocialAccount[] => {
     {
       name: "GitHub",
       link: "https://github.com/SomnathKar000",
-      icon: <Github className="w-6 h-6 hover:text-black dark:hover:text-white transition-colors" />,
+      icon: (
+        <HugeiconsIcon
+          icon={GithubIcon}
+          size={24}
+          className="hover:text-black dark:hover:text-white transition-colors"
+        />
+      ),
     },
     {
       name: "LeetCode",
@@ -43,17 +50,35 @@ export const getAccounts = (mode: ThemeMode): SocialAccount[] => {
     {
       name: "LinkedIn",
       link: "https://www.linkedin.com/in/somnath-kar-aa73aa1a3/",
-      icon: <Linkedin className="w-6 h-6 text-[#0072b1] hover:brightness-110 transition-all" />,
+      icon: (
+        <HugeiconsIcon
+          icon={Linkedin01Icon}
+          size={24}
+          className="text-[#0072b1] hover:brightness-110 transition-all"
+        />
+      ),
     },
     {
       name: "Twitter",
       link: "https://twitter.com/Somnathkar000",
-      icon: <Twitter className="w-6 h-6 text-[#00acee] hover:brightness-110 transition-all" />,
+      icon: (
+        <HugeiconsIcon
+          icon={NewTwitterIcon}
+          size={24}
+          className="text-[#00acee] hover:brightness-110 transition-all"
+        />
+      ),
     },
     {
       name: "Facebook",
       link: "https://www.facebook.com/somnathkar000",
-      icon: <Facebook className="w-6 h-6 text-[#3b5998] hover:brightness-110 transition-all" />,
+      icon: (
+        <HugeiconsIcon
+          icon={Facebook01Icon}
+          size={24}
+          className="text-[#3b5998] hover:brightness-110 transition-all"
+        />
+      ),
     },
     {
       name: "Reddit",

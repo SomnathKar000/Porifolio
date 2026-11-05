@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  SentIcon,
+  CheckmarkCircle02Icon,
+  AlertCircleIcon,
+  Loading03Icon,
+} from "@hugeicons/core-free-icons";
 import { Contextvalues } from "../context/context";
 
 interface FormData {
@@ -156,12 +162,12 @@ const Contact: React.FC = () => {
         >
           {isSubmitting ? (
             <>
-              <Loader2 className="w-4 h-4 animate-spin" />
+              <HugeiconsIcon icon={Loading03Icon} size={16} className="animate-spin" />
               Sending message...
             </>
           ) : (
             <>
-              <Send className="w-4 h-4" />
+              <HugeiconsIcon icon={SentIcon} size={16} />
               Send Message
             </>
           )}
@@ -181,10 +187,10 @@ const Contact: React.FC = () => {
             }`}
           >
             {toast.type === "success" && (
-              <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <HugeiconsIcon icon={CheckmarkCircle02Icon} size={20} className="text-emerald-500 shrink-0 mt-0.5" />
             )}
             {toast.type === "error" && (
-              <AlertCircle className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
+              <HugeiconsIcon icon={AlertCircleIcon} size={20} className="text-rose-500 shrink-0 mt-0.5" />
             )}
             <p className="text-sm font-medium leading-snug">{toast.message}</p>
           </div>

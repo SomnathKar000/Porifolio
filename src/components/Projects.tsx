@@ -1,5 +1,10 @@
 import React from "react";
-import { Github, ExternalLink, FolderGit2 } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  GithubIcon,
+  ArrowUpRight01Icon,
+  FolderGit2Icon,
+} from "@hugeicons/core-free-icons";
 import { Contextvalues } from "../context/context";
 import { ProjectDetails } from "../utils/constants";
 
@@ -13,7 +18,7 @@ const Projects: React.FC = () => {
     >
       <div className="text-center max-w-2xl mx-auto mb-14">
         <div className="inline-flex p-3 rounded-2xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 mb-4 border border-blue-200/50 dark:border-blue-800/50">
-          <FolderGit2 className="w-8 h-8" />
+          <HugeiconsIcon icon={FolderGit2Icon} size={32} />
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
           Apps I've Built
@@ -46,7 +51,7 @@ const Projects: React.FC = () => {
                       rel="noreferrer"
                       className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-zinc-900 hover:bg-zinc-100 inline-flex items-center gap-1.5 shadow-md"
                     >
-                      <ExternalLink className="w-3.5 h-3.5" />
+                      <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} />
                       Live Demo
                     </a>
                   )}
@@ -57,7 +62,7 @@ const Projects: React.FC = () => {
                       rel="noreferrer"
                       className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 text-white hover:bg-zinc-800 inline-flex items-center gap-1.5 shadow-md"
                     >
-                      <Github className="w-3.5 h-3.5" />
+                      <HugeiconsIcon icon={GithubIcon} size={14} />
                       Code
                     </a>
                   )}
@@ -80,7 +85,7 @@ const Projects: React.FC = () => {
                       aria-label={`${project.name} GitHub Repository`}
                       className="p-1.5 rounded-lg text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
                     >
-                      <Github className="w-4 h-4" />
+                      <HugeiconsIcon icon={GithubIcon} size={16} />
                     </a>
                   )}
                   {project.websiteLink && (
@@ -91,7 +96,7 @@ const Projects: React.FC = () => {
                       aria-label={`${project.name} Live Demo`}
                       className="p-1.5 rounded-lg text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <HugeiconsIcon icon={ArrowUpRight01Icon} size={16} />
                     </a>
                   )}
                 </div>
@@ -125,7 +130,7 @@ const Projects: React.FC = () => {
           rel="noreferrer"
           className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-sm text-zinc-800 dark:text-zinc-200 bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 border border-zinc-300/80 dark:border-zinc-700/80 shadow-sm transition-all active:scale-95"
         >
-          <Github className="w-4 h-4" />
+          <HugeiconsIcon icon={GithubIcon} size={16} />
           View more projects on GitHub
         </a>
       </div>
@@ -134,4 +139,3 @@ const Projects: React.FC = () => {
 };
 
 export default Projects;
-

@@ -1,5 +1,10 @@
 import React from "react";
-import { Download, ArrowRight, Mail } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  Download01Icon,
+  ArrowRight01Icon,
+  Mail01Icon,
+} from "@hugeicons/core-free-icons";
 import { Contextvalues } from "../context/context";
 import { getAccounts } from "../utils/constants";
 
@@ -85,14 +90,14 @@ const About: React.FC = () => {
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm text-white bg-blue-600 hover:bg-blue-500 active:scale-95 shadow-md hover:shadow-blue-500/25 transition-all"
             >
               See my projects
-              <ArrowRight className="w-4 h-4" />
+              <HugeiconsIcon icon={ArrowRight01Icon} size={16} />
             </button>
 
             <button
               onClick={() => ViewPage(contactRef)}
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm text-zinc-800 dark:text-zinc-200 bg-zinc-100 dark:bg-zinc-800/80 hover:bg-zinc-200 dark:hover:bg-zinc-700/80 active:scale-95 border border-zinc-300/80 dark:border-zinc-700/80 transition-all"
             >
-              <Mail className="w-4 h-4" />
+              <HugeiconsIcon icon={Mail01Icon} size={16} />
               Contact me
             </button>
 
@@ -104,7 +109,7 @@ const About: React.FC = () => {
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-medium text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-all"
               >
-                <Download className="w-4 h-4" />
+                <HugeiconsIcon icon={Download01Icon} size={16} />
                 Resume
               </a>
             )}

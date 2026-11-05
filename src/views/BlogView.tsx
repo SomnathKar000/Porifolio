@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
 import { BlogPosts } from "../data/blogData";
 
 export const BlogView: React.FC = () => {
@@ -69,7 +70,7 @@ export const BlogView: React.FC = () => {
                     <span className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors duration-150">
                       {post.title}
                     </span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-text-dim opacity-0 group-hover:opacity-100 arrow-redirect shrink-0 hidden sm:inline-block" />
+                    <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-text-dim opacity-0 group-hover:opacity-100 arrow-redirect shrink-0 hidden sm:inline-block" />
                   </div>
                   <p className="text-xs text-text-muted font-normal mt-1 leading-relaxed line-clamp-1">
                     {post.summary}
