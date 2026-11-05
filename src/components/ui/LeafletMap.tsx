@@ -19,11 +19,15 @@ export const LeafletMap: React.FC<LeafletMapProps> = ({ className = "" }) => {
       mapInstanceRef.current = null;
     }
 
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+
     // Initialize Leaflet map centered at Kolkata, West Bengal, India
     const map = L.map(mapContainerRef.current, {
       center: [22.5726, 88.3639],
       zoom: 12,
       scrollWheelZoom: false, // Prevent page scroll hijack
+      dragging: !isMobile, // Prevent single-finger scroll trap on mobile devices
+      touchZoom: true,
       zoomControl: false, // Custom position added below
       attributionControl: true,
     });
@@ -65,7 +69,7 @@ export const LeafletMap: React.FC<LeafletMapProps> = ({ className = "" }) => {
     marker.bindPopup(
       `<div style="font-family: Inter, sans-serif; padding: 2px;">
         <div style="color: #ffffff; font-weight: 600; font-size: 13px; letter-spacing: -0.01em;">Kolkata, India</div>
-        <div style="color: #8b8d98; font-size: 11px; font-family: monospace; margin-top: 3px;">22.5726° N, 88.3639° E · UTC+5:30</div>
+        <div style="color: #9ca3af; font-size: 11px; font-family: monospace; margin-top: 3px;">22.5726° N, 88.3639° E · UTC+5:30</div>
       </div>`,
       { className: "custom-leaflet-popup" }
     );
@@ -85,18 +89,17 @@ export const LeafletMap: React.FC<LeafletMapProps> = ({ className = "" }) => {
   return (
     <div className={`relative w-full rounded-xl overflow-hidden border border-white/[0.08] bg-[#121315] shadow-md ${className}`}>
       {/* Map container */}
-      <div ref={mapContainerRef} className="w-full h-full min-h-[260px] sm:min-h-[290px] z-0" />
+      <div ref={mapContainerRef} className="w-full h-full min-h-[200px] sm:min-h-[280px] z-0" />
 
       {/* Top Floating Glass Badge */}
       <div className="absolute top-3 left-3 z-[400] pointer-events-none">
-        <div className="flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#0d0e11]/85 backdrop-blur-md border border-white/10 text-xs font-mono text-text-dim shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span className="text-neutral-200">KOLKATA, IN</span>
+        <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 rounded-md bg-[#0d0e11]/85 backdrop-blur-md border border-white/10 text-[11px] sm:text-xs font-mono shadow-sm max-w-[calc(100%-24px)]">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+          <span className="text-neutral-200 font-medium shrink-0">KOLKATA, IN</span>
           <span className="text-white/20">|</span>
-          <span className="text-[11px] text-text-dim">22.57° N, 88.36° E</span>
+          <span className="text-[10px] sm:text-[11px] text-neutral-400 truncate">22.57° N, 88.36° E</span>
         </div>
       </div>
     </div>
   );
 };
-

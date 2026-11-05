@@ -450,24 +450,24 @@ export const AboutView: React.FC = () => {
       </section>
 
       {/* "Now" & Cartographic Map Section */}
-      <section className="flex flex-col gap-6 pt-4 border-t border-white/[0.08]">
+      <section className="flex flex-col gap-5 sm:gap-6 pt-4 border-t border-white/[0.08]">
         <div className="flex items-center justify-between">
           <h2 className="text-xl sm:text-2xl font-semibold text-neutral-200 tracking-tight">
             Now
           </h2>
         </div>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-4 sm:gap-5">
           <p className="text-sm text-neutral-400 leading-relaxed">
             Architecting next-generation distributed systems, exploring event-driven
             patterns, and crafting refined minimal web interfaces.
           </p>
 
           {/* Leaflet Dark Cartographic Map (Kolkata) */}
-          <LeafletMap className="h-64 sm:h-72" />
+          <LeafletMap className="h-52 sm:h-72" />
 
           {/* Dotted Leader Info List */}
-          <div className="flex flex-col gap-3 pt-2">
+          <div className="flex flex-col divide-y divide-white/[0.05] sm:divide-y-0 sm:gap-3 pt-1 sm:pt-2">
             <DottedRow label="Location" value="Kolkata, West Bengal, India" />
             <DottedRow
               label="Learning"
@@ -479,7 +479,12 @@ export const AboutView: React.FC = () => {
             />
             <DottedRow
               label="Availability"
-              value="Open for select roles (Remote / Hybrid)"
+              value={
+                <span className="inline-flex items-center gap-1.5 sm:gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                  <span>Open for select roles (Remote / Hybrid)</span>
+                </span>
+              }
             />
           </div>
         </div>
