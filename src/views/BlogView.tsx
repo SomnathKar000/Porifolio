@@ -22,16 +22,16 @@ export const BlogView: React.FC = () => {
   return (
     <div className="w-full max-w-2xl mx-auto px-6 pt-6 pb-24">
       {/* Section Heading */}
-      <div className="mb-10">
-        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-200 mb-2.5">
+      <div className="mb-8 sm:mb-10">
+        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-200 mb-2 sm:mb-2.5">
           Blog
         </h1>
-        <p className="text-sm text-text-muted font-normal leading-relaxed max-w-xl">
+        <p className="text-xs sm:text-sm text-neutral-400 font-normal leading-relaxed max-w-xl">
           Thoughts on distributed architecture, high-concurrency systems, and calm interface craft.
         </p>
 
         {/* Category Filter Pills */}
-        <div className="flex items-center gap-2 mt-6 overflow-x-auto pb-1 text-xs">
+        <div className="flex items-center gap-2 mt-5 sm:mt-6 overflow-x-auto sm:flex-wrap no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 py-1 text-xs">
           {categories.map((category) => {
             const count =
               category === "All"
@@ -42,13 +42,22 @@ export const BlogView: React.FC = () => {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-3 py-1 rounded-full text-xs font-medium transition-all shrink-0 ${
+                className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all shrink-0 active:scale-95 cursor-pointer ${
                   isSelected
                     ? "bg-[#25272e] text-white border border-white/20 shadow-sm"
-                    : "text-text-muted hover:text-white border border-white/5 hover:border-white/15 hover:bg-[#15161b]"
+                    : "text-neutral-400 hover:text-white border border-white/[0.06] hover:border-white/15 hover:bg-[#15161b]"
                 }`}
               >
-                {category} ({count})
+                <span>{category}</span>
+                <span
+                  className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${
+                    isSelected
+                      ? "bg-white/15 text-white"
+                      : "bg-white/[0.06] text-neutral-400"
+                  }`}
+                >
+                  {count}
+                </span>
               </button>
             );
           })}
@@ -70,13 +79,13 @@ export const BlogView: React.FC = () => {
                     <span className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors duration-150">
                       {post.title}
                     </span>
-                    <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-text-dim opacity-0 group-hover:opacity-100 arrow-redirect shrink-0 hidden sm:inline-block" />
+                    <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-neutral-500 opacity-0 group-hover:opacity-100 arrow-redirect shrink-0 hidden sm:inline-block" />
                   </div>
-                  <p className="text-xs text-text-muted font-normal mt-1 leading-relaxed line-clamp-1">
+                  <p className="text-xs text-neutral-400 font-normal mt-1 leading-relaxed line-clamp-1">
                     {post.summary}
                   </p>
                 </div>
-                <div className="flex items-center gap-1.5 text-xs text-text-dim shrink-0 whitespace-nowrap mt-1 sm:mt-0 font-mono group-hover:text-text-muted transition-colors">
+                <div className="flex items-center gap-1.5 text-xs text-neutral-400 shrink-0 whitespace-nowrap mt-1 sm:mt-0 font-mono group-hover:text-neutral-200 transition-colors">
                   <span>{post.readTime}</span>
                   <span>·</span>
                   <time>{post.date}</time>

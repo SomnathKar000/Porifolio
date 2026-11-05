@@ -17,7 +17,7 @@ export const AboutView: React.FC = () => {
     "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/247098543-58155098-8559-40cc-b52c-0d3ebaa0b914.jpeg";
 
   return (
-    <div className="w-full max-w-[680px] mx-auto px-6 pb-24 flex flex-col gap-14">
+    <div className="w-full max-w-[680px] mx-auto px-6 pb-12 flex flex-col gap-14">
       {/* Bio / Intro Section */}
       <section className="flex flex-col gap-5 sm:gap-6 pt-2 sm:pt-4">
         <div className="flex items-start sm:items-center justify-between gap-4 sm:gap-6">
@@ -26,9 +26,13 @@ export const AboutView: React.FC = () => {
               Somnath
             </h1>
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-neutral-400">
-              <span className="text-neutral-300 font-medium">Full-Stack Engineer & Systems Architect</span>
+              <span className="text-neutral-300 font-medium">
+                Full-Stack Engineer & Systems Architect
+              </span>
               <span className="hidden sm:inline w-1 h-1 rounded-full bg-neutral-600"></span>
-              <span className="text-neutral-400 font-mono text-[11px] sm:text-xs">Kolkata, India (Remote)</span>
+              <span className="text-neutral-400 font-mono text-[11px] sm:text-xs">
+                Kolkata, India (Remote)
+              </span>
             </div>
           </div>
           <div className="relative shrink-0">
@@ -46,8 +50,9 @@ export const AboutView: React.FC = () => {
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
             I'm a full-stack engineer and systems architect focused on building
             high-throughput web applications with the MERN stack (MongoDB,
-            Express, React, Node.js) and resilient AWS cloud architectures. I enjoy
-            turning complex data pipelines into intuitive, calm interfaces.
+            Express, React, Node.js) and resilient AWS cloud architectures. I
+            enjoy turning complex data pipelines into intuitive, calm
+            interfaces.
           </p>
           <p className="text-sm text-neutral-300 leading-relaxed">
             Currently engineering production systems at{" "}
@@ -83,7 +88,11 @@ export const AboutView: React.FC = () => {
             className="group text-neutral-400 hover:text-white transition-colors flex items-center gap-1.5 py-0.5"
           >
             <span className="truncate">somnathkar2023@gmail.com</span>
-            <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-neutral-400 group-hover:text-white transition-colors shrink-0 arrow-redirect" />
+            <HugeiconsIcon
+              icon={ArrowUpRight01Icon}
+              size={14}
+              className="text-neutral-400 group-hover:text-white transition-colors shrink-0 arrow-redirect"
+            />
           </Link>
         </div>
       </section>
@@ -106,11 +115,16 @@ export const AboutView: React.FC = () => {
               <div className="flex flex-col gap-1">
                 <h3 className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors flex items-center gap-1.5">
                   Vortex — Direct-to-S3 Multipart Upload Pipeline
-                  <HugeiconsIcon icon={ArrowUpRight01Icon} size={16} className="text-text-dim arrow-redirect" />
+                  <HugeiconsIcon
+                    icon={ArrowUpRight01Icon}
+                    size={16}
+                    className="text-text-dim arrow-redirect"
+                  />
                 </h3>
                 <p className="text-xs text-neutral-400 leading-relaxed">
                   Bypassing application servers using presigned multipart URLs,
-                  SHA-256 integrity verification, and zero proxy memory saturation.
+                  SHA-256 integrity verification, and zero proxy memory
+                  saturation.
                 </p>
               </div>
             </div>
@@ -136,12 +150,17 @@ export const AboutView: React.FC = () => {
                     className="inline-flex items-center"
                     aria-label="View on GitHub"
                   >
-                    <HugeiconsIcon icon={ArrowUpRight01Icon} size={16} className="text-text-dim arrow-redirect" />
+                    <HugeiconsIcon
+                      icon={ArrowUpRight01Icon}
+                      size={16}
+                      className="text-text-dim arrow-redirect"
+                    />
                   </a>
                 </h3>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  A high-concurrency digital store with session storage, idempotent
-                  RESTful webhook handling, and inventory consistency.
+                  A high-concurrency digital store with session storage,
+                  idempotent RESTful webhook handling, and inventory
+                  consistency.
                 </p>
               </div>
             </div>
@@ -167,12 +186,16 @@ export const AboutView: React.FC = () => {
                     className="inline-flex items-center"
                     aria-label="Live Demo"
                   >
-                    <HugeiconsIcon icon={ArrowUpRight01Icon} size={16} className="text-text-dim arrow-redirect" />
+                    <HugeiconsIcon
+                      icon={ArrowUpRight01Icon}
+                      size={16}
+                      className="text-text-dim arrow-redirect"
+                    />
                   </a>
                 </h3>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Multi-tier storage with encrypted file sharing, DynamoDB session
-                  persistence, and AWS Lambda serverless execution.
+                  Multi-tier storage with encrypted file sharing, DynamoDB
+                  session persistence, and AWS Lambda serverless execution.
                 </p>
               </div>
             </div>
@@ -259,7 +282,9 @@ export const AboutView: React.FC = () => {
                               loading="lazy"
                               className="w-full h-32 sm:h-36 object-cover object-top transition-transform duration-300 group-hover/preview:scale-[1.02]"
                               onError={(e) => {
-                                const container = e.currentTarget.closest(".absolute") as HTMLElement;
+                                const container = e.currentTarget.closest(
+                                  ".absolute",
+                                ) as HTMLElement;
                                 if (container) container.style.display = "none";
                               }}
                             />
@@ -272,7 +297,9 @@ export const AboutView: React.FC = () => {
                               loading="lazy"
                               className="w-full h-32 sm:h-36 object-cover object-top"
                               onError={(e) => {
-                                const container = e.currentTarget.closest(".absolute") as HTMLElement;
+                                const container = e.currentTarget.closest(
+                                  ".absolute",
+                                ) as HTMLElement;
                                 if (container) container.style.display = "none";
                               }}
                             />
@@ -337,9 +364,11 @@ export const AboutView: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Building scalable MERN applications with integrated cloud infrastructure.
-                  Architected direct S3 multipart upload pipelines boosting asset delivery
-                  efficiency by 35%. Implemented robust scheduling engines and idempotent caching layers.
+                  Building scalable MERN applications with integrated cloud
+                  infrastructure. Architected direct S3 multipart upload
+                  pipelines boosting asset delivery efficiency by 35%.
+                  Implemented robust scheduling engines and idempotent caching
+                  layers.
                 </p>
               </div>
             </div>
@@ -366,8 +395,9 @@ export const AboutView: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Graduated with CGPA 9.09. Rigorous curriculum across Data Structures,
-                  Algorithms, Database Management Systems, Computer Networks, and Cloud Computing.
+                  Graduated with CGPA 9.09. Rigorous curriculum across Data
+                  Structures, Algorithms, Database Management Systems, Computer
+                  Networks, and Cloud Computing.
                 </p>
               </div>
             </div>
@@ -387,7 +417,11 @@ export const AboutView: React.FC = () => {
           {/* Frontend Stack */}
           <div className="p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover flex flex-col gap-3">
             <div className="flex items-center gap-2">
-              <HugeiconsIcon icon={Layers01Icon} size={16} className="text-neutral-400" />
+              <HugeiconsIcon
+                icon={Layers01Icon}
+                size={16}
+                className="text-neutral-400"
+              />
               <h3 className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider font-medium">
                 Frontend Architecture
               </h3>
@@ -417,7 +451,11 @@ export const AboutView: React.FC = () => {
           {/* Backend & Cloud Stack */}
           <div className="p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover flex flex-col gap-3">
             <div className="flex items-center gap-2">
-              <HugeiconsIcon icon={CloudIcon} size={16} className="text-neutral-400" />
+              <HugeiconsIcon
+                icon={CloudIcon}
+                size={16}
+                className="text-neutral-400"
+              />
               <h3 className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider font-medium">
                 Backend & Cloud
               </h3>
@@ -459,8 +497,8 @@ export const AboutView: React.FC = () => {
 
         <div className="flex flex-col gap-4 sm:gap-5">
           <p className="text-sm text-neutral-400 leading-relaxed">
-            Architecting next-generation distributed systems, exploring event-driven
-            patterns, and crafting refined minimal web interfaces.
+            Architecting next-generation distributed systems, exploring
+            event-driven patterns, and crafting refined minimal web interfaces.
           </p>
 
           {/* Leaflet Dark Cartographic Map (Kolkata) */}

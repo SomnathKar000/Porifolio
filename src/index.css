@@ -114,6 +114,15 @@
     border: none !important;
   }
 
+  /* Hide scrollbar for Chrome, Safari, Opera and Firefox/Edge */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   .leaflet-popup-content-wrapper {
     background: #14151a !important;
     color: #ffffff !important;
