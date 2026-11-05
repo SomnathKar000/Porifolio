@@ -1,50 +1,77 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { TabBar, TabBarItem } from "glisse";
+
+interface RouterLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  href?: string;
+  to?: string;
+}
+
+const RouterLink = React.forwardRef<HTMLAnchorElement, RouterLinkProps>(
+  ({ href, to, onClick, children, ...props }, ref) => {
+    const destination = to || href || "/";
+    return (
+      <Link
+        ref={ref}
+        to={destination}
+        onClick={(e) => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          onClick?.(e);
+        }}
+        {...props}
+      >
+        {children}
+      </Link>
+    );
+  }
+);
+
+RouterLink.displayName = "RouterLink";
 
 export const NavbarCapsule: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const pathname = location.pathname;
 
-  const tabs = [
+  const currentTab = pathname.startsWith("/blog")
+    ? "/blog"
+    : pathname === "/contact"
+    ? "/contact"
+    : "/";
+
+  const tabs: TabBarItem[] = [
     {
-      to: "/",
+      value: "/",
       label: "About",
-      isActive: pathname === "/" || pathname === "/about",
+      href: "/",
     },
     {
-      to: "/blog",
+      value: "/blog",
       label: "Blog",
-      isActive: pathname.startsWith("/blog"),
+      href: "/blog",
     },
     {
-      to: "/contact",
+      value: "/contact",
       label: "Contact",
-      isActive: pathname === "/contact",
+      href: "/contact",
     },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
       <div className="h-20 max-w-4xl mx-auto px-6 flex items-center pointer-events-auto justify-center">
-        <nav
-          className="h-11 px-1.5 bg-[#181a1f]/85 backdrop-blur-2xl rounded-full flex items-center gap-1 shadow-[0_8px_32px_-4px_rgba(0,0,0,0.6)] border border-white/10"
-          aria-label="Site Navigation"
-        >
-          {tabs.map((tab) => (
-            <Link
-              key={tab.to}
-              to={tab.to}
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-150 ${
-                tab.isActive
-                  ? "bg-[#292a2c] text-white shadow-sm border border-white/15"
-                  : "text-neutral-400 hover:text-white hover:bg-white/5"
-              }`}
-            >
-              {tab.label}
-            </Link>
-          ))}
-        </nav>
+        <TabBar
+          value={currentTab}
+          onValueChange={(val) => {
+            if (val && val !== currentTab) {
+              navigate(val);
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          items={tabs}
+          link={RouterLink}
+          className="shadow-[0_8px_32px_-4px_rgba(0,0,0,0.6)] border border-white/10"
+        />
       </div>
     </header>
   );
