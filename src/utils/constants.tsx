@@ -2,7 +2,7 @@ import React from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   GithubIcon,
-  Linkedin01Icon,
+  Linkedin02Icon,
   NewTwitterIcon,
   Facebook01Icon,
 } from "@hugeicons/core-free-icons";
@@ -52,7 +52,7 @@ export const getAccounts = (mode: ThemeMode): SocialAccount[] => {
       link: "https://www.linkedin.com/in/somnath-kar-aa73aa1a3/",
       icon: (
         <HugeiconsIcon
-          icon={Linkedin01Icon}
+          icon={Linkedin02Icon}
           size={24}
           className="text-[#0072b1] hover:brightness-110 transition-all"
         />
@@ -83,7 +83,9 @@ export const getAccounts = (mode: ThemeMode): SocialAccount[] => {
     {
       name: "Reddit",
       link: "https://www.reddit.com/user/Somnath000",
-      icon: <RedditIcon className="w-6 h-6 text-[#FF4300] hover:brightness-110 transition-all" />,
+      icon: (
+        <RedditIcon className="w-6 h-6 text-[#FF4300] hover:brightness-110 transition-all" />
+      ),
     },
   ];
 };
@@ -194,4 +196,3 @@ export const TimelineEvents: TimelineItem[] = [
     type: "work",
   },
 ];
-
