@@ -86,10 +86,9 @@ export const AboutView: React.FC = () => {
       {/* Highlights Section */}
       <section className="flex flex-col gap-6" id="highlights">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm sm:text-base font-medium text-text-muted tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
             Highlights
           </h2>
-          <span className="text-[11px] text-text-dim font-mono">FEATURED CASE STUDIES</span>
         </div>
 
         <div className="flex flex-col gap-4">
@@ -186,12 +185,9 @@ export const AboutView: React.FC = () => {
       {/* Projects Section */}
       <section className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm sm:text-base font-medium text-text-muted tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
             Projects
           </h2>
-          <span className="text-[11px] text-text-dim font-mono">
-            {ProjectDetails.length} REPOSITORIES
-          </span>
         </div>
 
         <div className="flex flex-col gap-3.5">
@@ -309,7 +305,7 @@ export const AboutView: React.FC = () => {
       {/* Experience Section */}
       <section className="flex flex-col gap-6" id="experience">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm sm:text-base font-medium text-text-muted tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
             Experience & Education
           </h2>
         </div>
@@ -377,7 +373,7 @@ export const AboutView: React.FC = () => {
       {/* Skills & Stack Section */}
       <section className="flex flex-col gap-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm sm:text-base font-medium text-text-muted tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
             Skills & Stack
           </h2>
         </div>
@@ -451,7 +447,7 @@ export const AboutView: React.FC = () => {
       {/* "Now" & Cartographic Map Section */}
       <section className="flex flex-col gap-6 pt-4 border-t border-white/[0.08]">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm sm:text-base font-medium text-text-muted tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
             Now
           </h2>
         </div>
