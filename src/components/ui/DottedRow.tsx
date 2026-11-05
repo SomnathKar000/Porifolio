@@ -17,7 +17,7 @@ export const DottedRow: React.FC<DottedRowProps> = ({
         {label}
       </span>
       <span className="flex-1 mx-3 border-b border-dotted border-white/20 relative top-[-4px]"></span>
-      <span className="text-white font-medium shrink-0 text-right">
+      <span className="text-neutral-300 font-medium shrink-0 text-right">
         {value}
       </span>
     </div>

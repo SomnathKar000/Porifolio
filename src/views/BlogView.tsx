@@ -22,7 +22,7 @@ export const BlogView: React.FC = () => {
     <div className="w-full max-w-2xl mx-auto px-6 pt-6 pb-24">
       {/* Section Heading */}
       <div className="mb-10">
-        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white mb-2.5">
+        <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-200 mb-2.5">
           Blog
         </h1>
         <p className="text-sm text-text-muted font-normal leading-relaxed max-w-xl">

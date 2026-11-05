@@ -15,7 +15,7 @@ export const Badge: React.FC<BadgeProps> = ({
     default:
       "bg-surface-container text-text-muted border border-border-subtle",
     mono:
-      "bg-surface-container text-on-surface-variant font-mono text-[11px] sm:text-xs border border-white/5",
+      "bg-surface-container text-text-muted font-mono text-[11px] sm:text-xs border border-white/5",
     active:
       "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
     subtle:

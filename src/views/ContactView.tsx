@@ -76,7 +76,7 @@ export const ContactView: React.FC = () => {
     <div className="w-full max-w-2xl mx-auto px-6 py-6 flex flex-col gap-12">
       {/* Header */}
       <header className="flex flex-col">
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-3">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-200 mb-3">
           Contact
         </h1>
         <p className="text-sm text-text-muted leading-relaxed">

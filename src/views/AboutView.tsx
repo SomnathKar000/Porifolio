@@ -46,12 +46,12 @@ export const AboutView: React.FC = () => {
           </p>
           <p className="text-sm text-text-dim leading-relaxed">
             Currently engineering production systems at{" "}
-            <span className="text-white font-medium">
+            <span className="text-neutral-200 font-medium">
               Wiseboxs Softworks
             </span>
             , scaling cloud infrastructure and boosting client asset delivery
             efficiency by{" "}
-            <span className="text-white font-mono text-xs bg-surface-container px-1.5 py-0.5 rounded border border-white/10">
+            <span className="text-neutral-300 font-mono text-xs bg-surface-container px-1.5 py-0.5 rounded border border-white/10">
               +35%
             </span>
             .
@@ -60,7 +60,7 @@ export const AboutView: React.FC = () => {
 
         <div className="flex items-center gap-4 pt-1 text-xs sm:text-sm">
           <a
-            className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-white/80 transition-all font-medium"
+            className="text-neutral-300 hover:text-white underline decoration-white/20 underline-offset-4 hover:decoration-white/80 transition-all font-medium"
             href="#highlights"
           >
             Selected Work
@@ -86,7 +86,7 @@ export const AboutView: React.FC = () => {
       {/* Highlights Section */}
       <section className="flex flex-col gap-6" id="highlights">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-semibold text-neutral-200 tracking-tight">
             Highlights
           </h2>
         </div>
@@ -99,7 +99,7 @@ export const AboutView: React.FC = () => {
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-col gap-1">
-                <h3 className="text-[15px] font-medium text-white group-hover:text-white transition-colors flex items-center gap-1.5">
+                <h3 className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors flex items-center gap-1.5">
                   Vortex — Direct-to-S3 Multipart Upload Pipeline
                   <ArrowUpRight className="w-4 h-4 text-text-dim arrow-redirect" />
                 </h3>
@@ -122,7 +122,7 @@ export const AboutView: React.FC = () => {
           <article className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover">
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-col gap-1">
-                <h3 className="text-[15px] font-medium text-white group-hover:text-white transition-colors flex items-center gap-1.5">
+                <h3 className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors flex items-center gap-1.5">
                   Full-Stack E-Commerce & Ingress Platform
                   <a
                     href="https://github.com/SomnathKar000/Furniture-website"
@@ -153,7 +153,7 @@ export const AboutView: React.FC = () => {
           <article className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover">
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-col gap-1">
-                <h3 className="text-[15px] font-medium text-white group-hover:text-white transition-colors flex items-center gap-1.5">
+                <h3 className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors flex items-center gap-1.5">
                   CloudHive & AI Conversational Assistant
                   <a
                     href="https://cloud-hive.vercel.app"
@@ -185,7 +185,7 @@ export const AboutView: React.FC = () => {
       {/* Projects Section */}
       <section className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-semibold text-neutral-200 tracking-tight">
             Projects
           </h2>
         </div>
@@ -305,7 +305,7 @@ export const AboutView: React.FC = () => {
       {/* Experience Section */}
       <section className="flex flex-col gap-6" id="experience">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-semibold text-neutral-200 tracking-tight">
             Experience & Education
           </h2>
         </div>
@@ -373,7 +373,7 @@ export const AboutView: React.FC = () => {
       {/* Skills & Stack Section */}
       <section className="flex flex-col gap-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-semibold text-neutral-200 tracking-tight">
             Skills & Stack
           </h2>
         </div>
@@ -447,7 +447,7 @@ export const AboutView: React.FC = () => {
       {/* "Now" & Cartographic Map Section */}
       <section className="flex flex-col gap-6 pt-4 border-t border-white/[0.08]">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-semibold text-neutral-200 tracking-tight">
             Now
           </h2>
         </div>
