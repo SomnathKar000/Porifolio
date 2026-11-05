@@ -27,7 +27,7 @@ export const AboutView: React.FC = () => {
             </h1>
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-neutral-400">
               <span className="text-neutral-300 font-medium">
-                Full-Stack Engineer & Systems Architect
+                Software Engineer
               </span>
               <span className="hidden sm:inline w-1 h-1 rounded-full bg-neutral-600"></span>
               <span className="text-neutral-400 font-mono text-[11px] sm:text-xs">
@@ -48,7 +48,7 @@ export const AboutView: React.FC = () => {
 
         <div className="flex flex-col gap-3.5 sm:gap-4">
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
-            I'm a full-stack engineer and systems architect focused on building
+            I'm a software engineer focused on building
             high-throughput web applications with the MERN stack (MongoDB,
             Express, React, Node.js) and resilient AWS cloud architectures. I
             enjoy turning complex data pipelines into intuitive, calm
