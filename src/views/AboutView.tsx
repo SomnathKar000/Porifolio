@@ -19,20 +19,20 @@ export const AboutView: React.FC = () => {
   return (
     <div className="w-full max-w-[680px] mx-auto px-6 pb-24 flex flex-col gap-14">
       {/* Bio / Intro Section */}
-      <section className="flex flex-col gap-6 pt-4">
-        <div className="flex items-center justify-between gap-6">
-          <div className="flex flex-col gap-1.5">
-            <h1 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
+      <section className="flex flex-col gap-5 sm:gap-6 pt-2 sm:pt-4">
+        <div className="flex items-start sm:items-center justify-between gap-4 sm:gap-6">
+          <div className="flex flex-col gap-1 sm:gap-1.5 min-w-0">
+            <h1 className="text-2xl sm:text-4xl font-semibold text-white tracking-tight">
               Somnath
             </h1>
-            <p className="text-xs sm:text-sm text-neutral-400 flex items-center gap-2">
-              <span className="text-neutral-300">Full-Stack Engineer & Systems Architect</span>
-              <span className="w-1 h-1 rounded-full bg-surface-container-highest"></span>
-              <span className="text-neutral-400 font-mono text-xs">Kolkata, India (Remote)</span>
-            </p>
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-neutral-400">
+              <span className="text-neutral-300 font-medium">Full-Stack Engineer & Systems Architect</span>
+              <span className="hidden sm:inline w-1 h-1 rounded-full bg-neutral-600"></span>
+              <span className="text-neutral-400 font-mono text-[11px] sm:text-xs">Kolkata, India (Remote)</span>
+            </div>
           </div>
           <div className="relative shrink-0">
-            <div className="w-16 h-16 rounded-full overflow-hidden bg-surface-container-high ring-1 ring-border-subtle shadow-md hover:ring-white/30 transition-all">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-surface-container-high ring-1 ring-border-subtle shadow-md hover:ring-white/30 transition-all">
               <img
                 alt="Somnath avatar profile"
                 className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-300"
@@ -42,7 +42,7 @@ export const AboutView: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3.5 sm:gap-4">
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
             I'm a full-stack engineer and systems architect focused on building
             high-throughput web applications with the MERN stack (MongoDB,
@@ -56,34 +56,34 @@ export const AboutView: React.FC = () => {
             </span>
             , scaling cloud infrastructure and boosting client asset delivery
             efficiency by{" "}
-            <span className="text-neutral-300 font-mono text-xs bg-surface-container px-1.5 py-0.5 rounded border border-white/10">
+            <span className="inline-block text-neutral-300 font-mono text-xs bg-surface-container px-1.5 py-0.5 rounded border border-white/10 whitespace-nowrap">
               +35%
             </span>
             .
           </p>
         </div>
 
-        <div className="flex items-center gap-4 pt-1 text-xs sm:text-sm">
+        <div className="flex flex-wrap items-center gap-x-3 sm:gap-x-4 gap-y-2 pt-1 text-xs sm:text-sm">
           <a
-            className="text-neutral-300 hover:text-white underline decoration-white/20 underline-offset-4 hover:decoration-white/80 transition-all font-medium"
+            className="text-neutral-300 hover:text-white underline decoration-white/20 underline-offset-4 hover:decoration-white/80 transition-all font-medium py-0.5"
             href="#highlights"
           >
             Selected Work
           </a>
-          <span className="text-surface-container-highest">/</span>
+          <span className="text-neutral-700">/</span>
           <a
-            className="text-text-dim hover:text-white transition-colors"
+            className="text-neutral-400 hover:text-white transition-colors py-0.5"
             href="#experience"
           >
             Timeline
           </a>
-          <span className="text-surface-container-highest">/</span>
+          <span className="text-neutral-700">/</span>
           <Link
             to="/contact"
-            className="group text-text-dim hover:text-white transition-colors flex items-center gap-1"
+            className="group text-neutral-400 hover:text-white transition-colors flex items-center gap-1.5 py-0.5"
           >
-            somnathkar2023@gmail.com
-            <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-text-dim arrow-redirect" />
+            <span className="truncate">somnathkar2023@gmail.com</span>
+            <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-neutral-400 group-hover:text-white transition-colors shrink-0 arrow-redirect" />
           </Link>
         </div>
       </section>
