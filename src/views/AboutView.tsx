@@ -364,7 +364,7 @@ export const AboutView: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Engineering production web and desktop platforms. Working with Vue 3 (Composition API), Quasar, Pinia, Electron, Node.js, AdonisJS, PostgreSQL, Redis/BullMQ, and Docker. Implemented automated scheduled tasks, workday and shift timers, drag-and-drop boards, and role-based access control.
+                  Engineering production web platforms. Working with Vue 3 (Composition API), React, Quasar, Pinia, Node.js, AdonisJS, PostgreSQL, Redis/BullMQ, and Docker. Implemented automated scheduled tasks, workday and shift timers, drag-and-drop boards, and role-based access control.
                 </p>
               </div>
             </div>
@@ -422,16 +422,14 @@ export const AboutView: React.FC = () => {
             </div>
             <div className="flex flex-wrap gap-1.5">
               {[
+                "React",
                 "Vue 3 (Composition API)",
                 "Quasar",
                 "Pinia",
                 "Vuetify",
                 "Tailwind CSS",
                 "SCSS",
-                "Electron (Desktop Apps)",
                 "Infinite Scroll & Lazy Loading",
-                "Browser Camera Capture",
-                "Search & Date Filtering",
                 "Drag-and-Drop Task Boards",
                 "Multi-Step Onboarding Flows",
                 "Custom Theme System",

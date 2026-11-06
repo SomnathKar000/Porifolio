@@ -193,7 +193,7 @@ export const TimelineEvents: TimelineItem[] = [
     institution: "Wiseboxs Softworks Pvt Ltd",
     badge: "Full-time",
     description:
-      "Engineering production web and desktop platforms. Working with Vue 3 (Composition API), Quasar, Pinia, Electron, Node.js, AdonisJS, PostgreSQL, Redis/BullMQ, and Docker.",
+      "Engineering production web platforms. Working with Vue 3 (Composition API), React, Quasar, Pinia, Node.js, AdonisJS, PostgreSQL, Redis/BullMQ, and Docker.",
     type: "work",
   },
 ];
