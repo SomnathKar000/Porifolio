@@ -1,34 +1,45 @@
 import React from "react";
-import Header from "./components/Header";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Information from "./components/Information";
-import Contact from "./components/Contact";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { NavbarCapsule } from "./components/ui/NavbarCapsule";
+import { Footer } from "./components/ui/Footer";
+import { AboutView } from "./views/AboutView";
+import { BlogView } from "./views/BlogView";
+import { ContactView } from "./views/ContactView";
+import { CaseStudyView } from "./views/CaseStudyView";
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors">
-      <Header />
-      <main className="flex-1 pb-16">
-        <About />
-        <Projects />
-        <Skills />
-        <Information />
-        <Contact />
-      </main>
+    <BrowserRouter>
+      <div className="bg-[#0D0E10] text-[#e3e2e5] antialiased selection:bg-[#343537] selection:text-white min-h-screen flex flex-col font-sans">
+        {/* Floating Top Navigation Capsule */}
+        <NavbarCapsule />
 
-      <footer className="py-8 border-t border-zinc-200/60 dark:border-zinc-800/60 text-center text-xs text-zinc-500 dark:text-zinc-400">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© {new Date().getFullYear()} Somnath Kar. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            Built with React, TypeScript & Tailwind CSS
-          </p>
-        </div>
-      </footer>
-    </div>
+        {/* Routed Views */}
+        <main className="w-full pt-24 pb-12 flex-1">
+          <Routes>
+            <Route path="/" element={<AboutView />} />
+            <Route path="/about" element={<Navigate to="/" replace />} />
+            <Route path="/blog" element={<BlogView />} />
+            <Route path="/blog/:slug" element={<CaseStudyView />} />
+            <Route
+              path="/case-study"
+              element={
+                <Navigate
+                  to="/blog/designing-direct-to-s3-multipart-uploads"
+                  replace
+                />
+              }
+            />
+            <Route path="/contact" element={<ContactView />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+
+        {/* Minimalist Footer */}
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 };
 
 export default App;
-

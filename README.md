@@ -9,7 +9,7 @@ The portfolio is built as a fast, responsive Single Page Application (SPA) power
 ### Key Sections
 
 - **About**: Professional summary, key expertise (Vue.js, React, TypeScript, Firebase, Node.js), resume download, and social profiles.
-- **Projects**: Showcase of production and open-source applications (Furniture Website, CloudHive, AI ChatBot, AWS Serverless API, Gallery Website, TS Compiler Hub, etc.) with GitHub & Live Demo links.
+- **Projects**: Showcase of production and open-source applications (Furniture Website, CloudHive, AI ChatBot, AWS Serverless API, Gallery Website, etc.) with GitHub & Live Demo links.
 - **Skills**: Core engineering competencies covering frontend architectures, cloud functions, databases, CI/CD, and developer tools.
 - **Journey & Timeline**: Education and professional timeline, including Software Engineer role at Wiseboxs Softworks Pvt Ltd and B.Tech CSE (CGPA: 9.09).
 - **Contact**: Direct communication form integrated with EmailJS.

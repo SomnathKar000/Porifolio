@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Sun, Moon, Menu as MenuIcon, X } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  Sun01Icon,
+  Moon02Icon,
+  Menu01Icon,
+  Cancel01Icon,
+} from "@hugeicons/core-free-icons";
 import { Contextvalues } from "../context/context";
 
 const Header: React.FC = () => {
@@ -58,9 +64,9 @@ const Header: React.FC = () => {
             className="p-2 rounded-xl text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors border border-zinc-200/50 dark:border-zinc-800/50"
           >
             {mode === "light" ? (
-              <Moon className="w-4 h-4" />
+              <HugeiconsIcon icon={Moon02Icon} size={16} />
             ) : (
-              <Sun className="w-4 h-4 text-amber-400" />
+              <HugeiconsIcon icon={Sun01Icon} size={16} className="text-amber-400" />
             )}
           </button>
 
@@ -71,9 +77,9 @@ const Header: React.FC = () => {
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? (
-              <X className="w-5 h-5" />
+              <HugeiconsIcon icon={Cancel01Icon} size={20} />
             ) : (
-              <MenuIcon className="w-5 h-5" />
+              <HugeiconsIcon icon={Menu01Icon} size={20} />
             )}
           </button>
         </div>

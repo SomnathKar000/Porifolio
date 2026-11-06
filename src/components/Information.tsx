@@ -1,13 +1,14 @@
 import React from "react";
+import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  Briefcase,
-  GraduationCap,
-  Cake,
-  Mail,
-  Phone,
-  Download,
-  Calendar,
-} from "lucide-react";
+  Briefcase01Icon,
+  GraduationCapIcon,
+  BirthdayCakeIcon,
+  Mail01Icon,
+  Call02Icon,
+  Download01Icon,
+  Calendar03Icon,
+} from "@hugeicons/core-free-icons";
 import { TimelineEvents } from "../utils/constants";
 
 const Information: React.FC = () => {
@@ -29,12 +30,12 @@ const Information: React.FC = () => {
   const getIcon = (type: string) => {
     switch (type) {
       case "work":
-        return <Briefcase className="w-5 h-5 text-emerald-500" />;
+        return <HugeiconsIcon icon={Briefcase01Icon} size={20} className="text-emerald-500" />;
       case "education":
-        return <GraduationCap className="w-5 h-5 text-blue-500" />;
+        return <HugeiconsIcon icon={GraduationCapIcon} size={20} className="text-blue-500" />;
       case "event":
       default:
-        return <Cake className="w-5 h-5 text-amber-500" />;
+        return <HugeiconsIcon icon={BirthdayCakeIcon} size={20} className="text-amber-500" />;
     }
   };
 
@@ -42,7 +43,7 @@ const Information: React.FC = () => {
     <section className="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-zinc-200/60 dark:border-zinc-800/60">
       <div className="text-center max-w-2xl mx-auto mb-14">
         <div className="inline-flex p-3 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 mb-4 border border-indigo-200/50 dark:border-indigo-800/50">
-          <Calendar className="w-8 h-8" />
+          <HugeiconsIcon icon={Calendar03Icon} size={32} />
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
           Journey & Background
@@ -95,7 +96,7 @@ const Information: React.FC = () => {
       <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-zinc-100/70 dark:bg-zinc-900/40 border border-zinc-200/80 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
         <div className="space-y-3">
           <div className="flex items-center gap-3 text-sm text-zinc-700 dark:text-zinc-300">
-            <Mail className="w-4 h-4 text-zinc-500 shrink-0" />
+            <HugeiconsIcon icon={Mail01Icon} size={16} className="text-zinc-500 shrink-0" />
             <a
               href={`mailto:${email}`}
               className="hover:underline font-medium hover:text-blue-600 dark:hover:text-blue-400"
@@ -104,7 +105,7 @@ const Information: React.FC = () => {
             </a>
           </div>
           <div className="flex items-center gap-3 text-sm text-zinc-700 dark:text-zinc-300">
-            <Phone className="w-4 h-4 text-zinc-500 shrink-0" />
+            <HugeiconsIcon icon={Call02Icon} size={16} className="text-zinc-500 shrink-0" />
             <a
               href={`tel:${phone}`}
               className="hover:underline font-medium hover:text-blue-600 dark:hover:text-blue-400"
@@ -122,7 +123,7 @@ const Information: React.FC = () => {
             rel="noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 shadow-md hover:shadow-blue-500/25 active:scale-95 transition-all"
           >
-            <Download className="w-4 h-4" />
+            <HugeiconsIcon icon={Download01Icon} size={16} />
             Download CV
           </a>
         )}
@@ -132,4 +133,3 @@ const Information: React.FC = () => {
 };
 
 export default Information;
-

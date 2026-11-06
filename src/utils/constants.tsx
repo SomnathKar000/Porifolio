@@ -1,10 +1,11 @@
 import React from "react";
+import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  Github,
-  Linkedin,
-  Twitter,
-  Facebook,
-} from "lucide-react";
+  GithubIcon,
+  Linkedin02Icon,
+  NewTwitterIcon,
+  Facebook01Icon,
+} from "@hugeicons/core-free-icons";
 import LeetCodeWhite from "../assets/LeetCodeWhite.svg";
 import LeetCodeBlack from "../assets/LeetCodeBlack.svg";
 import { Project, SocialAccount, TimelineItem, ThemeMode } from "../types";
@@ -27,7 +28,13 @@ export const getAccounts = (mode: ThemeMode): SocialAccount[] => {
     {
       name: "GitHub",
       link: "https://github.com/SomnathKar000",
-      icon: <Github className="w-6 h-6 hover:text-black dark:hover:text-white transition-colors" />,
+      icon: (
+        <HugeiconsIcon
+          icon={GithubIcon}
+          size={24}
+          className="hover:text-black dark:hover:text-white transition-colors"
+        />
+      ),
     },
     {
       name: "LeetCode",
@@ -43,22 +50,42 @@ export const getAccounts = (mode: ThemeMode): SocialAccount[] => {
     {
       name: "LinkedIn",
       link: "https://www.linkedin.com/in/somnath-kar-aa73aa1a3/",
-      icon: <Linkedin className="w-6 h-6 text-[#0072b1] hover:brightness-110 transition-all" />,
+      icon: (
+        <HugeiconsIcon
+          icon={Linkedin02Icon}
+          size={24}
+          className="text-[#0072b1] hover:brightness-110 transition-all"
+        />
+      ),
     },
     {
       name: "Twitter",
       link: "https://twitter.com/Somnathkar000",
-      icon: <Twitter className="w-6 h-6 text-[#00acee] hover:brightness-110 transition-all" />,
+      icon: (
+        <HugeiconsIcon
+          icon={NewTwitterIcon}
+          size={24}
+          className="text-[#00acee] hover:brightness-110 transition-all"
+        />
+      ),
     },
     {
       name: "Facebook",
       link: "https://www.facebook.com/somnathkar000",
-      icon: <Facebook className="w-6 h-6 text-[#3b5998] hover:brightness-110 transition-all" />,
+      icon: (
+        <HugeiconsIcon
+          icon={Facebook01Icon}
+          size={24}
+          className="text-[#3b5998] hover:brightness-110 transition-all"
+        />
+      ),
     },
     {
       name: "Reddit",
       link: "https://www.reddit.com/user/Somnath000",
-      icon: <RedditIcon className="w-6 h-6 text-[#FF4300] hover:brightness-110 transition-all" />,
+      icon: (
+        <RedditIcon className="w-6 h-6 text-[#FF4300] hover:brightness-110 transition-all" />
+      ),
     },
   ];
 };
@@ -114,36 +141,6 @@ export const ProjectDetails: Project[] = [
       "Gallery website is a MERN stack project where users can upload their personal images and view them. Users must log in or sign up to upload their images. The site offers sorting functionality by image title and users can edit titles or delete images.",
     tags: ["MERN", "MongoDB", "Express", "React", "Node.js"],
   },
-  {
-    name: "User Registration Web Application",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/245683772-9371df94-731a-4bd8-a3d0-143c70df3ecc.png",
-    websiteLink: "https://user-registration-somnath000.vercel.app",
-    gitHubLink: "https://github.com/SomnathKar000/User-registration",
-    about:
-      "This is a web application that allows users to register, login, and manage their personal details, including changing their name and password. The application follows the given use cases and handles error scenarios. It is implemented using Node.js, ReactJS, and MongoDB.",
-    tags: ["Auth", "React", "Node.js", "MongoDB"],
-  },
-  {
-    name: "Notebook-firebase",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/245452955-ddff3de0-e930-420f-b316-bacdbe74dca7.png",
-    websiteLink: "https://notebook-firebase-somnath000.vercel.app",
-    gitHubLink: "https://github.com/SomnathKar000/Notebook-firebase",
-    about:
-      "A sleek note-taking app powered by Firebase. Real-time editing, customizable categories, secure authentication, and title-based note search. Effortlessly create, organize, and sync your notes for a seamless note-taking experience.",
-    tags: ["Firebase", "Realtime DB", "React", "Cloud"],
-  },
-  {
-    name: "TS Compiler Hub",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/250079565-09ae704b-406d-436e-b4ab-db9c331df42e.png",
-    websiteLink: "https://ts-compiler-hub-somnath000.vercel.app",
-    gitHubLink: "https://github.com/SomnathKar000/TS-Compiler-Hub",
-    about:
-      "TS Compiler Hub is an online TypeScript compiler and playground built with React. It provides a web-based interface for compiling, executing, and experimenting with TypeScript code right in the browser.",
-    tags: ["TypeScript", "Compiler", "React", "DevTools"],
-  },
 ];
 
 export const Skills: string[] = [
@@ -183,22 +180,11 @@ export const TimelineEvents: TimelineItem[] = [
     type: "event",
   },
   {
-    date: "March 2016 — March 2017",
-    title: "Secondary Education",
-    institution: "Kartickpur Deganga Adarsha Vidyapith",
-    type: "education",
-  },
-  {
-    date: "March 2018 — March 2019",
-    title: "Higher Secondary Education",
-    institution: "Kartickpur Deganga Adarsha Vidyapith",
-    type: "education",
-  },
-  {
     date: "Sept 2019 — July 2023",
     title: "B.Tech in Computer Science and Engineering",
     institution: "Maulana Abul Kalam Azad University of Technology",
-    badge: "CGPA: 9.09",
+    description:
+      "Learned core CS foundations (DSA, DBMS, Networks) and mastered the MERN stack (MongoDB, Express, React, Node.js), building full-stack web applications and project prototypes.",
     type: "education",
   },
   {
@@ -207,8 +193,7 @@ export const TimelineEvents: TimelineItem[] = [
     institution: "Wiseboxs Softworks Pvt Ltd",
     badge: "Full-time",
     description:
-      "Developing scheduling systems, real-time collaboration tools, role-based access control, drag & drop workflows, and automated cloud systems.",
+      "Engineering production web platforms. Working with Vue 3 (Composition API), React, Quasar, Pinia, Node.js, AdonisJS, PostgreSQL, Redis/BullMQ, and Docker.",
     type: "work",
   },
 ];
-
