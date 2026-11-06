@@ -98,15 +98,17 @@ export const AboutView: React.FC = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          {/* Highlight Card 1: Vortex / S3 Pipeline (Navigates to case study route) */}
-          <Link
-            to="/blog/designing-direct-to-s3-multipart-uploads"
+          {/* Highlight Card 1: ResumeForge */}
+          <a
+            href="https://github.com/SomnathKar000/ResumeForge"
+            target="_blank"
+            rel="noreferrer"
             className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-col gap-1">
                 <h3 className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors flex items-center gap-1.5">
-                  Vortex — Direct-to-S3 Multipart Upload Pipeline
+                  ResumeForge — AI-Powered Resume & ATS Tailoring
                   <HugeiconsIcon
                     icon={ArrowUpRight01Icon}
                     size={16}
@@ -114,20 +116,19 @@ export const AboutView: React.FC = () => {
                   />
                 </h3>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Bypassing application servers using presigned multipart URLs,
-                  SHA-256 integrity verification, and zero proxy memory
-                  saturation.
+                  An AI-powered tool that takes your existing resume and a job description, and rewrites your resume to match that job. Highlights the right skills, uses optimal keywords, and formats everything in a clean ATS-friendly layout.
                 </p>
               </div>
             </div>
             <div className="flex flex-wrap gap-1.5 pt-1">
-              <Badge variant="mono">AWS S3 & STS</Badge>
-              <Badge variant="mono">Node.js</Badge>
-              <Badge variant="mono">Redis Lock</Badge>
-              <Badge variant="mono">TypeScript</Badge>
-              <Badge variant="active">+35% Efficiency</Badge>
+              <Badge variant="mono">React</Badge>
+              <Badge variant="mono">Node.js & Express</Badge>
+              <Badge variant="mono">Google Gemini API</Badge>
+              <Badge variant="mono">Puppeteer</Badge>
+              <Badge variant="mono">Tailwind CSS</Badge>
+              <Badge variant="active">Open Source</Badge>
             </div>
-          </Link>
+          </a>
 
           {/* Highlight Card 2: Modern E-Commerce */}
           <article className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover">

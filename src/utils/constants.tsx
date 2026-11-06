@@ -92,6 +92,22 @@ export const getAccounts = (mode: ThemeMode): SocialAccount[] => {
 
 export const ProjectDetails: Project[] = [
   {
+    name: "ResumeForge",
+    image: "/images/project/ResumeForge.png",
+    websiteLink: "",
+    gitHubLink: "https://github.com/SomnathKar000/ResumeForge",
+    about:
+      "ResumeForge is an AI-powered tool that takes your existing resume and a job description, and rewrites your resume to match that job. It highlights the right skills, uses the right keywords, and formats everything in a clean ATS-friendly layout.",
+    tags: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "Gemini AI",
+      "Puppeteer",
+    ],
+  },
+  {
     name: "Furniture website",
     image:
       "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/246487000-82cb9567-1e9a-45c4-a11d-9af97674e322.png",

@@ -21,15 +21,7 @@ const App: React.FC = () => {
             <Route path="/about" element={<Navigate to="/" replace />} />
             <Route path="/blog" element={<BlogView />} />
             <Route path="/blog/:slug" element={<CaseStudyView />} />
-            <Route
-              path="/case-study"
-              element={
-                <Navigate
-                  to="/blog/designing-direct-to-s3-multipart-uploads"
-                  replace
-                />
-              }
-            />
+            <Route path="/case-study" element={<Navigate to="/" replace />} />
             <Route path="/contact" element={<ContactView />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
