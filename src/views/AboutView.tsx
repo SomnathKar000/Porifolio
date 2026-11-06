@@ -38,7 +38,7 @@ export const AboutView: React.FC = () => {
             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-surface-container-high ring-1 ring-border-subtle shadow-md hover:ring-white/30 transition-all">
               <img
                 alt="Somnath avatar profile"
-                className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-300"
+                className="w-full h-full object-cover object-center transition-all duration-300"
                 src={SomnathAvatar}
               />
             </div>
