@@ -80,7 +80,7 @@ export const ContactView: React.FC = () => {
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-200 mb-3">
           Contact
         </h1>
-        <p className="text-sm text-text-muted leading-relaxed">
+        <p className="text-sm text-neutral-400 leading-relaxed">
           I'm always open to discussing systems architecture, new product
           engineering challenges, open source collaborations, or full-time
           opportunities. Feel free to reach out directly or send a message below.
@@ -89,21 +89,21 @@ export const ContactView: React.FC = () => {
 
       {/* Direct Contact Cards */}
       <section className="flex flex-col gap-3.5">
-        {/* Email Card: Inside page action, stationary arrow (no movement) */}
+        {/* Email Card: Responsive layout on mobile, stationary arrow */}
         <div
           onClick={() => (window.location.href = `mailto:${email}`)}
-          className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
+          className="group relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer active:scale-[0.99] transition-all"
         >
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 min-w-0">
             <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium flex items-center gap-1.5">
               <HugeiconsIcon icon={Mail01Icon} size={14} className="text-neutral-400 group-hover:text-neutral-300 transition-colors" />
               Email
             </span>
-            <span className="text-sm sm:text-base font-medium text-neutral-200 group-hover:text-white transition-colors tracking-tight">
+            <span className="text-sm sm:text-base font-medium text-neutral-200 group-hover:text-white transition-colors tracking-tight truncate">
               {email}
             </span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 self-start sm:self-auto shrink-0 pt-0.5 sm:pt-0">
             <button
               onClick={handleCopyEmail}
               aria-label="Copy Email Address"
@@ -125,10 +125,11 @@ export const ContactView: React.FC = () => {
             <a
               aria-label="Send Email"
               onClick={(e) => e.stopPropagation()}
-              className="p-1.5 rounded-lg bg-[#1c1d22] border border-white/10 group-hover:border-white/30 transition-all flex items-center justify-center shadow-sm"
+              className="px-2.5 py-1.5 sm:p-1.5 rounded-lg bg-[#1c1d22] text-neutral-300 hover:text-white border border-white/10 hover:border-white/30 transition-all flex items-center gap-1.5 text-xs font-medium shadow-sm active:scale-95"
               href={`mailto:${email}`}
             >
-              <HugeiconsIcon icon={ArrowUpRight01Icon} size={16} className="text-[#63656e] group-hover:text-neutral-300 transition-colors" />
+              <span className="sm:hidden text-xs">Send</span>
+              <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-[#63656e] group-hover:text-neutral-300 transition-colors" />
             </a>
           </div>
         </div>
@@ -136,9 +137,9 @@ export const ContactView: React.FC = () => {
         {/* Voice / Signal Card: Shows a Phone icon instead of arrow */}
         <div
           onClick={() => (window.location.href = `tel:+918509592835`)}
-          className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
+          className="group relative flex items-center justify-between p-4 sm:p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer active:scale-[0.99] transition-all"
         >
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 min-w-0">
             <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium flex items-center gap-1.5">
               <HugeiconsIcon icon={Call02Icon} size={14} className="text-neutral-400 group-hover:text-neutral-300 transition-colors" />
               Voice / Signal
@@ -147,7 +148,7 @@ export const ContactView: React.FC = () => {
               {phone}
             </span>
           </div>
-          <div className="p-2 rounded-lg bg-[#1c1d22] border border-white/10 group-hover:border-white/20 transition-colors flex items-center justify-center shadow-sm">
+          <div className="p-2 rounded-lg bg-[#1c1d22] border border-white/10 group-hover:border-white/20 transition-colors flex items-center justify-center shadow-sm shrink-0">
             <HugeiconsIcon icon={Call02Icon} size={16} className="text-[#63656e] group-hover:text-neutral-200 transition-colors" />
           </div>
         </div>
@@ -290,7 +291,7 @@ export const ContactView: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-5 py-2.5 rounded-lg bg-white text-zinc-950 text-sm font-semibold hover:bg-neutral-200 transition-colors inline-flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-[0.98] disabled:opacity-50"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-white text-zinc-950 text-sm font-semibold hover:bg-neutral-200 transition-colors inline-flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-[0.98] disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <>
