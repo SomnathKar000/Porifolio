@@ -9,9 +9,7 @@ export const BlogView: React.FC = () => {
 
   const categories = [
     "All",
-    "Systems Architecture",
-    "Performance",
-    "Frontend & Craft",
+    ...Array.from(new Set(BlogPosts.map((p) => p.category))),
   ];
 
   const filteredPosts =
@@ -66,34 +64,40 @@ export const BlogView: React.FC = () => {
 
       {/* Article Listing */}
       <section aria-label="Essays and technical notes">
-        <ul className="divide-y divide-white/5 border-t border-b border-white/5">
-          {filteredPosts.map((post) => (
-            <li key={post.id}>
-              <Link
-                to={`/blog/${post.slug}`}
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="w-full text-left group py-5 px-3.5 -mx-3.5 rounded-xl flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 hover:bg-[#14161a] border border-transparent hover:border-white/[0.06] transition-all duration-150 cursor-pointer block"
-              >
-                <div className="flex-grow pr-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors duration-150">
-                      {post.title}
-                    </span>
-                    <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-neutral-500 opacity-0 group-hover:opacity-100 arrow-redirect shrink-0 hidden sm:inline-block" />
+        {filteredPosts.length > 0 ? (
+          <ul className="divide-y divide-white/5 border-t border-b border-white/5">
+            {filteredPosts.map((post) => (
+              <li key={post.id}>
+                <Link
+                  to={`/blog/${post.slug}`}
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  className="w-full text-left group py-5 px-3.5 -mx-3.5 rounded-xl flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 hover:bg-[#14161a] border border-transparent hover:border-white/[0.06] transition-all duration-150 cursor-pointer block"
+                >
+                  <div className="flex-grow pr-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors duration-150">
+                        {post.title}
+                      </span>
+                      <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-neutral-500 opacity-0 group-hover:opacity-100 arrow-redirect shrink-0 hidden sm:inline-block" />
+                    </div>
+                    <p className="text-xs text-neutral-400 font-normal mt-1 leading-relaxed line-clamp-1">
+                      {post.summary}
+                    </p>
                   </div>
-                  <p className="text-xs text-neutral-400 font-normal mt-1 leading-relaxed line-clamp-1">
-                    {post.summary}
-                  </p>
-                </div>
-                <div className="flex items-center gap-1.5 text-xs text-neutral-400 shrink-0 whitespace-nowrap mt-1 sm:mt-0 font-mono group-hover:text-neutral-200 transition-colors">
-                  <span>{post.readTime}</span>
-                  <span>·</span>
-                  <time>{post.date}</time>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                  <div className="flex items-center gap-1.5 text-xs text-neutral-400 shrink-0 whitespace-nowrap mt-1 sm:mt-0 font-mono group-hover:text-neutral-200 transition-colors">
+                    <span>{post.readTime}</span>
+                    <span>·</span>
+                    <time>{post.date}</time>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="py-12 text-center text-xs text-neutral-400 font-mono">
+            No articles published under this topic yet.
+          </div>
+        )}
       </section>
     </div>
   );
