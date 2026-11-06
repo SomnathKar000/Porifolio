@@ -1,0 +1,8 @@
+name = "portfolio"
+compatibility_date = "2024-11-01"
+
+[assets]
+directory = "./build"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+

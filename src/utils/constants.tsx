@@ -109,8 +109,7 @@ export const ProjectDetails: Project[] = [
   },
   {
     name: "Furniture website",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/246487000-82cb9567-1e9a-45c4-a11d-9af97674e322.png",
+    image: "/images/project/Furniture-website.png",
     websiteLink: "",
     gitHubLink: "https://github.com/SomnathKar000/Furniture-website",
     about:
@@ -119,8 +118,7 @@ export const ProjectDetails: Project[] = [
   },
   {
     name: "CloudHive",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/275884722-f861a5c4-1a05-4220-966a-db5b07a813b2.png",
+    image: "/images/project/CloudHive.png",
     websiteLink: "https://cloud-hive.vercel.app",
     gitHubLink: "https://github.com/SomnathKar000/CloudHive",
     about:
@@ -129,8 +127,7 @@ export const ProjectDetails: Project[] = [
   },
   {
     name: "AI ChatBot",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/244596256-54df3c50-52eb-4287-b418-5b41d88a8535.png",
+    image: "/images/project/AI-Chatbot.png",
     websiteLink: "",
     gitHubLink: "https://github.com/SomnathKar000/AI-Chatbot",
     about:
