@@ -1,3 +1,6 @@
 name = "somnath-portfolio"
-pages_build_output_dir = "./dist"
-compatibility_date = "2026-11-06"
+pages_build_output_dir = "./build"
+compatibility_date = "2024-11-01"
+
+[build]
+command = "npm run build"
