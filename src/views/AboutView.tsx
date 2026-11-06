@@ -13,8 +13,7 @@ import { ProjectDetails } from "../utils/constants";
 
 export const AboutView: React.FC = () => {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
-  const SomnathAvatar =
-    "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/247098543-58155098-8559-40cc-b52c-0d3ebaa0b914.jpeg";
+  const SomnathAvatar = "/images/Somnath.jpeg";
 
   return (
     <div className="w-full max-w-[680px] mx-auto px-6 pb-12 flex flex-col gap-14">
@@ -100,7 +99,7 @@ export const AboutView: React.FC = () => {
         <div className="flex flex-col gap-4">
           {/* Highlight Card 1: ResumeForge */}
           <a
-            href="https://github.com/SomnathKar000/ResumeForge"
+            href="https://resume-forge-web.vercel.app/"
             target="_blank"
             rel="noreferrer"
             className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
