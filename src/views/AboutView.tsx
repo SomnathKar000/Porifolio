@@ -144,94 +144,51 @@ export const AboutView: React.FC = () => {
             const targetLink = project.websiteLink || project.gitHubLink;
             const hasImage = Boolean(project.image);
 
-            return (
-              <div
-                key={project.name}
-                className="p-4 sm:p-5 rounded-xl border border-white/[0.08] bg-[#131418] hover:border-white/15 transition-all duration-300 flex flex-col relative"
-              >
-                {/* Title as a transparent button with menu-type preview popover */}
+            const cardClasses =
+              "group relative flex flex-col p-4 sm:p-5 rounded-xl border border-white/[0.08] bg-[#131418] hover:border-white/15 card-glow-hover transition-all duration-300 cursor-pointer block";
+
+            const content = (
+              <>
+                {/* Title with menu-type preview popover */}
                 <div
                   className="relative inline-block self-start"
                   onMouseEnter={() => setHoveredProject(project.name)}
                   onMouseLeave={() => setHoveredProject(null)}
                 >
-                  {targetLink ? (
-                    <a
-                      href={targetLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onFocus={() => setHoveredProject(project.name)}
-                      onBlur={() => setHoveredProject(null)}
-                      className={`inline-flex items-center px-2 py-1 -ml-2 rounded-lg text-sm font-medium transition-colors border ${
-                        isHovered
-                          ? "bg-white/[0.08] text-white border-white/10"
-                          : "bg-transparent text-neutral-200 border-transparent hover:bg-white/[0.06] hover:text-white hover:border-white/10"
-                      }`}
-                    >
-                      <span>{project.name}</span>
-                    </a>
-                  ) : (
-                    <button
-                      type="button"
-                      onFocus={() => setHoveredProject(project.name)}
-                      onBlur={() => setHoveredProject(null)}
-                      className={`inline-flex items-center px-2 py-1 -ml-2 rounded-lg text-sm font-medium transition-colors border cursor-default ${
-                        isHovered
-                          ? "bg-white/[0.08] text-white border-white/10"
-                          : "bg-transparent text-neutral-200 border-transparent hover:bg-white/[0.06] hover:text-white hover:border-white/10"
-                      }`}
-                    >
-                      <span>{project.name}</span>
-                    </button>
-                  )}
+                  <div className="inline-flex items-center gap-1.5 px-2 py-1 -ml-2 rounded-lg text-sm font-medium transition-colors text-neutral-200 group-hover:text-white group-hover:bg-white/[0.06] border border-transparent group-hover:border-white/10">
+                    <span>{project.name}</span>
+                    <HugeiconsIcon
+                      icon={ArrowUpRight01Icon}
+                      size={14}
+                      className="text-neutral-500 group-hover:text-neutral-200 opacity-60 group-hover:opacity-100 transition-all arrow-redirect"
+                    />
+                  </div>
 
                   {/* Menu type preview box: small enough to identify images, floats without growing the card */}
                   {hasImage && isHovered && (
-                    <div className="absolute left-0 top-full pt-1.5 z-30 pointer-events-auto animate-popover-in">
+                    <div className="absolute left-0 top-full pt-1.5 z-30 pointer-events-none animate-popover-in">
                       <div className="w-56 sm:w-64 p-1.5 rounded-xl bg-[#16171d]/95 backdrop-blur-md border border-white/10 shadow-[0_12px_36px_rgba(0,0,0,0.65)]">
-                        {targetLink ? (
-                          <a
-                            href={targetLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block rounded-lg overflow-hidden bg-black/60 group/preview"
-                          >
-                            <img
-                              src={project.image}
-                              alt={project.name}
-                              loading="lazy"
-                              className="w-full h-32 sm:h-36 object-cover object-top transition-transform duration-300 group-hover/preview:scale-[1.02]"
-                              onError={(e) => {
-                                const container = e.currentTarget.closest(
-                                  ".absolute",
-                                ) as HTMLElement;
-                                if (container) container.style.display = "none";
-                              }}
-                            />
-                          </a>
-                        ) : (
-                          <div className="rounded-lg overflow-hidden bg-black/60">
-                            <img
-                              src={project.image}
-                              alt={project.name}
-                              loading="lazy"
-                              className="w-full h-32 sm:h-36 object-cover object-top"
-                              onError={(e) => {
-                                const container = e.currentTarget.closest(
-                                  ".absolute",
-                                ) as HTMLElement;
-                                if (container) container.style.display = "none";
-                              }}
-                            />
-                          </div>
-                        )}
+                        <div className="block rounded-lg overflow-hidden bg-black/60">
+                          <img
+                            src={project.image}
+                            alt={project.name}
+                            loading="lazy"
+                            className="w-full h-32 sm:h-36 object-cover object-top"
+                            onError={(e) => {
+                              const container = e.currentTarget.closest(
+                                ".absolute",
+                              ) as HTMLElement;
+                              if (container) container.style.display = "none";
+                            }}
+                          />
+                        </div>
                       </div>
                     </div>
                   )}
                 </div>
 
                 {/* Description below title */}
-                <p className="text-xs sm:text-[13px] text-neutral-400 leading-relaxed mt-2.5">
+                <p className="text-xs sm:text-[13px] text-neutral-400 group-hover:text-neutral-300 transition-colors leading-relaxed mt-2.5">
                   {project.about}
                 </p>
 
@@ -248,6 +205,22 @@ export const AboutView: React.FC = () => {
                     ))}
                   </div>
                 )}
+              </>
+            );
+
+            return targetLink ? (
+              <a
+                key={project.name}
+                href={targetLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cardClasses}
+              >
+                {content}
+              </a>
+            ) : (
+              <div key={project.name} className={cardClasses}>
+                {content}
               </div>
             );
           })}
@@ -337,7 +310,7 @@ export const AboutView: React.FC = () => {
                     </span>
                   </h3>
                   <span className="text-[11px] text-neutral-400 font-mono shrink-0">
-                    2019 — 2023
+                    AUG 2019 — SEPT 2023
                   </span>
                 </div>
                 <p className="text-xs text-neutral-400 leading-relaxed">
