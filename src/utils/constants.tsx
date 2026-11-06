@@ -137,26 +137,6 @@ export const ProjectDetails: Project[] = [
       "The Chat Bot Application is a robust and interactive chat bot built using various technologies. It leverages the power of AI and real-time communication to provide intelligent conversation capabilities and a seamless user experience.",
     tags: ["AI", "React", "Real-time", "Conversational AI"],
   },
-  {
-    name: "AWS Serverless API",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/251432884-5b82ce49-5c0c-495a-9fb8-da8155155429.png",
-    websiteLink: "",
-    gitHubLink: "https://github.com/SomnathKar000/AWS-Serverless-API",
-    about:
-      "This project provides a serverless CRUD (Create, Read, Update, Delete) API for DynamoDB using AWS Lambda and the Serverless Framework.",
-    tags: ["AWS Lambda", "DynamoDB", "Serverless", "Node.js"],
-  },
-  {
-    name: "Gallery website",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/244605688-3d9fe784-709e-4b74-a2a5-5a49381673bb.png",
-    websiteLink: "https://gallery-website-somnath.vercel.app",
-    gitHubLink: "https://github.com/SomnathKar000/Gallery-website",
-    about:
-      "Gallery website is a MERN stack project where users can upload their personal images and view them. Users must log in or sign up to upload their images. The site offers sorting functionality by image title and users can edit titles or delete images.",
-    tags: ["MERN", "MongoDB", "Express", "React", "Node.js"],
-  },
 ];
 
 export const Skills: string[] = [
