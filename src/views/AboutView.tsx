@@ -364,11 +364,7 @@ export const AboutView: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Building scalable MERN applications with integrated cloud
-                  infrastructure. Architected direct S3 multipart upload
-                  pipelines boosting asset delivery efficiency by 35%.
-                  Implemented robust scheduling engines and idempotent caching
-                  layers.
+                  Building production features across enterprise products including Kaamfu and Celebrity Fanalyzer. Working with Vue 3 (Composition API), Quasar, Pinia, Electron desktop apps, AdonisJS, PostgreSQL, Redis/BullMQ, and Docker. Implemented automated Firebase Functions, workday/shift/task timers, drag-and-drop task boards, and role-based access control.
                 </p>
               </div>
             </div>
@@ -395,9 +391,7 @@ export const AboutView: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Graduated with CGPA 9.09. Rigorous curriculum across Data
-                  Structures, Algorithms, Database Management Systems, Computer
-                  Networks, and Cloud Computing.
+                  Graduated with CGPA 9.09. Mastered core computer science foundations (Data Structures, Algorithms, DBMS, Operating Systems, Networks) and learned the MERN stack (MongoDB, Express, React, Node.js), building full-stack web applications and project prototypes throughout college.
                 </p>
               </div>
             </div>
@@ -414,75 +408,72 @@ export const AboutView: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* Frontend Stack */}
-          <div className="p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover flex flex-col gap-3">
-            <div className="flex items-center gap-2">
+          {/* Frontend */}
+          <div className="p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover flex flex-col gap-3.5">
+            <div className="flex items-center gap-2 pb-2.5 border-b border-white/[0.06]">
               <HugeiconsIcon
                 icon={Layers01Icon}
                 size={16}
                 className="text-neutral-400"
               />
               <h3 className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider font-medium">
-                Frontend Architecture
+                Frontend
               </h3>
             </div>
-            <div className="flex flex-wrap gap-1.5">
+            <ul className="flex flex-col gap-2 text-xs text-neutral-300">
               {[
-                "TypeScript",
-                "React",
-                "Vue.js",
-                "JavaScript (ES6+)",
-                "Tailwind CSS",
-                "Glisse (Liquid Glass)",
-                "Redux Toolkit",
-                "Drag & Drop UI",
-                "HTML5 & CSS3",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="text-xs px-2.5 py-1 rounded bg-[#1c1d22] text-text-muted border border-white/5 hover:border-white/20 transition-colors"
-                >
-                  {tech}
-                </span>
+                "Vue 3 with the Composition API and lifecycle hooks",
+                "Quasar (used for Celebrity Fanalyzer)",
+                "Pinia for state management",
+                "Vuetify and Tailwind for UI",
+                "SCSS",
+                "Electron (desktop apps)",
+                "Infinite scroll and lazy loading for feeds",
+                "Camera capture in the browser",
+                "Search with date filtering",
+                "Drag-and-drop task boards",
+                "Multi-step onboarding flows (desktop and mobile)",
+                "A theme system with six customizable themes",
+                "Pixel-perfect UI fixes",
+              ].map((skill) => (
+                <li key={skill} className="flex items-start gap-2.5 leading-relaxed">
+                  <span className="w-1 h-1 rounded-full bg-neutral-500 mt-2 shrink-0"></span>
+                  <span className="text-neutral-300">{skill}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* Backend & Cloud Stack */}
-          <div className="p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover flex flex-col gap-3">
-            <div className="flex items-center gap-2">
+          {/* Backend and cloud */}
+          <div className="p-5 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover flex flex-col gap-3.5">
+            <div className="flex items-center gap-2 pb-2.5 border-b border-white/[0.06]">
               <HugeiconsIcon
                 icon={CloudIcon}
                 size={16}
                 className="text-neutral-400"
               />
               <h3 className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider font-medium">
-                Backend & Cloud
+                Backend and cloud
               </h3>
             </div>
-            <div className="flex flex-wrap gap-1.5">
+            <ul className="flex flex-col gap-2 text-xs text-neutral-300">
               {[
-                "Node.js",
-                "Express.js",
-                "Firebase",
-                "Cloud Functions",
-                "AWS Lambda",
-                "AWS DynamoDB",
-                "AWS S3",
+                "Node.js and Express",
+                "AdonisJS",
                 "PostgreSQL",
-                "Redis",
-                "MongoDB",
-                "RESTful APIs",
+                "Redis and BullMQ",
                 "Docker",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="text-xs px-2.5 py-1 rounded bg-[#1c1d22] text-text-muted border border-white/5 hover:border-white/20 transition-colors"
-                >
-                  {tech}
-                </span>
+                "Firebase Functions to publish and unpublish posts on a schedule",
+                "Role-based access, such as deleting posts based on role",
+                "Admin tools for scheduling posts and tracking views and clicks per post",
+                "Workday, shift, and task timers in Kaamfu",
+              ].map((skill) => (
+                <li key={skill} className="flex items-start gap-2.5 leading-relaxed">
+                  <span className="w-1 h-1 rounded-full bg-neutral-500 mt-2 shrink-0"></span>
+                  <span className="text-neutral-300">{skill}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </section>

@@ -184,6 +184,8 @@ export const TimelineEvents: TimelineItem[] = [
     title: "B.Tech in Computer Science and Engineering",
     institution: "Maulana Abul Kalam Azad University of Technology",
     badge: "CGPA: 9.09",
+    description:
+      "Learned core CS foundations (DSA, DBMS, Networks) and mastered the MERN stack (MongoDB, Express, React, Node.js), building full-stack web applications and project prototypes.",
     type: "education",
   },
   {
@@ -192,7 +194,7 @@ export const TimelineEvents: TimelineItem[] = [
     institution: "Wiseboxs Softworks Pvt Ltd",
     badge: "Full-time",
     description:
-      "Developing scheduling systems, real-time collaboration tools, role-based access control, drag & drop workflows, and automated cloud systems.",
+      "Engineering enterprise web and desktop platforms (Kaamfu, Celebrity Fanalyzer). Working with Vue 3, Quasar, Pinia, Electron, Node.js, AdonisJS, PostgreSQL, Redis/BullMQ, and Docker.",
     type: "work",
   },
 ];
