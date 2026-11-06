@@ -2,6 +2,19 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "framework": "vite",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?!somnathkar\\.com|www\\.somnathkar\\.com).*"
+        }
+      ],
+      "destination": "https://somnathkar.com/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
