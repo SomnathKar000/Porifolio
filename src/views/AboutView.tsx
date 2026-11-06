@@ -126,7 +126,6 @@ export const AboutView: React.FC = () => {
               <Badge variant="mono">Google Gemini API</Badge>
               <Badge variant="mono">Puppeteer</Badge>
               <Badge variant="mono">Tailwind CSS</Badge>
-              <Badge variant="active">Open Source</Badge>
             </div>
           </a>
 
