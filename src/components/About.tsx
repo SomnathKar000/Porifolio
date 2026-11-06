@@ -20,7 +20,7 @@ const About: React.FC = () => {
   const SomnathImage =
     import.meta.env.VITE_IMAGE ||
     import.meta.env.REACT_APP_IMAGE ||
-    "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/247098543-58155098-8559-40cc-b52c-0d3ebaa0b914.jpeg";
+    "/images/Somnath.jpeg";
 
   const techChips = ["React", "Vue.js", "TypeScript", "Firebase", "Node.js", "Tailwind CSS"];
 

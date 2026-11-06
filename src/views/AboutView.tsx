@@ -13,8 +13,7 @@ import { ProjectDetails } from "../utils/constants";
 
 export const AboutView: React.FC = () => {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
-  const SomnathAvatar =
-    "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/247098543-58155098-8559-40cc-b52c-0d3ebaa0b914.jpeg";
+  const SomnathAvatar = "/images/Somnath.jpeg";
 
   return (
     <div className="w-full max-w-[680px] mx-auto px-6 pb-12 flex flex-col gap-14">
@@ -39,7 +38,7 @@ export const AboutView: React.FC = () => {
             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-surface-container-high ring-1 ring-border-subtle shadow-md hover:ring-white/30 transition-all">
               <img
                 alt="Somnath avatar profile"
-                className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-300"
+                className="w-full h-full object-cover object-center transition-all duration-300"
                 src={SomnathAvatar}
               />
             </div>
@@ -98,15 +97,17 @@ export const AboutView: React.FC = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          {/* Highlight Card 1: Vortex / S3 Pipeline (Navigates to case study route) */}
-          <Link
-            to="/blog/designing-direct-to-s3-multipart-uploads"
+          {/* Highlight Card 1: ResumeForge */}
+          <a
+            href="https://resume-forge-web.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
             className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-col gap-1">
                 <h3 className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors flex items-center gap-1.5">
-                  Vortex — Direct-to-S3 Multipart Upload Pipeline
+                  ResumeForge — AI-Powered Resume & ATS Tailoring
                   <HugeiconsIcon
                     icon={ArrowUpRight01Icon}
                     size={16}
@@ -114,91 +115,18 @@ export const AboutView: React.FC = () => {
                   />
                 </h3>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Bypassing application servers using presigned multipart URLs,
-                  SHA-256 integrity verification, and zero proxy memory
-                  saturation.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-1.5 pt-1">
-              <Badge variant="mono">AWS S3 & STS</Badge>
-              <Badge variant="mono">Node.js</Badge>
-              <Badge variant="mono">Redis Lock</Badge>
-              <Badge variant="mono">TypeScript</Badge>
-              <Badge variant="active">+35% Efficiency</Badge>
-            </div>
-          </Link>
-
-          {/* Highlight Card 2: Modern E-Commerce */}
-          <article className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover">
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex flex-col gap-1">
-                <h3 className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors flex items-center gap-1.5">
-                  Full-Stack E-Commerce & Ingress Platform
-                  <a
-                    href="https://github.com/SomnathKar000/Furniture-website"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center"
-                    aria-label="View on GitHub"
-                  >
-                    <HugeiconsIcon
-                      icon={ArrowUpRight01Icon}
-                      size={16}
-                      className="text-text-dim arrow-redirect"
-                    />
-                  </a>
-                </h3>
-                <p className="text-xs text-neutral-400 leading-relaxed">
-                  A high-concurrency digital store with session storage,
-                  idempotent RESTful webhook handling, and inventory
-                  consistency.
+                  An AI-powered tool that takes your existing resume and a job description, and rewrites your resume to match that job. Highlights the right skills, uses optimal keywords, and formats everything in a clean ATS-friendly layout.
                 </p>
               </div>
             </div>
             <div className="flex flex-wrap gap-1.5 pt-1">
               <Badge variant="mono">React</Badge>
-              <Badge variant="mono">Node.js</Badge>
-              <Badge variant="mono">Express</Badge>
-              <Badge variant="mono">MongoDB</Badge>
-              <Badge variant="mono">RESTful APIs</Badge>
+              <Badge variant="mono">Node.js & Express</Badge>
+              <Badge variant="mono">Google Gemini API</Badge>
+              <Badge variant="mono">Puppeteer</Badge>
+              <Badge variant="mono">Tailwind CSS</Badge>
             </div>
-          </article>
-
-          {/* Highlight Card 3: AI Assistant & Cloud Storage */}
-          <article className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover">
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex flex-col gap-1">
-                <h3 className="text-[15px] font-medium text-neutral-200 group-hover:text-white transition-colors flex items-center gap-1.5">
-                  CloudHive & AI Conversational Assistant
-                  <a
-                    href="https://cloud-hive.vercel.app"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center"
-                    aria-label="Live Demo"
-                  >
-                    <HugeiconsIcon
-                      icon={ArrowUpRight01Icon}
-                      size={16}
-                      className="text-text-dim arrow-redirect"
-                    />
-                  </a>
-                </h3>
-                <p className="text-xs text-neutral-400 leading-relaxed">
-                  Multi-tier storage with encrypted file sharing, DynamoDB
-                  session persistence, and AWS Lambda serverless execution.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-1.5 pt-1">
-              <Badge variant="mono">AWS Lambda</Badge>
-              <Badge variant="mono">DynamoDB</Badge>
-              <Badge variant="mono">React</Badge>
-              <Badge variant="mono">Firebase</Badge>
-              <Badge variant="mono">Serverless</Badge>
-            </div>
-          </article>
+          </a>
         </div>
       </section>
 
@@ -216,94 +144,51 @@ export const AboutView: React.FC = () => {
             const targetLink = project.websiteLink || project.gitHubLink;
             const hasImage = Boolean(project.image);
 
-            return (
-              <div
-                key={project.name}
-                className="p-4 sm:p-5 rounded-xl border border-white/[0.08] bg-[#131418] hover:border-white/15 transition-all duration-300 flex flex-col relative"
-              >
-                {/* Title as a transparent button with menu-type preview popover */}
+            const cardClasses =
+              "group relative flex flex-col p-4 sm:p-5 rounded-xl border border-white/[0.08] bg-[#131418] hover:border-white/15 card-glow-hover transition-all duration-300 cursor-pointer block";
+
+            const content = (
+              <>
+                {/* Title with menu-type preview popover */}
                 <div
                   className="relative inline-block self-start"
                   onMouseEnter={() => setHoveredProject(project.name)}
                   onMouseLeave={() => setHoveredProject(null)}
                 >
-                  {targetLink ? (
-                    <a
-                      href={targetLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onFocus={() => setHoveredProject(project.name)}
-                      onBlur={() => setHoveredProject(null)}
-                      className={`inline-flex items-center px-2 py-1 -ml-2 rounded-lg text-sm font-medium transition-colors border ${
-                        isHovered
-                          ? "bg-white/[0.08] text-white border-white/10"
-                          : "bg-transparent text-neutral-200 border-transparent hover:bg-white/[0.06] hover:text-white hover:border-white/10"
-                      }`}
-                    >
-                      <span>{project.name}</span>
-                    </a>
-                  ) : (
-                    <button
-                      type="button"
-                      onFocus={() => setHoveredProject(project.name)}
-                      onBlur={() => setHoveredProject(null)}
-                      className={`inline-flex items-center px-2 py-1 -ml-2 rounded-lg text-sm font-medium transition-colors border cursor-default ${
-                        isHovered
-                          ? "bg-white/[0.08] text-white border-white/10"
-                          : "bg-transparent text-neutral-200 border-transparent hover:bg-white/[0.06] hover:text-white hover:border-white/10"
-                      }`}
-                    >
-                      <span>{project.name}</span>
-                    </button>
-                  )}
+                  <div className="inline-flex items-center gap-1.5 px-2 py-1 -ml-2 rounded-lg text-sm font-medium transition-colors text-neutral-200 group-hover:text-white group-hover:bg-white/[0.06] border border-transparent group-hover:border-white/10">
+                    <span>{project.name}</span>
+                    <HugeiconsIcon
+                      icon={ArrowUpRight01Icon}
+                      size={14}
+                      className="text-neutral-500 group-hover:text-neutral-200 opacity-60 group-hover:opacity-100 transition-all arrow-redirect"
+                    />
+                  </div>
 
                   {/* Menu type preview box: small enough to identify images, floats without growing the card */}
                   {hasImage && isHovered && (
-                    <div className="absolute left-0 top-full pt-1.5 z-30 pointer-events-auto animate-popover-in">
+                    <div className="absolute left-0 top-full pt-1.5 z-30 pointer-events-none animate-popover-in">
                       <div className="w-56 sm:w-64 p-1.5 rounded-xl bg-[#16171d]/95 backdrop-blur-md border border-white/10 shadow-[0_12px_36px_rgba(0,0,0,0.65)]">
-                        {targetLink ? (
-                          <a
-                            href={targetLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block rounded-lg overflow-hidden bg-black/60 group/preview"
-                          >
-                            <img
-                              src={project.image}
-                              alt={project.name}
-                              loading="lazy"
-                              className="w-full h-32 sm:h-36 object-cover object-top transition-transform duration-300 group-hover/preview:scale-[1.02]"
-                              onError={(e) => {
-                                const container = e.currentTarget.closest(
-                                  ".absolute",
-                                ) as HTMLElement;
-                                if (container) container.style.display = "none";
-                              }}
-                            />
-                          </a>
-                        ) : (
-                          <div className="rounded-lg overflow-hidden bg-black/60">
-                            <img
-                              src={project.image}
-                              alt={project.name}
-                              loading="lazy"
-                              className="w-full h-32 sm:h-36 object-cover object-top"
-                              onError={(e) => {
-                                const container = e.currentTarget.closest(
-                                  ".absolute",
-                                ) as HTMLElement;
-                                if (container) container.style.display = "none";
-                              }}
-                            />
-                          </div>
-                        )}
+                        <div className="block rounded-lg overflow-hidden bg-black/60">
+                          <img
+                            src={project.image}
+                            alt={project.name}
+                            loading="lazy"
+                            className="w-full h-32 sm:h-36 object-cover object-top"
+                            onError={(e) => {
+                              const container = e.currentTarget.closest(
+                                ".absolute",
+                              ) as HTMLElement;
+                              if (container) container.style.display = "none";
+                            }}
+                          />
+                        </div>
                       </div>
                     </div>
                   )}
                 </div>
 
                 {/* Description below title */}
-                <p className="text-xs sm:text-[13px] text-neutral-400 leading-relaxed mt-2.5">
+                <p className="text-xs sm:text-[13px] text-neutral-400 group-hover:text-neutral-300 transition-colors leading-relaxed mt-2.5">
                   {project.about}
                 </p>
 
@@ -320,6 +205,22 @@ export const AboutView: React.FC = () => {
                     ))}
                   </div>
                 )}
+              </>
+            );
+
+            return targetLink ? (
+              <a
+                key={project.name}
+                href={targetLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cardClasses}
+              >
+                {content}
+              </a>
+            ) : (
+              <div key={project.name} className={cardClasses}>
+                {content}
               </div>
             );
           })}
@@ -338,15 +239,30 @@ export const AboutView: React.FC = () => {
           {/* Experience Item 1: Wiseboxs */}
           <div className="flex flex-col gap-1.5 pb-5 border-b border-white/5">
             <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 flex items-center justify-center shrink-0 overflow-hidden text-text-muted mt-0.5">
-                <span className="font-mono text-[13px] font-semibold text-text-muted">
-                  W
-                </span>
-              </div>
+              <a
+                href="https://www.linkedin.com/company/wiseboxs/home/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Wiseboxs Softworks LinkedIn Profile"
+                className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 hover:border-white/30 flex items-center justify-center shrink-0 overflow-hidden mt-0.5 transition-all group/logo cursor-pointer shadow-sm hover:scale-105"
+              >
+                <img
+                  src="/images/experience_and_education/wiseboxs_logo.jpeg"
+                  alt="Wiseboxs Softworks Logo"
+                  className="w-full h-full object-cover group-hover/logo:opacity-90 transition-opacity"
+                />
+              </a>
               <div className="flex flex-col gap-1.5 flex-1 min-w-0">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                   <h3 className="text-sm font-medium text-neutral-200">
-                    Wiseboxs Softworks Pvt Ltd{" "}
+                    <a
+                      href="https://www.linkedin.com/company/wiseboxs/home/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition-colors hover:underline decoration-white/20 underline-offset-2"
+                    >
+                      Wiseboxs Softworks Pvt Ltd
+                    </a>{" "}
                     <span className="font-normal text-neutral-400">
                       — Software Engineer
                     </span>
@@ -365,21 +281,36 @@ export const AboutView: React.FC = () => {
           {/* Experience Item 2: MAKAUT */}
           <div className="flex flex-col gap-1.5">
             <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 flex items-center justify-center shrink-0 overflow-hidden text-text-muted mt-0.5">
-                <span className="font-mono text-[13px] font-semibold text-text-muted">
-                  M
-                </span>
-              </div>
+              <a
+                href="https://www.linkedin.com/school/maulana-abul-kalam-azad-university-of-technology-west-bengal/home/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MAKAUT LinkedIn Profile"
+                className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 hover:border-white/30 flex items-center justify-center shrink-0 overflow-hidden mt-0.5 transition-all group/logo cursor-pointer shadow-sm hover:scale-105"
+              >
+                <img
+                  src="/images/experience_and_education/maulana_abul_kalam_azad_university_of_technology_west_bengal_logo.jpeg"
+                  alt="MAKAUT Logo"
+                  className="w-full h-full object-cover group-hover/logo:opacity-90 transition-opacity"
+                />
+              </a>
               <div className="flex flex-col gap-1.5 flex-1 min-w-0">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                   <h3 className="text-sm font-medium text-neutral-200">
-                    Maulana Abul Kalam Azad University (MAKAUT){" "}
+                    <a
+                      href="https://www.linkedin.com/school/maulana-abul-kalam-azad-university-of-technology-west-bengal/home/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition-colors hover:underline decoration-white/20 underline-offset-2"
+                    >
+                      Maulana Abul Kalam Azad University (MAKAUT)
+                    </a>{" "}
                     <span className="font-normal text-neutral-400">
                       — B.Tech in CSE
                     </span>
                   </h3>
                   <span className="text-[11px] text-neutral-400 font-mono shrink-0">
-                    2019 — 2023
+                    AUG 2019 — SEPT 2023
                   </span>
                 </div>
                 <p className="text-xs text-neutral-400 leading-relaxed">

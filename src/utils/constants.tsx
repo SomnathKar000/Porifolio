@@ -92,9 +92,24 @@ export const getAccounts = (mode: ThemeMode): SocialAccount[] => {
 
 export const ProjectDetails: Project[] = [
   {
+    name: "ResumeForge",
+    image: "/images/project/ResumeForge.png",
+    websiteLink: "https://resume-forge-web.vercel.app/",
+    gitHubLink: "https://github.com/SomnathKar000/ResumeForge",
+    about:
+      "ResumeForge is an AI-powered tool that takes your existing resume and a job description, and rewrites your resume to match that job. It highlights the right skills, uses the right keywords, and formats everything in a clean ATS-friendly layout.",
+    tags: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "Gemini AI",
+      "Puppeteer",
+    ],
+  },
+  {
     name: "Furniture website",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/246487000-82cb9567-1e9a-45c4-a11d-9af97674e322.png",
+    image: "/images/project/Furniture-website.png",
     websiteLink: "",
     gitHubLink: "https://github.com/SomnathKar000/Furniture-website",
     about:
@@ -103,8 +118,7 @@ export const ProjectDetails: Project[] = [
   },
   {
     name: "CloudHive",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/275884722-f861a5c4-1a05-4220-966a-db5b07a813b2.png",
+    image: "/images/project/CloudHive.png",
     websiteLink: "https://cloud-hive.vercel.app",
     gitHubLink: "https://github.com/SomnathKar000/CloudHive",
     about:
@@ -113,33 +127,12 @@ export const ProjectDetails: Project[] = [
   },
   {
     name: "AI ChatBot",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/244596256-54df3c50-52eb-4287-b418-5b41d88a8535.png",
+    image: "/images/project/AI-Chatbot.png",
     websiteLink: "",
     gitHubLink: "https://github.com/SomnathKar000/AI-Chatbot",
     about:
       "The Chat Bot Application is a robust and interactive chat bot built using various technologies. It leverages the power of AI and real-time communication to provide intelligent conversation capabilities and a seamless user experience.",
     tags: ["AI", "React", "Real-time", "Conversational AI"],
-  },
-  {
-    name: "AWS Serverless API",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/251432884-5b82ce49-5c0c-495a-9fb8-da8155155429.png",
-    websiteLink: "",
-    gitHubLink: "https://github.com/SomnathKar000/AWS-Serverless-API",
-    about:
-      "This project provides a serverless CRUD (Create, Read, Update, Delete) API for DynamoDB using AWS Lambda and the Serverless Framework.",
-    tags: ["AWS Lambda", "DynamoDB", "Serverless", "Node.js"],
-  },
-  {
-    name: "Gallery website",
-    image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/108184610/244605688-3d9fe784-709e-4b74-a2a5-5a49381673bb.png",
-    websiteLink: "https://gallery-website-somnath.vercel.app",
-    gitHubLink: "https://github.com/SomnathKar000/Gallery-website",
-    about:
-      "Gallery website is a MERN stack project where users can upload their personal images and view them. Users must log in or sign up to upload their images. The site offers sorting functionality by image title and users can edit titles or delete images.",
-    tags: ["MERN", "MongoDB", "Express", "React", "Node.js"],
   },
 ];
 
@@ -180,7 +173,7 @@ export const TimelineEvents: TimelineItem[] = [
     type: "event",
   },
   {
-    date: "Sept 2019 — July 2023",
+    date: "Aug 2019 — Sept 2023",
     title: "B.Tech in Computer Science and Engineering",
     institution: "Maulana Abul Kalam Azad University of Technology",
     description:

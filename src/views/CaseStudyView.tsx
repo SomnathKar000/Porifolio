@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   ArrowLeft01Icon,
@@ -16,6 +16,9 @@ export const CaseStudyView: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const matchedPost = BlogPosts.find((p) => p.slug === slug);
+  if (!matchedPost) {
+    return <Navigate to="/blog" replace />;
+  }
   const data = SampleCaseStudy;
 
   const handleCopyLink = () => {
