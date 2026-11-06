@@ -1,13 +1,181 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #0D0E10;
+    color: #e3e2e5;
+  }
+
+  body {
+    background-color: #0D0E10;
+    color: #e3e2e5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Force dark inputs across all browsers and remove any splash/flash/ring */
+  input,
+  textarea,
+  select {
+    background-color: #15161a !important;
+    color: #ffffff !important;
+    color-scheme: dark;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #15161a inset !important;
+    box-shadow: 0 0 0px 1000px #15161a inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* Custom subtle dark scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0D0E10;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #23252a;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #343740;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@layer utilities {
+  /* Subtle box glow without any position movement */
+  .card-glow-hover {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+  .card-glow-hover:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 0 24px -4px rgba(255, 255, 255, 0.08), 0 8px 32px -4px rgba(0, 0, 0, 0.5);
+    background-color: #17181d;
+    transform: none !important; /* Keep box strictly stationary */
+  }
+
+  /* Calm, subtle arrow transition from dim to normal without sharp glare - only for redirecting items */
+  .arrow-redirect {
+    color: #63656e;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+  }
+  .group:hover .arrow-redirect {
+    transform: translate(2px, -2px);
+    color: #e4e4e7;
+  }
+
+  /* Popover entrance animation */
+  @keyframes popoverIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-4px) scale(0.96);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-popover-in {
+    animation: popoverIn 180ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform-origin: top left;
+  }
+
+  /* Leaflet Dark Mode styling */
+  .custom-leaflet-marker {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  /* Hide scrollbar for Chrome, Safari, Opera and Firefox/Edge */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: #14151a !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7) !important;
+    padding: 2px !important;
+  }
+
+  .leaflet-popup-tip {
+    background: #14151a !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .leaflet-popup-close-button {
+    color: #8b8d98 !important;
+    top: 6px !important;
+    right: 6px !important;
+  }
+
+  .leaflet-popup-close-button:hover {
+    color: #ffffff !important;
+  }
+
+  .leaflet-control-zoom {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .leaflet-control-zoom a {
+    background-color: #14151a !important;
+    color: #d4d4d8 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    transition: background-color 0.15s ease, color 0.15s ease !important;
+  }
+
+  .leaflet-control-zoom a:hover {
+    background-color: #22242d !important;
+    color: #ffffff !important;
+  }
+
+  .leaflet-control-attribution {
+    background: rgba(13, 14, 16, 0.85) !important;
+    color: #63656e !important;
+    font-size: 10px !important;
+    backdrop-filter: blur(4px);
+    border-top-left-radius: 6px;
+    padding: 2px 6px !important;
+  }
+
+  .leaflet-control-attribution a {
+    color: #8b8d98 !important;
+  }
 }
