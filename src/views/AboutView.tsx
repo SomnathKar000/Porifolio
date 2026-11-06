@@ -48,23 +48,15 @@ export const AboutView: React.FC = () => {
 
         <div className="flex flex-col gap-3.5 sm:gap-4">
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
-            I'm a software engineer focused on building
-            high-throughput web applications with the MERN stack (MongoDB,
-            Express, React, Node.js) and resilient AWS cloud architectures. I
-            enjoy turning complex data pipelines into intuitive, calm
-            interfaces.
+            I'm a software engineer who enjoys building reliable, user-friendly
+            web applications. I mainly work on frontend development, building
+            interfaces and product features that solve real problems. I also
+            work with backend services and enjoy understanding how different
+            parts of an application work together.
           </p>
-          <p className="text-sm text-neutral-300 leading-relaxed">
-            Currently engineering production systems at{" "}
-            <span className="text-neutral-200 font-medium">
-              Wiseboxs Softworks
-            </span>
-            , scaling cloud infrastructure and boosting client asset delivery
-            efficiency by{" "}
-            <span className="inline-block text-neutral-300 font-mono text-xs bg-surface-container px-1.5 py-0.5 rounded border border-white/10 whitespace-nowrap">
-              +35%
-            </span>
-            .
+          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+            I like turning complex requirements into simple solutions, improving
+            existing systems, and learning how to build better software.
           </p>
         </div>
 
