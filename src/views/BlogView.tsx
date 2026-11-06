@@ -25,41 +25,43 @@ export const BlogView: React.FC = () => {
           Blog
         </h1>
         <p className="text-xs sm:text-sm text-neutral-400 font-normal leading-relaxed max-w-xl">
-          Thoughts on distributed architecture, high-concurrency systems, and calm interface craft.
+          Notes, technical breakdowns, and reflections from projects I'm building.
         </p>
 
-        {/* Category Filter Pills */}
-        <div className="flex items-center gap-2 mt-5 sm:mt-6 overflow-x-auto sm:flex-wrap no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 py-1 text-xs">
-          {categories.map((category) => {
-            const count =
-              category === "All"
-                ? BlogPosts.length
-                : BlogPosts.filter((p) => p.category === category).length;
-            const isSelected = selectedCategory === category;
-            return (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all shrink-0 active:scale-95 cursor-pointer ${
-                  isSelected
-                    ? "bg-[#25272e] text-white border border-white/20 shadow-sm"
-                    : "text-neutral-400 hover:text-white border border-white/[0.06] hover:border-white/15 hover:bg-[#15161b]"
-                }`}
-              >
-                <span>{category}</span>
-                <span
-                  className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${
+        {/* Category Filter Pills (rendered only when there are multiple categories) */}
+        {categories.length > 2 && (
+          <div className="flex items-center gap-2 mt-5 sm:mt-6 overflow-x-auto sm:flex-wrap no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 py-1 text-xs">
+            {categories.map((category) => {
+              const count =
+                category === "All"
+                  ? BlogPosts.length
+                  : BlogPosts.filter((p) => p.category === category).length;
+              const isSelected = selectedCategory === category;
+              return (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all shrink-0 active:scale-95 cursor-pointer ${
                     isSelected
-                      ? "bg-white/15 text-white"
-                      : "bg-white/[0.06] text-neutral-400"
+                      ? "bg-[#25272e] text-white border border-white/20 shadow-sm"
+                      : "text-neutral-400 hover:text-white border border-white/[0.06] hover:border-white/15 hover:bg-[#15161b]"
                   }`}
                 >
-                  {count}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+                  <span>{category}</span>
+                  <span
+                    className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${
+                      isSelected
+                        ? "bg-white/15 text-white"
+                        : "bg-white/[0.06] text-neutral-400"
+                    }`}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       {/* Article Listing */}
@@ -95,7 +97,7 @@ export const BlogView: React.FC = () => {
           </ul>
         ) : (
           <div className="py-12 text-center text-xs text-neutral-400 font-mono">
-            No articles published under this topic yet.
+            Writing in progress. New posts will be published here soon.
           </div>
         )}
       </section>
