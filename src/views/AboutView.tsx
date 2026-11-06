@@ -266,15 +266,30 @@ export const AboutView: React.FC = () => {
           {/* Experience Item 1: Wiseboxs */}
           <div className="flex flex-col gap-1.5 pb-5 border-b border-white/5">
             <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 flex items-center justify-center shrink-0 overflow-hidden text-text-muted mt-0.5">
-                <span className="font-mono text-[13px] font-semibold text-text-muted">
-                  W
-                </span>
-              </div>
+              <a
+                href="https://www.linkedin.com/company/wiseboxs/home/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Wiseboxs Softworks LinkedIn Profile"
+                className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 hover:border-white/30 flex items-center justify-center shrink-0 overflow-hidden mt-0.5 transition-all group/logo cursor-pointer shadow-sm hover:scale-105"
+              >
+                <img
+                  src="/images/experience_and_education/wiseboxs_logo.jpeg"
+                  alt="Wiseboxs Softworks Logo"
+                  className="w-full h-full object-cover group-hover/logo:opacity-90 transition-opacity"
+                />
+              </a>
               <div className="flex flex-col gap-1.5 flex-1 min-w-0">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                   <h3 className="text-sm font-medium text-neutral-200">
-                    Wiseboxs Softworks Pvt Ltd{" "}
+                    <a
+                      href="https://www.linkedin.com/company/wiseboxs/home/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition-colors hover:underline decoration-white/20 underline-offset-2"
+                    >
+                      Wiseboxs Softworks Pvt Ltd
+                    </a>{" "}
                     <span className="font-normal text-neutral-400">
                       — Software Engineer
                     </span>
@@ -293,15 +308,30 @@ export const AboutView: React.FC = () => {
           {/* Experience Item 2: MAKAUT */}
           <div className="flex flex-col gap-1.5">
             <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 flex items-center justify-center shrink-0 overflow-hidden text-text-muted mt-0.5">
-                <span className="font-mono text-[13px] font-semibold text-text-muted">
-                  M
-                </span>
-              </div>
+              <a
+                href="https://www.linkedin.com/school/maulana-abul-kalam-azad-university-of-technology-west-bengal/home/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MAKAUT LinkedIn Profile"
+                className="w-10 h-10 rounded-lg bg-[#16181c] border border-white/10 hover:border-white/30 flex items-center justify-center shrink-0 overflow-hidden mt-0.5 transition-all group/logo cursor-pointer shadow-sm hover:scale-105"
+              >
+                <img
+                  src="/images/experience_and_education/maulana_abul_kalam_azad_university_of_technology_west_bengal_logo.jpeg"
+                  alt="MAKAUT Logo"
+                  className="w-full h-full object-cover group-hover/logo:opacity-90 transition-opacity"
+                />
+              </a>
               <div className="flex flex-col gap-1.5 flex-1 min-w-0">
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                   <h3 className="text-sm font-medium text-neutral-200">
-                    Maulana Abul Kalam Azad University (MAKAUT){" "}
+                    <a
+                      href="https://www.linkedin.com/school/maulana-abul-kalam-azad-university-of-technology-west-bengal/home/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition-colors hover:underline decoration-white/20 underline-offset-2"
+                    >
+                      Maulana Abul Kalam Azad University (MAKAUT)
+                    </a>{" "}
                     <span className="font-normal text-neutral-400">
                       — B.Tech in CSE
                     </span>
