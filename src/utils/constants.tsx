@@ -176,7 +176,7 @@ export const TimelineEvents: TimelineItem[] = [
     type: "event",
   },
   {
-    date: "Sept 2019 — July 2023",
+    date: "Aug 2019 — Sept 2023",
     title: "B.Tech in Computer Science and Engineering",
     institution: "Maulana Abul Kalam Azad University of Technology",
     description:
