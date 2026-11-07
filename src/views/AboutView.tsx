@@ -10,6 +10,7 @@ import { Badge } from "../components/ui/Badge";
 import { DottedRow } from "../components/ui/DottedRow";
 import { LeafletMap } from "../components/ui/LeafletMap";
 import { ProjectDetails } from "../utils/constants";
+import { LoadingComponent } from "../components/LoadingComponent";
 
 export const AboutView: React.FC = () => {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
@@ -440,6 +441,9 @@ export const AboutView: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Loading Component (Before Footer) */}
+      <LoadingComponent />
     </div>
   );
 };
