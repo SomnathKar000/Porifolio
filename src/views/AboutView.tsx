@@ -10,13 +10,14 @@ import { Badge } from "../components/ui/Badge";
 import { DottedRow } from "../components/ui/DottedRow";
 import { LeafletMap } from "../components/ui/LeafletMap";
 import { ProjectDetails } from "../utils/constants";
+import { LoadingComponent } from "../components/LoadingComponent";
 
 export const AboutView: React.FC = () => {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const SomnathAvatar = "/images/Somnath.jpeg";
 
   return (
-    <div className="w-full max-w-[680px] mx-auto px-6 pb-12 flex flex-col gap-14">
+    <div className="w-full max-w-[680px] mx-auto px-6 pb-6 flex flex-col gap-14">
       {/* Bio / Intro Section */}
       <section className="flex flex-col gap-5 sm:gap-6 pt-2 sm:pt-4">
         <div className="flex items-start sm:items-center justify-between gap-4 sm:gap-6">
@@ -115,7 +116,10 @@ export const AboutView: React.FC = () => {
                   />
                 </h3>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  An AI-powered tool that takes your existing resume and a job description, and rewrites your resume to match that job. Highlights the right skills, uses optimal keywords, and formats everything in a clean ATS-friendly layout.
+                  An AI-powered tool that takes your existing resume and a job
+                  description, and rewrites your resume to match that job.
+                  Highlights the right skills, uses optimal keywords, and
+                  formats everything in a clean ATS-friendly layout.
                 </p>
               </div>
             </div>
@@ -272,7 +276,11 @@ export const AboutView: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Engineering production web platforms. Working with Vue 3 (Composition API), React, Quasar, Pinia, Node.js, AdonisJS, PostgreSQL, Redis/BullMQ, and Docker. Implemented automated scheduled tasks, workday and shift timers, drag-and-drop boards, and role-based access control.
+                  Engineering production web platforms. Working with Vue 3
+                  (Composition API), React, Quasar, Pinia, Node.js, AdonisJS,
+                  PostgreSQL, Redis/BullMQ, and Docker. Implemented automated
+                  scheduled tasks, workday and shift timers, drag-and-drop
+                  boards, and role-based access control.
                 </p>
               </div>
             </div>
@@ -314,7 +322,11 @@ export const AboutView: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Mastered core computer science foundations (Data Structures, Algorithms, DBMS, Operating Systems, Networks) and learned the MERN stack (MongoDB, Express, React, Node.js), building full-stack web applications and project prototypes throughout college.
+                  Mastered core computer science foundations (Data Structures,
+                  Algorithms, DBMS, Operating Systems, Networks) and learned the
+                  MERN stack (MongoDB, Express, React, Node.js), building
+                  full-stack web applications and project prototypes throughout
+                  college.
                 </p>
               </div>
             </div>
@@ -440,6 +452,9 @@ export const AboutView: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Loading Component (Before Footer) */}
+      <LoadingComponent />
     </div>
   );
 };
