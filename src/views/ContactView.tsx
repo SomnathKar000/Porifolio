@@ -11,6 +11,7 @@ import {
   Mail01Icon,
 } from "@hugeicons/core-free-icons";
 import { toast } from "../components/ui/Toast";
+import { DottedRow } from "../components/ui/DottedRow";
 
 export const ContactView: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -368,34 +369,25 @@ export const ContactView: React.FC = () => {
         <h2 className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium">
           Now & Location
         </h2>
-        <div className="flex flex-col gap-2.5 text-xs sm:text-sm">
-          <div className="flex items-baseline justify-between">
-            <span className="text-neutral-400 font-mono text-xs uppercase tracking-wider">
-              Location
-            </span>
-            <span className="text-neutral-300 font-medium">
-              Kolkata, West Bengal, India
-            </span>
-          </div>
-          <div className="flex items-baseline justify-between">
-            <span className="text-neutral-400 font-mono text-xs uppercase tracking-wider">
-              Availability
-            </span>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-status-active animate-pulse"></span>
-              <span className="text-neutral-300 font-medium">
-                Open for Select Roles (Remote / Hybrid)
+        <div className="flex flex-col divide-y divide-white/[0.05] sm:divide-y-0 sm:gap-3">
+          <DottedRow label="Location" value="Kolkata, West Bengal, India" />
+          <DottedRow
+            label="Availability"
+            value={
+              <span className="inline-flex items-center gap-1.5 sm:gap-2">
+                <span className="w-2 h-2 rounded-full bg-status-active animate-pulse shrink-0"></span>
+                <span>Open for Select Roles (Remote / Hybrid)</span>
               </span>
-            </div>
-          </div>
-          <div className="flex items-baseline justify-between">
-            <span className="text-neutral-400 font-mono text-xs uppercase tracking-wider">
-              Timezone
-            </span>
-            <span className="font-mono text-neutral-300 font-medium">
-              IST (UTC+05:30)
-            </span>
-          </div>
+            }
+          />
+          <DottedRow
+            label="Timezone"
+            value={
+              <span className="font-mono text-neutral-300 font-medium">
+                IST (UTC+05:30)
+              </span>
+            }
+          />
         </div>
       </section>
     </div>
