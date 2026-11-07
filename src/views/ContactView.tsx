@@ -34,7 +34,7 @@ export const ContactView: React.FC = () => {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -62,12 +62,14 @@ export const ContactView: React.FC = () => {
         "service_3npkrfo",
         "template_hh8m4xp",
         formData as unknown as Record<string, unknown>,
-        "Twwap4ZeVKnG-749h"
+        "Twwap4ZeVKnG-749h",
       );
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
-      setError("Failed to transmit message. Please contact directly via email.");
+      setError(
+        "Failed to transmit message. Please contact directly via email.",
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -83,7 +85,8 @@ export const ContactView: React.FC = () => {
         <p className="text-sm text-neutral-400 leading-relaxed">
           I'm always open to discussing systems architecture, new product
           engineering challenges, open source collaborations, or full-time
-          opportunities. Feel free to reach out directly or send a message below.
+          opportunities. Feel free to reach out directly or send a message
+          below.
         </p>
       </header>
 
@@ -96,7 +99,11 @@ export const ContactView: React.FC = () => {
         >
           <div className="flex flex-col gap-1 min-w-0">
             <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium flex items-center gap-1.5">
-              <HugeiconsIcon icon={Mail01Icon} size={14} className="text-neutral-400 group-hover:text-neutral-300 transition-colors" />
+              <HugeiconsIcon
+                icon={Mail01Icon}
+                size={14}
+                className="text-neutral-400 group-hover:text-neutral-300 transition-colors"
+              />
               Email
             </span>
             <span className="text-sm sm:text-base font-medium text-neutral-200 group-hover:text-white transition-colors tracking-tight truncate">
@@ -112,12 +119,20 @@ export const ContactView: React.FC = () => {
             >
               {copiedEmail ? (
                 <>
-                  <HugeiconsIcon icon={Tick01Icon} size={14} className="text-emerald-400" />
+                  <HugeiconsIcon
+                    icon={Tick01Icon}
+                    size={14}
+                    className="text-emerald-400"
+                  />
                   <span className="text-emerald-400">Copied</span>
                 </>
               ) : (
                 <>
-                  <HugeiconsIcon icon={Copy01Icon} size={14} className="text-neutral-400 group-hover:text-neutral-200 transition-colors" />
+                  <HugeiconsIcon
+                    icon={Copy01Icon}
+                    size={14}
+                    className="text-neutral-400 group-hover:text-neutral-200 transition-colors"
+                  />
                   <span>Copy</span>
                 </>
               )}
@@ -129,7 +144,11 @@ export const ContactView: React.FC = () => {
               href={`mailto:${email}`}
             >
               <span className="sm:hidden text-xs">Send</span>
-              <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-[#63656e] group-hover:text-neutral-300 transition-colors" />
+              <HugeiconsIcon
+                icon={ArrowUpRight01Icon}
+                size={14}
+                className="text-[#63656e] group-hover:text-neutral-300 transition-colors"
+              />
             </a>
           </div>
         </div>
@@ -141,7 +160,11 @@ export const ContactView: React.FC = () => {
         >
           <div className="flex flex-col gap-1 min-w-0">
             <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-400 font-medium flex items-center gap-1.5">
-              <HugeiconsIcon icon={Call02Icon} size={14} className="text-neutral-400 group-hover:text-neutral-300 transition-colors" />
+              <HugeiconsIcon
+                icon={Call02Icon}
+                size={14}
+                className="text-neutral-400 group-hover:text-neutral-300 transition-colors"
+              />
               Voice / Signal
             </span>
             <span className="text-sm sm:text-base font-medium text-neutral-200 group-hover:text-white transition-colors font-mono tracking-tight">
@@ -149,7 +172,11 @@ export const ContactView: React.FC = () => {
             </span>
           </div>
           <div className="p-2 rounded-lg bg-[#1c1d22] border border-white/10 group-hover:border-white/20 transition-colors flex items-center justify-center shadow-sm shrink-0">
-            <HugeiconsIcon icon={Call02Icon} size={16} className="text-[#63656e] group-hover:text-neutral-200 transition-colors" />
+            <HugeiconsIcon
+              icon={Call02Icon}
+              size={16}
+              className="text-[#63656e] group-hover:text-neutral-200 transition-colors"
+            />
           </div>
         </div>
 
@@ -167,7 +194,11 @@ export const ContactView: React.FC = () => {
                 target="_blank"
               >
                 GitHub
-                <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-[#63656e] transition-all duration-150 group-hover/link:text-neutral-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                <HugeiconsIcon
+                  icon={ArrowUpRight01Icon}
+                  size={14}
+                  className="text-[#63656e] transition-all duration-150 group-hover/link:text-neutral-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                />
               </a>
               <a
                 className="group/link text-neutral-300 hover:text-white transition-colors inline-flex items-center gap-1 font-medium"
@@ -176,7 +207,11 @@ export const ContactView: React.FC = () => {
                 target="_blank"
               >
                 LinkedIn
-                <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-[#63656e] transition-all duration-150 group-hover/link:text-neutral-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                <HugeiconsIcon
+                  icon={ArrowUpRight01Icon}
+                  size={14}
+                  className="text-[#63656e] transition-all duration-150 group-hover/link:text-neutral-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                />
               </a>
               <a
                 className="group/link text-neutral-300 hover:text-white transition-colors inline-flex items-center gap-1 font-medium"
@@ -185,7 +220,11 @@ export const ContactView: React.FC = () => {
                 target="_blank"
               >
                 Twitter / X
-                <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-[#63656e] transition-all duration-150 group-hover/link:text-neutral-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                <HugeiconsIcon
+                  icon={ArrowUpRight01Icon}
+                  size={14}
+                  className="text-[#63656e] transition-all duration-150 group-hover/link:text-neutral-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                />
               </a>
               <a
                 className="group/link text-neutral-300 hover:text-white transition-colors inline-flex items-center gap-1 font-medium"
@@ -194,7 +233,11 @@ export const ContactView: React.FC = () => {
                 target="_blank"
               >
                 LeetCode
-                <HugeiconsIcon icon={ArrowUpRight01Icon} size={14} className="text-[#63656e] transition-all duration-150 group-hover/link:text-neutral-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                <HugeiconsIcon
+                  icon={ArrowUpRight01Icon}
+                  size={14}
+                  className="text-[#63656e] transition-all duration-150 group-hover/link:text-neutral-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                />
               </a>
             </div>
           </div>
@@ -216,7 +259,8 @@ export const ContactView: React.FC = () => {
           <div className="p-5 rounded-xl bg-[#15161a] border border-emerald-500/30 text-text-primary text-xs sm:text-sm flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-status-active animate-pulse shrink-0"></span>
             <span className="text-neutral-200">
-              Inquiry transmitted successfully. Somnath will reply within 24 hours.
+              Inquiry transmitted successfully. Somnath will reply within 24
+              hours.
             </span>
           </div>
         ) : (
