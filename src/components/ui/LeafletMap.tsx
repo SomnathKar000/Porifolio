@@ -94,7 +94,6 @@ export const LeafletMap: React.FC<LeafletMapProps> = ({ className = "" }) => {
       {/* Top Floating Glass Badge */}
       <div className="absolute top-3 left-3 z-[400] pointer-events-none">
         <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 rounded-md bg-[#0d0e11]/85 backdrop-blur-md border border-white/10 text-[11px] sm:text-xs font-mono shadow-sm max-w-[calc(100%-24px)]">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
           <span className="text-neutral-200 font-medium shrink-0">KOLKATA, IN</span>
           <span className="text-white/20">|</span>
           <span className="text-[10px] sm:text-[11px] text-neutral-400 truncate">22.57° N, 88.36° E</span>

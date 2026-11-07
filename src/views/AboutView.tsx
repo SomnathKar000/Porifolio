@@ -435,12 +435,7 @@ export const AboutView: React.FC = () => {
             />
             <DottedRow
               label="Availability"
-              value={
-                <span className="inline-flex items-center gap-1.5 sm:gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-                  <span>Open for select roles (Remote / Hybrid)</span>
-                </span>
-              }
+              value="Open for select roles (Remote / Hybrid)"
             />
           </div>
         </div>
