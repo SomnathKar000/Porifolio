@@ -373,12 +373,7 @@ export const ContactView: React.FC = () => {
           <DottedRow label="Location" value="Kolkata, West Bengal, India" />
           <DottedRow
             label="Availability"
-            value={
-              <span className="inline-flex items-center gap-1.5 sm:gap-2">
-                <span className="w-2 h-2 rounded-full bg-status-active animate-pulse shrink-0"></span>
-                <span>Open for Select Roles (Remote / Hybrid)</span>
-              </span>
-            }
+            value="Open for Select Roles (Remote / Hybrid)"
           />
           <DottedRow
             label="Timezone"
