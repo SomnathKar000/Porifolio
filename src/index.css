@@ -9,13 +9,19 @@
 
   html {
     scroll-behavior: smooth;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #0D0E10;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+    background-color: #0d0e10;
     color: #e3e2e5;
   }
 
   body {
-    background-color: #0D0E10;
+    background-color: #0d0e10;
     color: #e3e2e5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -58,7 +64,7 @@
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #0D0E10;
+    background: #0d0e10;
   }
   ::-webkit-scrollbar-thumb {
     background: #23252a;
@@ -72,11 +78,16 @@
 @layer utilities {
   /* Subtle box glow without any position movement */
   .card-glow-hover {
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      background-color 0.2s ease;
   }
   .card-glow-hover:hover {
     border-color: rgba(255, 255, 255, 0.22);
-    box-shadow: 0 0 24px -4px rgba(255, 255, 255, 0.08), 0 8px 32px -4px rgba(0, 0, 0, 0.5);
+    box-shadow:
+      0 0 24px -4px rgba(255, 255, 255, 0.08),
+      0 8px 32px -4px rgba(0, 0, 0, 0.5);
     background-color: #17181d;
     transform: none !important; /* Keep box strictly stationary */
   }
@@ -84,7 +95,9 @@
   /* Calm, subtle arrow transition from dim to normal without sharp glare - only for redirecting items */
   .arrow-redirect {
     color: #63656e;
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+    transition:
+      transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+      color 0.2s ease;
   }
   .group:hover .arrow-redirect {
     transform: translate(2px, -2px);
@@ -106,6 +119,22 @@
   .animate-popover-in {
     animation: popoverIn 180ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
     transform-origin: top left;
+  }
+
+  /* Toast entrance animation */
+  @keyframes toastSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(12px) scale(0.96);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-toast-slide-in {
+    animation: toastSlideIn 220ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   /* Leaflet Dark Mode styling */
@@ -158,7 +187,9 @@
     background-color: #14151a !important;
     color: #d4d4d8 !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-    transition: background-color 0.15s ease, color 0.15s ease !important;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease !important;
   }
 
   .leaflet-control-zoom a:hover {
@@ -179,3 +210,4 @@
     color: #8b8d98 !important;
   }
 }
+

@@ -49,7 +49,6 @@ const About: React.FC = () => {
         {/* Text Content Column */}
         <div className="md:col-span-7 flex flex-col items-start gap-5">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200/60 dark:border-blue-800/60">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             Available for new projects
           </div>
 

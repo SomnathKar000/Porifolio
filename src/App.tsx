@@ -6,6 +6,7 @@ import { AboutView } from "./views/AboutView";
 import { BlogView } from "./views/BlogView";
 import { ContactView } from "./views/ContactView";
 import { CaseStudyView } from "./views/CaseStudyView";
+import { Toaster } from "./components/ui/Toast";
 
 const App: React.FC = () => {
   return (
@@ -29,6 +30,9 @@ const App: React.FC = () => {
 
         {/* Minimalist Footer */}
         <Footer />
+
+        {/* Global Toast Notifications */}
+        <Toaster />
       </div>
     </BrowserRouter>
   );
