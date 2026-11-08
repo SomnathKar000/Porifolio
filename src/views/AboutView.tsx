@@ -100,7 +100,7 @@ export const AboutView: React.FC = () => {
         <div className="flex flex-col gap-4">
           {/* Highlight Card 1: ResumeForge */}
           <a
-            href="https://resume-forge-web.vercel.app/"
+            href="https://resumeforge.somnathkar.com"
             target="_blank"
             rel="noreferrer"
             className="group relative flex flex-col gap-4 p-6 rounded-xl bg-[#131418] border border-white/[0.08] card-glow-hover cursor-pointer"

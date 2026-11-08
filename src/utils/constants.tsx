@@ -94,7 +94,7 @@ export const ProjectDetails: Project[] = [
   {
     name: "ResumeForge",
     image: "/images/project/ResumeForge.png",
-    websiteLink: "https://resume-forge-web.vercel.app/",
+    websiteLink: "https://resumeforge.somnathkar.com",
     gitHubLink: "https://github.com/SomnathKar000/ResumeForge",
     about:
       "ResumeForge is an AI-powered tool that takes your existing resume and a job description, and rewrites your resume to match that job. It highlights the right skills, uses the right keywords, and formats everything in a clean ATS-friendly layout.",
